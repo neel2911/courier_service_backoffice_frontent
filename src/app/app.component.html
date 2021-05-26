@@ -1,0 +1,35 @@
+<app-primary-loader *ngIf="isShowPrimaryLoader"></app-primary-loader>
+<mat-drawer-container class="example-container" [hasBackdrop]="true" autosize>
+  <!-- <mat-drawer
+    #drawer
+    class="custom-drawer"
+    [position]="DrawerPosition.START"
+    [mode]="DrawerMode.SIDE"
+    [opened]="isDrawerOpen"
+    (opened)="onDrawerOpen()"
+    (closed)="onDrawerClose()"
+  >
+    <app-drawer></app-drawer>
+  </mat-drawer> -->
+  <mat-drawer-content>
+    <app-header *ngIf="isLoggedIn" [breadCrumbs]="breadCrumbs" (toggleDrawerStateEmmit)="isDrawerOpen = $event"
+      (logoutEmmit)="onLogoutHandler()"></app-header>
+    <mat-sidenav-container>
+      <mat-sidenav *ngIf="isLoggedIn" class="custom-sidenav position-fixed" #sidenav [fixedInViewport]="false"
+        [position]="DrawerPosition.START" [mode]="DrawerMode.SIDE" [opened]="isLeftSidePanelOpen"
+        (opened)="onLeftSidePanelOpen()" (closed)="onLeftSidePanelClose()">
+        <app-left-nav-bar [isDashboard]="isDashboard" (toggleLeftSidePanelStateEmmit)="isLeftSidePanelOpen = $event">
+        </app-left-nav-bar>
+      </mat-sidenav>
+      <mat-sidenav-content>
+
+        <section role="main" class="page-container" id="page-container">
+          <section class="body-container" [ngClass]="{ 'app-top-padding': isLoggedIn }">
+            <router-outlet></router-outlet>
+            <app-footer *ngIf="isLoggedIn"></app-footer>
+          </section>
+        </section>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </mat-drawer-content>
+</mat-drawer-container>

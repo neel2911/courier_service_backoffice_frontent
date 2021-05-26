@@ -1,0 +1,108 @@
+{
+  "data": {
+    "statusLegends": {
+      "accepted": "Accepted",
+      "rejected": "Rejected",
+      "reviewInProgress": "Review In Progress",
+      "noActionTaken": "No Action Taken"
+    },
+    "anomalysLegends": {
+      "missingData": "Missing Data",
+      "outLier": "Outlier",
+      "overLappingEvents": "Overlapping event",
+      "variance": "Variance"
+    },
+    "domainDetails": [
+      {
+        "domainName": "AL",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 12,
+            "statusCount": {
+              "accepted": 4,
+              "rejected": 2,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 10,
+            "statusCount": {
+              "accepted": 5,
+              "rejected": 0,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 1,
+            "statusCount": {
+              "accepted": 1,
+              "rejected": 0,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 1,
+            "statusCount": {
+              "accepted": 1,
+              "rejected": 0,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          }
+        ]
+      },
+      {
+        "domainName": "DK",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 12,
+            "statusCount": {
+              "accepted": 4,
+              "rejected": 2,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 10,
+            "statusCount": {
+              "accepted": 5,
+              "rejected": 0,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 1,
+            "statusCount": {
+              "accepted": 1,
+              "rejected": 0,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 1,
+            "statusCount": {
+              "accepted": 1,
+              "rejected": 0,
+              "reviewInProgress": 6,
+              "noActionTaken": 6
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

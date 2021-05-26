@@ -1,0 +1,99 @@
+{
+  "data": {
+    "statusLegends": {
+      "completed": "Completed",
+      "inProgress": "In-Progress",
+      "notStarted": "Not Started"
+    },
+    "anomalysLegends": {
+      "missingData": "Missing Data",
+      "outLier": "Outlier",
+      "overLappingEvents": "Overlapping Events",
+      "variance": "Variance"
+    },
+    "domainDetails": [
+      {
+        "domainName": "LB",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 11,
+            "statusCount": {
+              "completed": 4,
+              "inProgress": 2,
+              "notStarted": 7
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 461,
+            "statusCount": {
+              "completed": 250,
+              "inProgress": 90,
+              "notStarted": 121
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 0,
+            "statusCount": {
+              "completed": 0,
+              "inProgress": 0,
+              "notStarted": 0
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 73,
+            "statusCount": {
+              "completed": 20,
+              "inProgress": 30,
+              "notStarted": 23
+            }
+          }
+        ]
+      },
+      {
+        "domainName": "VS",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 113,
+            "statusCount": {
+              "completed": 15,
+              "inProgress": 7,
+              "notStarted": 91
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 169,
+            "statusCount": {
+              "completed": 80,
+              "inProgress": 40,
+              "notStarted": 49
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 0,
+            "statusCount": {
+              "completed": 0,
+              "inProgress": 0,
+              "notStarted": 0
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 55,
+            "statusCount": {
+              "completed": 33,
+              "inProgress": 17,
+              "notStarted": 5
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

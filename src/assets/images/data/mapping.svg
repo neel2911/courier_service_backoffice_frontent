@@ -1,0 +1,12 @@
+<svg width="57" height="62" viewBox="0 0 57 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="1" width="10" height="10" fill="#8B8B8B"/>
+<rect y="26" width="10" height="10" fill="#8B8B8B"/>
+<rect y="50" width="10" height="10" fill="#666FBF"/>
+<path d="M6 6C6 5.44772 6.44772 5 7 5H47C47.5523 5 48 5.44772 48 6V6C48 6.55228 47.5523 7 47 7H7C6.44772 7 6 6.55228 6 6V6Z" fill="#8B8B8B"/>
+<path d="M6 31C6 30.4477 6.44772 30 7 30H47C47.5523 30 48 30.4477 48 31V31C48 31.5523 47.5523 32 47 32H7C6.44772 32 6 31.5523 6 31V31Z" fill="#8B8B8B"/>
+<path d="M6 56C6 55.4477 6.44772 55 7 55H47C47.5523 55 48 55.4477 48 56V56C48 56.5523 47.5523 57 47 57H7C6.44772 57 6 56.5523 6 56V56Z" fill="#8B8B8B"/>
+<path d="M4.94531 56.5294C38.3767 52.8824 14.6764 8.21569 47.5 7" stroke="#666FBF" stroke-width="2.5" stroke-linejoin="round"/>
+<rect x="46.25" y="1.25" width="9.5" height="9.5" rx="4.75" stroke="#666FBF" stroke-width="2.5"/>
+<rect x="46" y="26" width="10" height="10" rx="5" stroke="#8B8B8B" stroke-width="2"/>
+<rect x="46" y="51" width="10" height="10" rx="5" stroke="#8B8B8B" stroke-width="2"/>
+</svg>

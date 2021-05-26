@@ -1,0 +1,49 @@
+<div class="mat-typography">
+  <div mat-dialog-title class="d-flex justify-content-between mb-0">
+    <h2 class="mb-0">Anomaly Review</h2>
+  </div>
+  <mat-dialog-content class="mt-2 pt-3">
+    <div class="d-flex align-items-center">
+      <label class="mr-3">Mark Anomaly as:</label>
+      <mat-radio-group [(ngModel)]="actionType">
+        <mat-radio-button value="accept">Valid</mat-radio-button>
+        <mat-radio-button value="reject">Invalid</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="mt-4">
+    <strong class="mb-0 d-block review-label">
+      {{
+        actionType == "accept" ? "Suggested Query for Site" : "Add Justification"
+      }}
+    </strong>
+    <mat-form-field
+      class="custom-input custom-textarea w-100"
+      *ngIf="actionType == 'accept'"
+    >
+      <textarea matInput>Result for Lab Test AST/SGOT is missing. Please Provide.</textarea>
+    </mat-form-field>
+    <mat-form-field
+      class="custom-input custom-textarea w-100"
+      *ngIf="actionType == 'reject'"
+    >
+      <textarea matInput>Please provide feedback</textarea>
+    </mat-form-field>
+  </div>
+  </mat-dialog-content>
+  <mat-dialog-actions
+    class="justify-content-center mb-0 pb-0 position-relative"
+  >
+    <!-- <span class="success-msg" *ngIf="isShowingLabel"
+      >Query sent to the site</span
+    > -->
+    <button
+      mat-flat-button
+      class="custom-button mat-primary"
+      [disabled]="isLoading"
+      (click)="onSendQuery()"
+    >
+      {{ actionType == "accept" ? "Send Query to Site" : "Submit Feedback" }}
+    </button>
+    <button mat-button mat-dialog-close class="link">Cancel</button>
+  </mat-dialog-actions>
+</div>

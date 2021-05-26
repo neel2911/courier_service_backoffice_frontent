@@ -1,0 +1,50 @@
+<div class="mat-typography">
+  <div mat-dialog-title class="d-flex justify-content-between pb-4">
+    <h2 class="mb-0">Details of {{ data.clientName }}</h2>
+    <button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+  </div>
+
+  <mat-dialog-content>
+    <dl class="user-details">
+      <dt>Client Name :</dt>
+      <dd>{{ data.clientName }}</dd>
+      <dt>Requester Name :</dt>
+      <dd>{{ data.requesterName }}</dd>
+      <dt>Access Code :</dt>
+      <dd>{{ data.accessCode }}</dd>
+      <dt>Access Reason :</dt>
+      <dd>{{ data.accessReason }}</dd>
+      <dt>Active Period :</dt>
+      <dd>
+        {{ data.accessStartDate | date: "dd MMM yyyy" }} -
+        {{ data.accessEndDate | date: "dd MMM yyyy" }}
+      </dd>
+      <dt>Status :</dt>
+      <dd>
+        <span
+          class="user-status"
+          [ngClass]="data.status == EmployeeStatus.ACTIVE ? 'active' : 'inactive'"
+          >{{ data.status }}</span
+        >
+      </dd>
+      <dt>Last Logged In :</dt>
+      <dd>
+        {{
+          data.lastLoggedIn
+            ? (data.lastLoggedIn | date: "dd MMM yyyy , HH:mm:ss")
+            : "Not yet accessed"
+        }}
+      </dd>
+      <dt *ngIf="data.lastLoggedIn">IP :</dt>
+      <dd *ngIf="data.lastLoggedIn">
+        {{ data.userMetaInfo?.ipAddress || "" }}
+      </dd>
+      <dt>Created On :</dt>
+      <dd>{{ data.createdAt | date: "dd MMM yyyy, HH:mm:ss" }}</dd>
+      <dt>Updated On :</dt>
+      <dd>{{ data.updatedAt | date: "dd MMM yyyy, HH:mm:ss" }}</dd>
+    </dl>
+    <!-- <div [ngClass]="data.status == UserStatus.ACTIVE ? 'active' : 'inactive'">
+  </div> -->
+  </mat-dialog-content>
+</div>

@@ -1,0 +1,2849 @@
+{
+  "data": {
+    "columnsConfig": {
+      "titles": {
+        "studyid": "STUDYID",
+        "domain": "DOMAIN",
+        "usubjid": "USUBJID",
+        "epoch": "EPOCH",
+        "vsseq": "VSSEQ",
+        "vstestcd": "VSTESTCD",
+        "vstest": "VSTEST",
+        "vscat": "VSCAT",
+        "vsorres": "VSORRES",
+        "vsorresu": "VSORRESU",
+        "visit": "VISIT",
+        "visitnum": "VISITNUM",
+        "vsdtc": "VSDTC",
+        "vsdy": "VSDY"
+      }
+    },
+    "records": [
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_001099",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 171,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -5",
+        "visitnum": -5,
+        "vsdtc": 2005,
+        "vsdy": "-1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 87044,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_001608",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 82,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2004,
+        "vsdy": "16",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 44621,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK -2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_004121",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 8,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 60,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -1",
+        "visitnum": -1,
+        "vsdtc": 2004,
+        "vsdy": "28",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 19306,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK -1",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_005554",
+        "epoch": "END OF TAPER",
+        "vsseq": 12,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 63,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2003,
+        "vsdy": "59",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 72021,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_006815",
+        "epoch": "POST TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 60,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2005,
+        "vsdy": "44",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 75864,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK 2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_008665",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 158,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-8",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 54413,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_009632",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 142,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2005,
+        "vsdy": "-4",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 1147,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_011690",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 67,
+        "vsorresu": "INCHES",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2005,
+        "vsdy": "62",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 5219,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_014675",
+        "epoch": "SCREENING",
+        "vsseq": 1,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 64,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-14",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 4654,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_017699",
+        "epoch": "SCREENING",
+        "vsseq": 1,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 73,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2005,
+        "vsdy": " ",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 32393,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_019430",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 18,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 116,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK 8",
+        "visitnum": 8,
+        "vsdtc": 2005,
+        "vsdy": "85",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 56860,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK 8",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_022905",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 122,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2003,
+        "vsdy": "64",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 22134,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_024778",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 72,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 50680,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_026976",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 18,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 150,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK 9",
+        "visitnum": 9,
+        "vsdtc": 2004,
+        "vsdy": "84",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 8351,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK 9",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_031819",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 190,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 70763,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_032284",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 107,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": " ",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 92248,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_033270",
+        "epoch": "TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 74,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2004,
+        "vsdy": "45",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 2328,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK 2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_045049",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 170,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 2260,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_046805",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 7,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 68,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2004,
+        "vsdy": "16",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 21960,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK -2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_054416",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 74,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2004,
+        "vsdy": "30",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 86782,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK 0",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_068409",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 142,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-14",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 7053,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_068603",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 72,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 96596,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_069106",
+        "epoch": "SCREENING",
+        "vsseq": 1,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 64,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2003,
+        "vsdy": "-12",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 74580,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_072580",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 79,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2005,
+        "vsdy": "31",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 6876,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK 0",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_078816",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 7,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 68,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2004,
+        "vsdy": "15",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 17835,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK -2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_079260",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 17,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 71,
+        "vsorresu": "INCHES",
+        "visit": "WEEK 8",
+        "visitnum": 8,
+        "vsdtc": 2005,
+        "vsdy": "84",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 47630,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK 8",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_081609",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 4,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 92,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2005,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 30837,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_084035",
+        "epoch": "SCREENING",
+        "vsseq": 1,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 64,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 48893,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - HEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_087644",
+        "epoch": "END OF TAPER",
+        "vsseq": 13,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 60,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2005,
+        "vsdy": "58",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 80680,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - PULSE RATE has missing data for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_094808",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 190,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-7",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 67604,
+            "anomalyType": "Missing Data",
+            "anomalyDetails": "VS - WEIGHT has missing data for WEEK -6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_000399",
+        "epoch": "3 MONTHS POST RANDOMIZATION",
+        "vsseq": 16,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 13",
+        "visitnum": 13,
+        "vsdtc": 2005,
+        "vsdy": "115",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 74657,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 13 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_000399",
+        "epoch": "3 MONTHS POST TAPER",
+        "vsseq": 17,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 16",
+        "visitnum": 16,
+        "vsdtc": 2005,
+        "vsdy": "135",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 48221,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 16 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_001064",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 134,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2004,
+        "vsdy": "11",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 40337,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -3 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_001064",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 8,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 125,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -1",
+        "visitnum": -1,
+        "vsdtc": 2004,
+        "vsdy": "25",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 5284,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -1 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_002673",
+        "epoch": "POST TAPER",
+        "vsseq": 16,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 122,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 6",
+        "visitnum": 6,
+        "vsdtc": 2004,
+        "vsdy": "65",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 43673,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 6 is identified as outlier data by 5 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_009649",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 327,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2005,
+        "vsdy": "-7",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 7395,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - WEIGHT for WEEK -6 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_010991",
+        "epoch": "POST TAPER",
+        "vsseq": 10,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 4",
+        "visitnum": 4,
+        "vsdtc": 2005,
+        "vsdy": "57",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 87033,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 4 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_010991",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 13,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 304,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2005,
+        "vsdy": "64",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 14033,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - WEIGHT for WEEK 5 is identified as outlier data by 5 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_011690",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2005,
+        "vsdy": "14",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 75527,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -3 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_011690",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 7,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2005,
+        "vsdy": "21",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 38985,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -2 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_011690",
+        "epoch": "END OF TAPER",
+        "vsseq": 10,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2005,
+        "vsdy": "37",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 70088,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 2 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_014043",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2004,
+        "vsdy": "29",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 73947,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 0 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_016110",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 114,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2005,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 20790,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_024577",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2005,
+        "vsdy": "29",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 33557,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 0 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_024778",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 2,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 68719,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_029278",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 297,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2005,
+        "vsdy": "-6",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 49310,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - WEIGHT for WEEK -6 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_029550",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 4,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 48,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 97551,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_031459",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 40,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2004,
+        "vsdy": "8",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 67601,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -3 is identified as outlier data by 5 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_033622",
+        "epoch": "EARLY TERMINATION",
+        "vsseq": 3,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 114,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -5",
+        "visitnum": -5,
+        "vsdtc": 2004,
+        "vsdy": " ",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 59844,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -5 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_033975",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 40,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2005,
+        "vsdy": "32",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 37774,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 0 is identified as outlier data by 5 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039408",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 119,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2005,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 73168,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039408",
+        "epoch": "TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 48,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 3",
+        "visitnum": 3,
+        "vsdtc": 2005,
+        "vsdy": "48",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 27317,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 3 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039979",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 123,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 45395,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040069",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 117,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -5",
+        "visitnum": -5,
+        "vsdtc": 2003,
+        "vsdy": " ",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 23074,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -5 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040208",
+        "epoch": "END OF TAPER",
+        "vsseq": 10,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2005,
+        "vsdy": "38",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 33023,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 2 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040208",
+        "epoch": "POST TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 114,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2005,
+        "vsdy": "43",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 26910,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 2 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040208",
+        "epoch": "POST TAPER",
+        "vsseq": 12,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 3",
+        "visitnum": 3,
+        "vsdtc": 2005,
+        "vsdy": "50",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 9490,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 3 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040208",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2005,
+        "vsdy": "60",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 24379,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 5 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040537",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 45,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "4",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 12143,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040537",
+        "epoch": "POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 44,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 7",
+        "visitnum": 7,
+        "vsdtc": 2005,
+        "vsdy": "78",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 27873,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 7 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_044225",
+        "epoch": "TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 3",
+        "visitnum": 3,
+        "vsdtc": 2005,
+        "vsdy": "44",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 40087,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 3 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_048355",
+        "epoch": "END OF TAPER",
+        "vsseq": 12,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2004,
+        "vsdy": "59",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 62893,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 5 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_052093",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 129,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2004,
+        "vsdy": "11",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 78286,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -3 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_053683",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 79,
+        "vsorresu": "INCHES",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": "-6",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 94385,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - HEIGHT for WEEK -6 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_055990",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 309,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2004,
+        "vsdy": " ",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 5008,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - WEIGHT for WEEK -6 is identified as outlier data by 5 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_057662",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 307,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2003,
+        "vsdy": " ",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 9044,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - WEIGHT for WEEK -6 is identified as outlier data by 5 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_060638",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "6",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 75339,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_067772",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 119,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -5",
+        "visitnum": -5,
+        "vsdtc": 2005,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 34297,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -5 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_070995",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 123,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -5",
+        "visitnum": -5,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 33467,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -5 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_072804",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2003,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 46240,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -4 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_073329",
+        "epoch": "SCREENING",
+        "vsseq": 2,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 352,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2005,
+        "vsdy": "-3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 53318,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - WEIGHT for WEEK -6 is identified as outlier data by 6 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_085668",
+        "epoch": "POST TAPER",
+        "vsseq": 13,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 117,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 6",
+        "visitnum": 6,
+        "vsdtc": 2004,
+        "vsdy": "70",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 60377,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 6 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_089269",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 7,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 48,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2005,
+        "vsdy": "19",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 44459,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -2 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_089482",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -5",
+        "visitnum": -5,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 99471,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -5 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_093928",
+        "epoch": "3 MONTHS POST RANDOMIZATION",
+        "vsseq": 17,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 12",
+        "visitnum": 12,
+        "vsdtc": 2004,
+        "vsdy": "112",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 6762,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK 12 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_096352",
+        "epoch": "SCREENING",
+        "vsseq": 3,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -6",
+        "visitnum": -6,
+        "vsdtc": 2005,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 39027,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "VS - PULSE RATE for WEEK -6 is identified as outlier data by 4 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_009649",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 106,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2005,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 46514,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_009649 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_009947",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 7,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 105,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2004,
+        "vsdy": "16",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 34681,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_009947 for WEEK -2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_011292",
+        "epoch": "END OF TAPER",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 51,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2005,
+        "vsdy": "37",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 61206,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_011292 for WEEK 2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_011292",
+        "epoch": "POST TAPER",
+        "vsseq": 10,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 109,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 3",
+        "visitnum": 3,
+        "vsdtc": 2005,
+        "vsdy": "44",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 56386,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_011292 for WEEK 3",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_015478",
+        "epoch": "3 MONTHS POST RANDOMIZATION",
+        "vsseq": 19,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 93,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 12",
+        "visitnum": 12,
+        "vsdtc": 2005,
+        "vsdy": "109",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 14167,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_015478 for WEEK 12",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_022904",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 50,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2004,
+        "vsdy": "31",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 86910,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_022904 for WEEK 0",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_023232",
+        "epoch": "END OF TAPER",
+        "vsseq": 13,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 86,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2004,
+        "vsdy": "59",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 73681,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_023232 for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_024577",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 120,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2005,
+        "vsdy": "29",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 63831,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_024577 for WEEK 0",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_024577",
+        "epoch": "POST TAPER",
+        "vsseq": 12,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 96,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 3",
+        "visitnum": 3,
+        "vsdtc": 2005,
+        "vsdy": "50",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 7880,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_024577 for WEEK 3",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_028240",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 100,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2003,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 31982,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_028240 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_030887",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 15,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 72,
+        "vsorresu": "INCHES",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2005,
+        "vsdy": "60",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 61378,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - HEIGHT value spike observed for 03_030887 for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_031459",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 40,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2004,
+        "vsdy": "8",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 48762,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_031459 for WEEK -3",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_031459",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 7,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 90,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "vsdtc": 2004,
+        "vsdy": "15",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 84594,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_031459 for WEEK -2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_033975",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 40,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2005,
+        "vsdy": "32",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 68303,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_033975 for WEEK 0",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_033975",
+        "epoch": "TAPER",
+        "vsseq": 10,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 80,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 1",
+        "visitnum": 1,
+        "vsdtc": 2005,
+        "vsdy": "39",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 2948,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_033975 for WEEK 1",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039408",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 119,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2005,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 36992,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_039408 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039408",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 62,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2005,
+        "vsdy": "9",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 11320,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_039408 for WEEK -3",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039408",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 9,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 105,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "vsdtc": 2005,
+        "vsdy": "30",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 27728,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_039408 for WEEK 0",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039408",
+        "epoch": "TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 48,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 3",
+        "visitnum": 3,
+        "vsdtc": 2005,
+        "vsdy": "48",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 94354,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_039408 for WEEK 3",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039979",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 60,
+        "vsorresu": "INCHES",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2004,
+        "vsdy": "66",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 95778,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - HEIGHT value spike observed for 03_039979 for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_039979",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 123,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 3744,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_039979 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040537",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 45,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "4",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 94674,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_040537 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_040537",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 6,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 74,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "vsdtc": 2004,
+        "vsdy": "11",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 33731,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_040537 for WEEK -3",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_041051",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 4,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 96,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "1",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 66056,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_041051 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_056167",
+        "epoch": "3 MONTHS POST TAPER",
+        "vsseq": 20,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 98,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 17",
+        "visitnum": 17,
+        "vsdtc": 2005,
+        "vsdy": "145",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 81661,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_056167 for WEEK 17",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_071416",
+        "epoch": "POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 103,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 6",
+        "visitnum": 6,
+        "vsdtc": 2005,
+        "vsdy": "71",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 3429,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_071416 for WEEK 6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_072804",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2003,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 11127,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_072804 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_076126",
+        "epoch": "TAPER",
+        "vsseq": 11,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 109,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2004,
+        "vsdy": "39",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 32507,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_076126 for WEEK 2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_076964",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 8,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 96,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -1",
+        "visitnum": -1,
+        "vsdtc": 2004,
+        "vsdy": "24",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 86401,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_076964 for WEEK -1",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_080795",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 156,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK 5",
+        "visitnum": 5,
+        "vsdtc": 2004,
+        "vsdy": "64",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 17803,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - WEIGHT value spike observed for 03_080795 for WEEK 5",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_087644",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 16,
+        "vstestcd": "HEIGHT",
+        "vstest": "HEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 69,
+        "vsorresu": "INCHES",
+        "visit": "WEEK 9",
+        "visitnum": 9,
+        "vsdtc": 2005,
+        "vsdy": "91",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 41814,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - HEIGHT value spike observed for 03_087644 for WEEK 9",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_089269",
+        "epoch": "3 MONTHS POST RANDOMIZATION",
+        "vsseq": 15,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 108,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 12",
+        "visitnum": 12,
+        "vsdtc": 2005,
+        "vsdy": "107",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 37326,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_089269 for WEEK 12",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_089546",
+        "epoch": "END OF TAPER",
+        "vsseq": 10,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 96,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 2",
+        "visitnum": 2,
+        "vsdtc": 2004,
+        "vsdy": "40",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 15076,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_089546 for WEEK 2",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_093928",
+        "epoch": "POST TAPER",
+        "vsseq": 14,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 98,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 6",
+        "visitnum": 6,
+        "vsdtc": 2004,
+        "vsdy": "65",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 41380,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_093928 for WEEK 6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_093928",
+        "epoch": "3 MONTHS POST RANDOMIZATION",
+        "vsseq": 17,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 116,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK 12",
+        "visitnum": 12,
+        "vsdtc": 2004,
+        "vsdy": "112",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 10511,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_093928 for WEEK 12",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_095959",
+        "epoch": "INDUCTION/STABILIZATION",
+        "vsseq": 5,
+        "vstestcd": "PULSE",
+        "vstest": "PULSE RATE",
+        "vscat": "FORM 281-CLINICAL OPIATE WITHDRAWAL SCALE",
+        "vsorres": 91,
+        "vsorresu": "BEATS/MINUTE",
+        "visit": "WEEK -4",
+        "visitnum": -4,
+        "vsdtc": 2004,
+        "vsdy": "3",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 39471,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - PULSE RATE value spike observed for 03_095959 for WEEK -4",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "VS",
+        "usubjid": "03_099902",
+        "epoch": "1 MONTH POST TAPER",
+        "vsseq": 15,
+        "vstestcd": "WEIGHT",
+        "vstest": "WEIGHT",
+        "vscat": "FORM 266-PHYSICAL EXAM",
+        "vsorres": 135,
+        "vsorresu": "POUNDS",
+        "visit": "WEEK 6",
+        "visitnum": 6,
+        "vsdtc": 2004,
+        "vsdy": "67",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 10170,
+            "anomalyType": "Percentage Change Outlier",
+            "anomalyDetails": "VS - WEIGHT value spike observed for 03_099902 for WEEK 6",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      }
+    ]
+  }
+}

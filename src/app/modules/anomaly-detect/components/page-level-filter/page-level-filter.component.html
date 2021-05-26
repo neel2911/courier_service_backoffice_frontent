@@ -1,0 +1,100 @@
+<figure
+    class="
+      mat-figure
+      justify-content-between
+      d-flex
+      filter-section
+      mb-0
+      container-fluid
+    "
+  >
+    <form [formGroup]="filterForm" class="d-flex w-100">
+      <ng-container *ngFor="let filter of filters; let i = index">
+        <!-- *ngIf="filter.key != 'domainList'" -->
+        <ng-container>
+          <mat-form-field
+            class="custom-input"
+            [ngClass]="{ 'required-text': filter.key != 'domainList' }"
+          >
+            <mat-label>{{ filter.title }}</mat-label>
+
+            <input
+              type="text"
+              matInput
+              [formControlName]="filter.key"
+              [matAutocomplete]="auto"
+              [required]="filter.key == 'domainList' ? false : true"
+              (keyup)="filterAutoComplete($event, filter.key)"
+            />
+
+            <button
+              *ngIf="
+                filterForm.value[filter.key] &&
+                filterForm.value[filter.key] !== ''
+              "
+              class="ml-1 select-close"
+              mat-icon-button
+              matSuffix
+              (click)="resetFilters(i, true)"
+            >
+              <mat-icon>
+                <span class="material-icons-sharp"> close </span>
+              </mat-icon>
+            </button>
+
+            <mat-icon matSuffix *ngIf="filter.key != 'domainList'">
+              <span class="material-icons-sharp"> arrow_drop_down </span>
+            </mat-icon>
+
+            <mat-icon matSuffix class="ml-1" *ngIf="filter.key == 'domainList'">
+              <span class="material-icons-sharp"> manage_search </span>
+            </mat-icon>
+            <mat-autocomplete
+              #auto
+              [displayWith]="displayFn"
+              (optionSelected)="updateFilter(filter, i + 1)"
+            >
+              <mat-option
+                *ngFor="let option of displayFilterOptions[filter.key]"
+                [value]="option.name"
+              >
+                {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </ng-container>
+      </ng-container>
+    </form>
+    <div class="d-flex align-items-center mt-1">
+      <button
+        (click)="applyFilters()"
+        [disabled]="
+          filterForm.controls.therapeuticAreaList.value == '' ||
+          filterForm.controls.indicationList.value == '' ||
+          filterForm.controls.studyPhaseList.value == '' ||
+          filterForm.controls.studyList.value == ''
+        "
+        mat-flat-button
+        class="custom-button mr-0"
+        color="primary"
+      >
+        Apply
+      </button>
+      <button
+        (click)="
+          isDataAvailable = true; isShowData = false; resetFilters(0, true)
+        "
+        [disabled]="
+          filterForm.controls.therapeuticAreaList.value == '' ||
+          filterForm.controls.indicationList.value == '' ||
+          filterForm.controls.studyPhaseList.value == '' ||
+          filterForm.controls.studyList.value == ''
+        "
+        mat-button
+        class="link ml-0"
+        color="primary"
+      >
+        Reset
+      </button>
+    </div>
+  </figure>

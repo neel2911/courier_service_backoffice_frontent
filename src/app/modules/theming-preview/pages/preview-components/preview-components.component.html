@@ -1,0 +1,238 @@
+<section class="container-fluid">
+  <div class="container-fluid pt-5 mt-5">
+    <h2 class="mat-h2">custom button</h2>
+    <button mat-flat-button class="custom-button" color="primary">
+      Primary Button
+    </button>
+    <button mat-flat-button class="custom-button" color="primary">
+      <mat-icon>mic</mat-icon>
+      Icon Button
+    </button>
+    <button mat-flat-button class="default-button" color="primary">
+      Icon Button
+    </button>
+    <a href="#" mat-button class="link">Link</a>
+    <a href="#" mat-button class="link"><mat-icon>mic</mat-icon> Link</a>
+    <br />
+    <br />
+    <h2 class="mat-h2">custom fields</h2>
+    <mat-form-field class="custom-input">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="custom-input">
+      <mat-label>Choose one</mat-label>
+      <mat-select>
+        <mat-option>Clear</mat-option>
+        <mat-option value="valid">Valid option</mat-option>
+        <mat-option value="invalid">Invalid option</mat-option>
+      </mat-select>
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error>You must make a selection</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="custom-input">
+      <mat-label>Legacy form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-icon matSuffix></mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="custom-input custom-textarea">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+    <br />
+    <br />
+    <div class="d-block custom-checkbox mt-2">
+      <mat-checkbox class="example-margin">Checked</mat-checkbox>
+      <br />
+      <br />
+      <!-- <input type="checkbox" checked="checked" />
+      <label>checkbox</label> -->
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <!-- <mat-radio-button value="2">Option 2</mat-radio-button> -->
+      </mat-radio-group>
+      <br />
+      <br />
+      <mat-slide-toggle class="example-margin"> Slide me! </mat-slide-toggle>
+    </div>
+  </div>
+
+  <div class="container-fluid pt-5 mt-5">
+    <!-- <div class="d-block">
+      <a href="" mat-flat-button disableRipple class="btn btn-primary">Link</a>
+      <a href="" mat-flat-button disableRipple class="btn btn-cancel ml-3 mr-3"
+        >Link</a
+      >
+      <a href="#" mat-flat-button disableRipple class="back-btn">
+        <mat-icon></mat-icon> Link
+      </a>
+    </div> -->
+
+    <!-- <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field">
+        <mat-label>Clearable input</mat-label>
+        <input matInput type="text" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon></mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" [hideRequiredMarker]="false">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Ex. pat@example.com" />
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error> Please enter a valid email address </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Choose one</mat-label>
+        <mat-select>
+          <mat-option>Clear</mat-option>
+          <mat-option value="valid">Valid option</mat-option>
+          <mat-option value="invalid">Invalid option</mat-option>
+        </mat-select>
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error>You must make a selection</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="accent">
+        <mat-label>Inherited calendar color</mat-label>
+        <input matInput [matDatepicker]="picker1" />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </form> -->
+
+    <!-- <div class="d-block custom-checkbox mt-5">
+      <mat-checkbox class="example-margin">Checked</mat-checkbox>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-slide-toggle class="example-margin"> Slide me! </mat-slide-toggle>
+    </div> -->
+
+    <!-- <mat-slider
+      thumbLabel
+      tickInterval="1000"
+      min="1"
+      max="100000"
+    ></mat-slider> -->
+
+    <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+    <mat-menu #animals="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="vertebrates">
+        Vertebrates
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="invertebrates">
+        Invertebrates
+      </button>
+    </mat-menu>
+
+    <mat-menu #vertebrates="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+      <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+      <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+      <button mat-menu-item>Birds</button>
+      <button mat-menu-item>Mammals</button>
+    </mat-menu>
+
+    <mat-menu #invertebrates="matMenu">
+      <button mat-menu-item>Insects</button>
+      <button mat-menu-item>Molluscs</button>
+      <button mat-menu-item>Crustaceans</button>
+      <button mat-menu-item>Corals</button>
+      <button mat-menu-item>Arachnids</button>
+      <button mat-menu-item>Velvet worms</button>
+      <button mat-menu-item>Horseshoe crabs</button>
+    </mat-menu>
+
+    <mat-menu #fish="matMenu">
+      <button mat-menu-item>Baikal oilfish</button>
+      <button mat-menu-item>Bala shark</button>
+      <button mat-menu-item>Ballan wrasse</button>
+      <button mat-menu-item>Bamboo shark</button>
+      <button mat-menu-item>Banded killifish</button>
+    </mat-menu>
+
+    <mat-menu #amphibians="matMenu">
+      <button mat-menu-item>Sonoran desert toad</button>
+      <button mat-menu-item>Western toad</button>
+      <button mat-menu-item>Arroyo toad</button>
+      <button mat-menu-item>Yosemite toad</button>
+    </mat-menu>
+
+    <mat-menu #reptiles="matMenu">
+      <button mat-menu-item>Banded Day Gecko</button>
+      <button mat-menu-item>Banded Gila Monster</button>
+      <button mat-menu-item>Black Tree Monitor</button>
+      <button mat-menu-item>Blue Spiny Lizard</button>
+      <button mat-menu-item disabled>Velociraptor</button>
+    </mat-menu>
+
+    <br />
+    <mat-card class="example-card" style="width: 350px">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+    <br />
+    <br />
+    <div class="d-block mt-5">
+      <p>
+        <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+      </p>
+      <h4 class="title mb-0">Common Title</h4>
+    </div>
+  </div>
+
+  <h1 class="mat-display-4">display-4 &mdash; 112px light</h1>
+  <h2 class="mat-display-3">display-3 &mdash; 56px normal</h2>
+  <h3 class="mat-display-2">display-2 &mdash; 45px normal</h3>
+  <h4 class="mat-display-1">display-1 &mdash; 34px normal</h4>
+  <h1 class="mat-headline">headline (h1) &mdash; 24px normal</h1>
+  <h2 class="mat-title">title (h2) &mdash; 20px medium</h2>
+  <h3 class="mat-subheading-2">subheading-2 (h3) &mdash; 16px normal</h3>
+  <h4 class="mat-subheading-1">subheading-1 (h4) &mdash; 15px normal</h4>
+  <p class="mat-body-1">body-1 &mdash; 14px normal</p>
+  <p class="mat-body-2">body-2 &mdash; 14px medium</p>
+  <p class="mat-caption">caption &mdash; 12px normal</p>
+</section>

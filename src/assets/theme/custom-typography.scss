@@ -1,0 +1,18 @@
+
+$custom-typography: mat-typography-config(
+  $font-family: "'Open Sans', sans-serif",
+  $display-4: mat-typography-level(fontSize(112,90),1.4),
+  $display-3: mat-typography-level(fontSize(56,40),1.4),
+  $display-2: mat-typography-level(fontSize(45,35),1.4),
+  $display-1: mat-typography-level(fontSize(35,25),1.4),
+  $headline: mat-typography-level(fontSize(24,16),1.4),
+  $title: mat-typography-level(fontSize(26,18),1.4), // h2 heading
+  $subheading-2: mat-typography-level(fontSize(22,16),1.4), // h3 heading
+  $subheading-1: mat-typography-level(fontSize(18,14), 1.4), // h4 heading
+  $body-2: mat-typography-level(fontSize(16,13),1.4),
+  $body-1: mat-typography-level(fontSize(16,13),1.4),
+  $caption: mat-typography-level(fontSize(12,12),1.4),
+  $button: mat-typography-level(fontSize(16,13),1.4),
+  // Line-height must be unit-less fraction of the font-size.
+  $input: mat-typography-level(inherit, 1.125, 400),
+);

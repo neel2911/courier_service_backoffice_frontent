@@ -1,0 +1,44 @@
+{
+  "data": {
+    "identified": {
+      "label": "Anomaly Review",
+      "subLabel": "Identified",
+      "count": 40,
+      "isShowingClassification": true,
+      "classification": {
+        "warning": {
+          "value": 3,
+          "tooltipMessage": "This tooltip is testing"
+        }
+      }
+    },
+    "accepted": {
+      "label": "Anomaly Review",
+      "subLabel": "Accepted",
+      "count": 40,
+      "isShowingClassification": false,
+      "classification": null
+    },
+    "rejected": {
+      "label": "Anomaly Review",
+      "subLabel": "Rejected",
+      "count": 40,
+      "isShowingClassification": false,
+      "classification": null
+    },
+    "reviewInProgress": {
+      "label": "Anomaly Review",
+      "subLabel": "Review In-Progress",
+      "count": 40,
+      "isShowingClassification": false,
+      "classification": null
+    },
+    "noActionTaken": {
+      "label": "Anomaly Review",
+      "subLabel": "No Action Taken",
+      "count": 40,
+      "isShowingClassification": false,
+      "classification": null
+    }
+  }
+}

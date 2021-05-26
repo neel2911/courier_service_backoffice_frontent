@@ -1,0 +1,720 @@
+<section class="dashboard-section">
+  <figure
+    class="
+      mat-figure
+      justify-content-between
+      d-flex
+      filter-section
+      mb-0
+      container-fluid
+    "
+  >
+    <form [formGroup]="filterForm" class="d-flex w-100">
+      <ng-container *ngFor="let filter of filters; let i = index">
+        <!-- *ngIf="filter.key != 'domainList'" -->
+        <ng-container>
+          <mat-form-field
+            class="custom-input"
+            [ngClass]="{ 'required-text': filter.key != 'domainList' }"
+          >
+            <mat-label>{{ filter.title }}</mat-label>
+
+            <input
+              type="text"
+              matInput
+              [formControlName]="filter.key"
+              [matAutocomplete]="auto"
+              [required]="filter.key == 'domainList' ? false : true"
+              (keyup)="filterAutoComplete($event, filter.key)"
+            />
+
+            <button
+              *ngIf="
+                filterForm.value[filter.key] &&
+                filterForm.value[filter.key] !== ''
+              "
+              class="ml-1 select-close"
+              mat-icon-button
+              matSuffix
+              (click)="resetFilters(i, true)"
+            >
+              <mat-icon>
+                <span class="material-icons-sharp"> close </span>
+              </mat-icon>
+            </button>
+
+            <mat-icon matSuffix *ngIf="filter.key != 'domainList'">
+              <span class="material-icons-sharp"> arrow_drop_down </span>
+            </mat-icon>
+
+            <mat-icon matSuffix class="ml-1" *ngIf="filter.key == 'domainList'">
+              <span class="material-icons-sharp"> manage_search </span>
+            </mat-icon>
+            <mat-autocomplete
+              #auto
+              [displayWith]="displayFn"
+              (optionSelected)="updateFilter(filter, i + 1)"
+            >
+              <mat-option
+                *ngFor="let option of displayFilterOptions[filter.key]"
+                [value]="option.name"
+              >
+                {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </ng-container>
+      </ng-container>
+    </form>
+    <div class="d-flex align-items-center mt-1">
+      <button
+        (click)="applyFilters()"
+        [disabled]="
+          filterForm.controls.therapeuticAreaList.value == '' ||
+          filterForm.controls.indicationList.value == '' ||
+          filterForm.controls.studyPhaseList.value == '' ||
+          filterForm.controls.studyList.value == ''
+        "
+        mat-flat-button
+        class="custom-button mr-0"
+        color="primary"
+      >
+        Apply
+      </button>
+      <button
+        (click)="
+          isDataAvailable = true; isShowData = false; resetFilters(0, true)
+        "
+        [disabled]="
+          filterForm.controls.therapeuticAreaList.value == '' ||
+          filterForm.controls.indicationList.value == '' ||
+          filterForm.controls.studyPhaseList.value == '' ||
+          filterForm.controls.studyList.value == ''
+        "
+        mat-button
+        class="link ml-0"
+        color="primary"
+      >
+        Reset
+      </button>
+    </div>
+  </figure>
+  <!-- *ngIf="isDataLoaded && !isNoDataFound; else elseBlock" -->
+  <section
+    class="container-fluid"
+    [ngClass]="{ 'd-none': !isDataLoaded && isNoDataFound }"
+  >
+    <div class="row anomaly-count my-3 py-1">
+      <ng-container *ngIf="Object.keys(tileList).length > 0; else noDataFound">
+        <div
+          class="col"
+          *ngFor="let tile of Object.keys(tileList); let i = index"
+        >
+          <mat-card
+            class="w-100 d-flex align-items-center justify-content-around"
+          >
+            <div class="text-center">
+              <h2 class="mb-0">{{ tileList[tile].count }}</h2>
+              <span
+                class="waring-count d-inline-flex"
+                *ngIf="tileList[tile].isShowingClassification"
+              >
+                <span
+                  class="material-icons-sharp mr-2"
+                  [matTooltip]="
+                    tileList[tile].classification.warning.tooltipMessage
+                  "
+                  >warning</span
+                >
+                {{ tileList[tile].classification.warning.value }}
+              </span>
+            </div>
+            <p>
+              {{ tileList[tile].label }}
+              <strong class="d-block"> {{ tileList[tile].subLabel }} </strong>
+            </p>
+          </mat-card>
+        </div>
+      </ng-container>
+    </div>
+    <div class="graph-section">
+      <ng-container
+        *ngIf="
+          Object.keys(lineGraphdata).length > 0 ||
+            Object.keys(barChartdata).length > 0;
+          else noDataFound
+        "
+      >
+        <div class="align-items-center border-bottom graph-head row no-gutters">
+          <div class="col d-flex align-items-center">
+            <label for="" class="mr-3 mb-0">Select anlysis to review</label>
+            <mat-form-field class="custom-input">
+              <mat-select value="two">
+                <!-- <mat-option value="one">Anomaly type</mat-option> -->
+                <mat-option value="two">Domain Vs Anomaly type</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div
+            class="col-5 text-center"
+            *ngIf="Object.keys(lineGraphdata).length > 0"
+          >
+            <h6 class="mb-1">
+              Domain <strong>{{ filterForm.value.domainList || "-" }}</strong>
+            </h6>
+          </div>
+        </div>
+        <div
+          class="row no-gutters"
+          [ngClass]="{ 'd-none': Object.keys(lineGraphdata).length == 0 }"
+        >
+          <div class="col-7">
+            <div class="graph-container text-center pt-3 h-100">
+              <div class="d-flex justify-content-between h-100">
+                <div class="graph" style="overflow: hidden">
+                  <app-line-graph
+                    *ngIf="Object.keys(lineGraphdata).length > 0"
+                    [lineGraphId]="'sample_line-graph_id_1'"
+                    [data]="lineGraphdata"
+                    [width]="800"
+                    [height]="300"
+                  ></app-line-graph>
+                </div>
+                <div class="label-list mx-3">
+                  <ul class="list-unstyled">
+                    <li class="d-flex">
+                      <mat-icon
+                        class="mr-2 pr-1"
+                        svgIcon="accepted-label"
+                      ></mat-icon>
+                      Completed
+                    </li>
+                    <li class="d-flex">
+                      <mat-icon
+                        class="mr-2 pr-1"
+                        svgIcon="progress-label"
+                      ></mat-icon>
+                      In-Progress
+                    </li>
+                    <li class="d-flex">
+                      <mat-icon
+                        class="mr-2 pr-1"
+                        svgIcon="noAction-label"
+                      ></mat-icon>
+                      Not Started
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="custom-table h-100">
+              <table class="w-100">
+                <thead>
+                  <tr>
+                    <th><strong>Anomaly Type</strong></th>
+                    <th class="text-center border-right">Total</th>
+                    <th class="text-center">Completed</th>
+                    <th class="text-center min-width">In-Progress</th>
+                    <th class="text-center min-width">Not Started</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="Object.keys(lineGraphdata).length > 0">
+                  <tr *ngFor="let anomaly of lineGraphdata.graphData">
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span
+                          class="material-icons-sharp"
+                          [ngStyle]="{ color: anomaly.color }"
+                        >
+                          fiber_manual_record
+                        </span>
+                        {{ anomaly.name }}
+                      </div>
+                    </td>
+                    <td class="text-center border-right">
+                      <strong>{{
+                        +anomaly.completed +
+                          +anomaly.inProgress +
+                          +anomaly.notStarted || "-"
+                      }}</strong>
+                    </td>
+                    <td class="text-center">
+                      <strong>{{ anomaly.completed || "-" }}</strong>
+                    </td>
+                    <td class="text-center min-width">
+                      {{ anomaly.inProgress || "-" }}
+                    </td>
+                    <td class="text-center min-width">
+                      {{ anomaly.notStarted || "-" }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row"
+          [ngClass]="{ 'd-none': Object.keys(barChartdata).length == 0 }"
+        >
+          <div class="col-10">
+            <div class="graph w-100">
+              <app-vertical-stacked-bar-chart
+                *ngIf="Object.keys(barChartdata).length > 0"
+                [verticalStackedBarChartId]="
+                  'sample_vertical_stacked_bar_chart_id_1'
+                "
+                [data]="barChartdata"
+                [width]="1600"
+                [height]="300"
+              ></app-vertical-stacked-bar-chart>
+            </div>
+          </div>
+          <div class="col-2 pl-0">
+            <div class="anomalytype-list">
+              <div class="title">
+                <h6><strong>Anomaly Type</strong></h6>
+              </div>
+              <ul class="list-unstyled mt-5">
+                <li class="d-flex align-items-center">
+                  <span style="background-color: #68e4ff"></span>
+                  Missing Data
+                </li>
+                <li class="d-flex align-items-center">
+                  <span style="background-color: #eda0c9"></span>
+                  Outlier
+                </li>
+                <li class="d-flex align-items-center">
+                  <span style="background-color: #e7c61b"></span>
+                  Overlapping Events
+                </li>
+                <li class="d-flex align-items-center">
+                  <span style="background-color: #719ef6"></span>
+                  Variance
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="table-wrapper mb-5 pt-3">
+      <figure class="actions" *ngIf="dataSource.data.length > 0">
+        <button
+          mat-icon-button
+          matTooltip="Anomaly Review"
+          matTooltipClass="custom-tooltip"
+          matTooltipPosition="below"
+          class="accepted"
+          [disabled]="selection.selected.length == 0"
+          (click)="onAcceptClick()"
+        >
+          <span class="material-icons-sharp"> check </span>
+        </button>
+        <!-- <button
+            mat-icon-button
+            matTooltip="Reject Anomaly"
+            matTooltipClass="custom-tooltip"
+            matTooltipPosition="below"
+            class="rejected"
+            [disabled]="selection.selected.length == 0"
+            (click)="onRejectClick()"
+          >
+            <span class="material-icons-sharp"> close </span>
+          </button> -->
+        <button
+          mat-icon-button
+          matTooltip="Mark for Review"
+          matTooltipClass="custom-tooltip"
+          matTooltipPosition="below"
+          class="In-Progress"
+          [disabled]="selection.selected.length == 0"
+          (click)="onReviewClick()"
+        >
+          <span class="material-icons-sharp"> pause </span>
+        </button>
+      </figure>
+      <div
+        style="width: 100%; height: 50vh"
+        [ngClass]="{
+          'only-left-tabel': displayedColumnsTableSecond.length == 0
+        }"
+      >
+        <as-split unit="percent" [restrictMove]="restrictMove" gutterSize="20">
+          <!-- (scroll)="onTabelScroll($event, 'left', rightTable)" -->
+          <as-split-area
+            size="80"
+            minSize="50"
+            maxSize="80"
+            class="leftTable"
+            #leftTable
+          >
+            <div
+              class="w-100 h-100"
+              *ngIf="dataSource.data.length > 0; else noDataFound"
+            >
+              <!--   -->
+              <mat-table
+                [dataSource]="dataSource"
+                class="mat-elevation-z8"
+                style="width: 100%"
+                matSort
+                cdkDropList
+                cdkDropListOrientation="horizontal"
+                (cdkDropListDropped)="dropListDropped($event)"
+                matSortDisableClear
+                [matSortDirection]="sortDirection"
+                [matSortActive]="sortActiveOn"
+              >
+                <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+                <ng-container
+                  *ngFor="let column of columns; let i = index"
+                  [matColumnDef]="column.field"
+                >
+                  <ng-container
+                    *ngIf="
+                      column.field == 'select';
+                      else nonCheckBoxHeaderBlock
+                    "
+                  >
+                    <mat-header-cell *matHeaderCellDef class="checkColumn">
+                      <div class="d-inline-flex">
+                        <mat-checkbox
+                          (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="
+                            selection.hasValue() && !isAllSelected()
+                          "
+                          [aria-label]="checkboxLabel()"
+                        >
+                        </mat-checkbox>
+                      </div>
+                    </mat-header-cell>
+                  </ng-container>
+                  <ng-template #nonCheckBoxHeaderBlock>
+                    <!-- cdkDropListLockAxis="x"
+                          cdkDrag   -->
+
+                    <ng-container
+                      *ngIf="
+                        column.field === 'anomalyDetails';
+                        else withMenuColumn
+                      "
+                    >
+                      <mat-header-cell
+                        *matHeaderCellDef
+                        cdkDropListLockAxis="x"
+                        cdkDrag
+                      >
+                        <div class="d-inline-flex align-items-center">
+                          {{ column.title }}
+                        </div>
+                      </mat-header-cell>
+                    </ng-container>
+                    <ng-template #withMenuColumn>
+                      <mat-header-cell
+                        *matHeaderCellDef
+                        cdkDropListLockAxis="x"
+                        cdkDrag
+                        [matMenuTriggerFor]="filterBox"
+                      >
+                        <div class="d-inline-flex align-items-center">
+                          {{ column.title }}
+                          <span class="material-icons-sharp">
+                            arrow_drop_down
+                          </span>
+                          <span
+                            class="material-icons-sharp close-icon"
+                            *ngIf="
+                              column.field !== 'anomalyDetails' &&
+                              tableColumnFilter[column.field]
+                            "
+                            (click)="
+                              $event.stopPropagation();
+                              tableColumnFilter[column.field] = '';
+                              applyFilter('')
+                            "
+                          >
+                            close
+                          </span>
+                        </div>
+
+                        <mat-menu #filterBox="matMenu" class="filter-menu">
+                          <div class="d-flex justify-content-between">
+                            <button
+                              mat-flat-button
+                              class="custom-button mat-primary"
+                              (click)="
+                                $event.stopPropagation();
+                                onSortClick(
+                                  column.field,
+                                  'asc',
+                                  column.field == 'studyName'
+                                    ? true
+                                    : false || column.field == 'site'
+                                    ? true
+                                    : false || column.field == 'subject'
+                                    ? true
+                                    : false || column.field == 'domain'
+                                    ? true
+                                    : false || column.field == 'anomalyId'
+                                    ? true
+                                    : false || column.field == 'anomalyType'
+                                    ? true
+                                    : false
+                                )
+                              "
+                              [ngClass]="{
+                                active:
+                                  sortActiveOn === column.field &&
+                                  sortDirection === 'asc'
+                              }"
+                            >
+                              <span class="material-icons-sharp">sort</span>
+                            </button>
+                            <button
+                              mat-flat-button
+                              class="custom-button mat-primary decending"
+                              (click)="
+                                $event.stopPropagation();
+                                onSortClick(
+                                  column.field,
+                                  'desc',
+                                  column.field == 'studyName'
+                                    ? true
+                                    : false || column.field == 'site'
+                                    ? true
+                                    : false || column.field == 'subject'
+                                    ? true
+                                    : false || column.field == 'domain'
+                                    ? true
+                                    : false || column.field == 'anomalyId'
+                                    ? true
+                                    : false || column.field == 'anomalyType'
+                                    ? true
+                                    : false
+                                )
+                              "
+                              [ngClass]="{
+                                active:
+                                  sortActiveOn === column.field &&
+                                  sortDirection === 'desc'
+                              }"
+                            >
+                              <span class="material-icons-sharp">sort</span>
+                            </button>
+                          </div>
+                          <mat-form-field class="custom-input">
+                            <input
+                              matInput
+                              placeholder="Filter"
+                              (click)="$event.stopPropagation()"
+                              [(ngModel)]="tableColumnFilter[column.field]"
+                              [ngModelOptions]="{ standalone: true }"
+                              (keyup)="applyFilter($event.target.value)"
+                            />
+                            <button
+                              mat-icon-button
+                              matSuffix
+                              class="select-close ml-1"
+                              *ngIf="tableColumnFilter[column.field]"
+                              (click)="
+                                tableColumnFilter[column.field] = '';
+                                applyFilter('')
+                              "
+                            >
+                              <span class="material-icons-sharp"> close </span>
+                            </button>
+                            <mat-icon
+                              class="search-icon"
+                              color="primary"
+                              matSuffix
+                              *ngIf="!tableColumnFilter[column.field]"
+                              ><span class="material-icons-sharp">
+                                search
+                              </span></mat-icon
+                            >
+                          </mat-form-field>
+                        </mat-menu>
+                      </mat-header-cell>
+                    </ng-template>
+                  </ng-template>
+
+                  <mat-cell
+                    *matCellDef="let row"
+                    [ngClass]="{ checkColumn: column.field == 'select' }"
+                    class="checkColumn"
+                  >
+                    <ng-container
+                      *ngIf="column.field == 'select'; else nonCheckBoxBlock"
+                    >
+                      <mat-checkbox
+                        (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"
+                        [aria-label]="checkboxLabel(row)"
+                      >
+                      </mat-checkbox>
+                    </ng-container>
+                    <ng-template #nonCheckBoxBlock>
+                      {{ row[column.field] }}
+                    </ng-template>
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row
+                  *matHeaderRowDef="displayedColumns; sticky: true"
+                  class="tableHeaderRow"
+                  #tableHeaderRow
+                ></mat-header-row>
+                <mat-row
+                  mat-row
+                  *matRowDef="let row; columns: displayedColumns"
+                  [ngClass]="{
+                    selected: selection.isSelected(row),
+                    focused: row.id == focusedRow.id
+                  }"
+                  (mouseenter)="onHover(row)"
+                  (mouseover)="onHover(row)"
+                  (mouseout)="focusedRow = -1"
+                ></mat-row>
+              </mat-table>
+              <div
+                class="
+                  filter-data
+                  d-flex
+                  justify-content-center
+                  align-items-center
+                  py-5
+                "
+                *ngIf="dataSource?.filteredData.length == 0"
+              >
+                <strong>No Filter Data Available</strong>
+              </div>
+            </div>
+          </as-split-area>
+          <!-- (scroll)="onTabelScroll($event, 'right', leftTable)" -->
+          <as-split-area size="20" minSize="80" maxSize="50" #rightTable>
+            <ng-container *ngIf="dataSource.data.length > 0; else noDataFound">
+              <mat-row
+                class="w-100"
+                *ngIf="
+                  displayedColumnsTableSecond.length > 0;
+                  else noRigtTableBlock
+                "
+              >
+                <!--                 cdkDropListGroup
+                  cdkDropList
+                  cdkDropListOrientation="horizontal"
+                  (cdkDropListDropped)="dropListDroppedForSecondTable($event)" -->
+
+                <mat-table
+                  [dataSource]="dataSource"
+                  class="mat-elevation-z8 w-100"
+                >
+                  <ng-container
+                    *ngFor="let column of columnsTableSecond; let i = index"
+                    [matColumnDef]="column.field"
+                  >
+                    <!-- cdkDropList
+                    cdkDropListLockAxis="x"
+                    cdkDrag -->
+                    <mat-header-cell *matHeaderCellDef>
+                      {{ column.title }}
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                      {{ row[column.field] || "-" }}
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row
+                    mat-header-row
+                    *matHeaderRowDef="displayedColumnsTableSecond; sticky: true"
+                  >
+                  </mat-header-row>
+                  <mat-row
+                    mat-row
+                    *matRowDef="let row; columns: displayedColumnsTableSecond"
+                    [ngClass]="{
+                      selected: selection.isSelected(row),
+                      focused: row.id == focusedRow.id
+                    }"
+                    (mouseenter)="onHover(row)"
+                    (mouseover)="onHover(row)"
+                    (mouseout)="focusedRow = -1"
+                  ></mat-row>
+                </mat-table>
+              </mat-row>
+            </ng-container>
+            <ng-template #noRigtTableBlock>
+              <div
+                class="
+                  d-flex
+                  justify-content-center
+                  align-items-center
+                  flex-column
+                  text-center
+                  h-100
+                  table-nodata
+                "
+              >
+                <div class="data-header"></div>
+                <div class="mb-auto">
+                  <img
+                    src="../../../../../assets/images/nofilter-data.svg"
+                    alt="nofilter-data"
+                  />
+                  <span class="mt-1">
+                    <span class="d-block">To see the columns</span>
+                    select a domain in the filter section
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+          </as-split-area>
+        </as-split>
+      </div>
+    </div>
+  </section>
+  <section
+    class="container-fluid"
+    [ngClass]="{ 'd-none': isDataLoaded && isNoDataFound }"
+  >
+    <div
+      class="
+        noData
+        d-flex
+        justify-content-center
+        align-items-center
+        flex-column
+        text-center
+      "
+    >
+      <img src="../../../../../assets/images/no-data.svg" alt="no-data" />
+      <span
+        >To begin an analysis, select
+        <strong> Therapeutic Area, Indication, Study Phase, and Study </strong>
+      </span>
+    </div>
+  </section>
+</section>
+
+<ng-template #noDataFound>
+  <div
+    class="
+      sectionData
+      d-flex
+      justify-content-center
+      align-items-center
+      flex-column
+      text-center
+    "
+  >
+    <span class="material-icons-sharp"> query_stats </span>
+    <strong>No Data Found </strong>
+  </div>
+</ng-template>

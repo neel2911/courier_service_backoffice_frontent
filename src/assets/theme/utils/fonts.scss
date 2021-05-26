@@ -1,0 +1,13 @@
+$font-path: "../../fonts" !default;
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('#{$font-path}/TiemposHeadline-Medium.eot');
+    src: url('#{$font-path}/TiemposHeadline-Medium.eot?#iefix') format('embedded-opentype'),
+        url('#{$font-path}/TiemposHeadline-Medium.woff2') format('woff2'),
+        url('#{$font-path}/TiemposHeadline-Medium.woff') format('woff'),
+        url('#{$font-path}/TiemposHeadline-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  

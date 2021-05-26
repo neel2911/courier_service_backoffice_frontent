@@ -1,0 +1,223 @@
+{
+  "data": {
+    "columnsConfig": {
+      "titles": {
+        "studyid": "STUDYID",
+        "domain": "DOMAIN",
+        "usubjid": "USUBJID",
+        "exdtc": "EXDTC",
+        "exdy": "EXDY",
+        "epoch": "EPOCH",
+        "visit": "VISIT",
+        "visitnum": "VISITNUM",
+        "exseq": "EXSEQ",
+        "extrt": "EXTRT",
+        "excat": "EXCAT",
+        "exdose": "EXDOSE",
+        "exdosu": "EXDOSU",
+        "exdosfrm": "EXDOSFRM",
+        "exdosfrq": "EXDOSFRQ",
+        "exstdtc": "EXSTDTC",
+        "exstdy": "EXSTDY"
+      }
+    },
+    "records": [
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_031227",
+        "exdtc": 2005,
+        "exdy": "10",
+        "epoch": "INDUCTION/STABILIZATION",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "exseq": 13,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 48,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "BID",
+        "exstdtc": 2005.0,
+        "exstdy": "9",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 84213,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK -3 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_031227",
+        "exdtc": 2005,
+        "exdy": "17",
+        "epoch": "INDUCTION/STABILIZATION",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "exseq": 21,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 48,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "BID",
+        "exstdtc": 2005.0,
+        "exstdy": "16",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 89768,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK -2 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_077583",
+        "exdtc": 2004,
+        "exdy": "23",
+        "epoch": "INDUCTION/STABILIZATION",
+        "visit": "WEEK -1",
+        "visitnum": -1,
+        "exseq": 28,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 29,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "ONCE DAILY",
+        "exstdtc": 2004.0,
+        "exstdy": "22",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 29296,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK -1 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_078280",
+        "exdtc": 2004,
+        "exdy": "15",
+        "epoch": "INDUCTION/STABILIZATION",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "exseq": 19,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 48,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "QID",
+        "exstdtc": 2004.0,
+        "exstdy": "13",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 89808,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK -2 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_082431",
+        "exdtc": 2005,
+        "exdy": "29",
+        "epoch": "INDUCTION/STABILIZATION",
+        "visit": "WEEK 0",
+        "visitnum": 0,
+        "exseq": 35,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 40,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "TID",
+        "exstdtc": 2005.0,
+        "exstdy": "27",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 68774,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK 0 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_086832",
+        "exdtc": 2004,
+        "exdy": "15",
+        "epoch": "INDUCTION/STABILIZATION",
+        "visit": "WEEK -2",
+        "visitnum": -2,
+        "exseq": 19,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 40,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "OTHER",
+        "exstdtc": 2004.0,
+        "exstdy": "14",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 27757,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK -2 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      },
+      {
+        "studyid": "NIDA-CTN-0003",
+        "domain": "EX",
+        "usubjid": "03_098130",
+        "exdtc": 2004,
+        "exdy": "8",
+        "epoch": "EARLY TERMINATION",
+        "visit": "WEEK -3",
+        "visitnum": -3,
+        "exseq": 8,
+        "extrt": "BUPRENORPHINE",
+        "excat": "DOSE LOG",
+        "exdose": 40,
+        "exdosu": "MG",
+        "exdosfrm": "MG",
+        "exdosfrq": "OTHER",
+        "exstdtc": 2004.0,
+        "exstdy": "4",
+        "detectedAnomaly": [
+          {
+            "anomalyId": 94346,
+            "anomalyType": "Outlier Data",
+            "anomalyDetails": "EX - BUPRENORPHINE for WEEK -3 is identified as outlier data by 3 Algorithms",
+            "confidenceScore": "90%",
+            "reviewStatus": "Completed"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+.d3-vertical-stacked-bar-chart-tip {
+  background-color: #1A1E49;
+  z-index: 1;
+  color: #ffffff;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 12px;
+  strong {
+    font-weight: normal;
+}
+span {
+  font-weight: 600;
+  margin-left:20px;
+}
+&:after {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #1A1E49;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  margin: auto;
+}
+}
+.y-axis .tick text{
+  font-size: 14px;
+  color:#23263E;
+}
+.y-axis .domain, .x-axis .domain, .y-axis .tick line{
+  stroke:#C0C0C0;
+}

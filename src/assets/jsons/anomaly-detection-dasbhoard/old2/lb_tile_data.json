@@ -1,0 +1,32 @@
+{
+  "data": {
+    "identified": {
+      "label": "Anomaly Review",
+      "subLabel": "Identified",
+      "count": 445,
+      "isShowingClassification": false,
+      "classification": null
+    },
+    "completed": {
+      "label": "Anomaly Review",
+      "subLabel": "Completed",
+      "count": 370,
+      "isShowingClassification": false,
+      "classification": null
+    },
+    "inProgress": {
+      "label": "Anomaly Review",
+      "subLabel": "In-Progress",
+      "count": 45,
+      "isShowingClassification": false,
+      "classification": null
+    },
+    "notStarted": {
+      "label": "Anomaly Review",
+      "subLabel": "Not Started",
+      "count": 30,
+      "isShowingClassification": false,
+      "classification": null
+    }
+  }
+}

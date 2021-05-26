@@ -1,0 +1,406 @@
+{
+  "data": {
+    "statusLegends": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "notStarted": "Not Started"
+    },
+    "anomalysLegends": {
+      "missingData": "Missing Data",
+      "outLier": "Outlier Data",
+      "overLappingEvents": "Over Lapping Events",
+      "variance": "Variance",
+      "percChange": "Percentage Change Outlier",
+      "multiVariate": "Multi-Variate Analysis",
+      "crossDomainMissing": "Cross Domain Anomaly - Missing AEs",
+      "crossDomainIncorrect": "Cross Domain Anomaly - Incorrect AEs"
+    },
+    "domainDetails": [
+      {
+        "domainName": "LB",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 46,
+            "statusCount": {
+              "completed": 14,
+              "inProgress": 25,
+              "notStarted": 7
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 61,
+            "statusCount": {
+              "completed": 1,
+              "inProgress": 26,
+              "notStarted": 34
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 55,
+            "statusCount": {
+              "completed": 20,
+              "inProgress": 20,
+              "notStarted": 15
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 70,
+            "statusCount": {
+              "completed": 9,
+              "inProgress": 30,
+              "notStarted": 31
+            }
+          },
+          {
+            "name": "percChange",
+            "totalCount": 49,
+            "statusCount": {
+              "completed": 0,
+              "inProgress": 34,
+              "notStarted": 15
+            }
+          },
+          {
+            "name": "multiVariate",
+            "totalCount": 99,
+            "statusCount": {
+              "completed": 33,
+              "inProgress": 47,
+              "notStarted": 19
+            }
+          },
+          {
+            "name": "crossDomainMissing",
+            "totalCount": 60,
+            "statusCount": {
+              "completed": 8,
+              "inProgress": 27,
+              "notStarted": 25
+            }
+          },
+          {
+            "name": "crossDomainIncorrect",
+            "totalCount": 53,
+            "statusCount": {
+              "completed": 25,
+              "inProgress": 4,
+              "notStarted": 24
+            }
+          }
+        ]
+      },
+      {
+        "domainName": "VS",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 101,
+            "statusCount": {
+              "completed": 48,
+              "inProgress": 38,
+              "notStarted": 15
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 95,
+            "statusCount": {
+              "completed": 40,
+              "inProgress": 48,
+              "notStarted": 7
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 70,
+            "statusCount": {
+              "completed": 3,
+              "inProgress": 45,
+              "notStarted": 22
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 80,
+            "statusCount": {
+              "completed": 35,
+              "inProgress": 3,
+              "notStarted": 42
+            }
+          },
+          {
+            "name": "percChange",
+            "totalCount": 62,
+            "statusCount": {
+              "completed": 45,
+              "inProgress": 14,
+              "notStarted": 3
+            }
+          },
+          {
+            "name": "multiVariate",
+            "totalCount": 91,
+            "statusCount": {
+              "completed": 16,
+              "inProgress": 40,
+              "notStarted": 35
+            }
+          },
+          {
+            "name": "crossDomainMissing",
+            "totalCount": 127,
+            "statusCount": {
+              "completed": 37,
+              "inProgress": 48,
+              "notStarted": 42
+            }
+          },
+          {
+            "name": "crossDomainIncorrect",
+            "totalCount": 63,
+            "statusCount": {
+              "completed": 22,
+              "inProgress": 8,
+              "notStarted": 33
+            }
+          }
+        ]
+      },
+      {
+        "domainName": "EX",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 85,
+            "statusCount": {
+              "completed": 34,
+              "inProgress": 25,
+              "notStarted": 26
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 82,
+            "statusCount": {
+              "completed": 31,
+              "inProgress": 45,
+              "notStarted": 6
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 45,
+            "statusCount": {
+              "completed": 25,
+              "inProgress": 13,
+              "notStarted": 7
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 95,
+            "statusCount": {
+              "completed": 7,
+              "inProgress": 39,
+              "notStarted": 49
+            }
+          },
+          {
+            "name": "percChange",
+            "totalCount": 49,
+            "statusCount": {
+              "completed": 14,
+              "inProgress": 33,
+              "notStarted": 2
+            }
+          },
+          {
+            "name": "multiVariate",
+            "totalCount": 105,
+            "statusCount": {
+              "completed": 43,
+              "inProgress": 48,
+              "notStarted": 14
+            }
+          },
+          {
+            "name": "crossDomainMissing",
+            "totalCount": 58,
+            "statusCount": {
+              "completed": 29,
+              "inProgress": 9,
+              "notStarted": 20
+            }
+          },
+          {
+            "name": "crossDomainIncorrect",
+            "totalCount": 57,
+            "statusCount": {
+              "completed": 3,
+              "inProgress": 28,
+              "notStarted": 26
+            }
+          }
+        ]
+      },
+      {
+        "domainName": "RS",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 68,
+            "statusCount": {
+              "completed": 24,
+              "inProgress": 33,
+              "notStarted": 11
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 38,
+            "statusCount": {
+              "completed": 19,
+              "inProgress": 18,
+              "notStarted": 1
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 74,
+            "statusCount": {
+              "completed": 39,
+              "inProgress": 33,
+              "notStarted": 2
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 89,
+            "statusCount": {
+              "completed": 35,
+              "inProgress": 7,
+              "notStarted": 47
+            }
+          },
+          {
+            "name": "percChange",
+            "totalCount": 88,
+            "statusCount": {
+              "completed": 13,
+              "inProgress": 37,
+              "notStarted": 38
+            }
+          },
+          {
+            "name": "multiVariate",
+            "totalCount": 96,
+            "statusCount": {
+              "completed": 25,
+              "inProgress": 23,
+              "notStarted": 48
+            }
+          },
+          {
+            "name": "crossDomainMissing",
+            "totalCount": 70,
+            "statusCount": {
+              "completed": 46,
+              "inProgress": 18,
+              "notStarted": 6
+            }
+          },
+          {
+            "name": "crossDomainIncorrect",
+            "totalCount": 54,
+            "statusCount": {
+              "completed": 10,
+              "inProgress": 40,
+              "notStarted": 4
+            }
+          }
+        ]
+      },
+      {
+        "domainName": "AE-LB",
+        "anomalysDetails": [
+          {
+            "name": "missingData",
+            "totalCount": 69,
+            "statusCount": {
+              "completed": 41,
+              "inProgress": 2,
+              "notStarted": 26
+            }
+          },
+          {
+            "name": "outLier",
+            "totalCount": 79,
+            "statusCount": {
+              "completed": 1,
+              "inProgress": 35,
+              "notStarted": 43
+            }
+          },
+          {
+            "name": "overLappingEvents",
+            "totalCount": 82,
+            "statusCount": {
+              "completed": 38,
+              "inProgress": 35,
+              "notStarted": 9
+            }
+          },
+          {
+            "name": "variance",
+            "totalCount": 60,
+            "statusCount": {
+              "completed": 37,
+              "inProgress": 12,
+              "notStarted": 11
+            }
+          },
+          {
+            "name": "percChange",
+            "totalCount": 50,
+            "statusCount": {
+              "completed": 32,
+              "inProgress": 8,
+              "notStarted": 10
+            }
+          },
+          {
+            "name": "multiVariate",
+            "totalCount": 81,
+            "statusCount": {
+              "completed": 29,
+              "inProgress": 37,
+              "notStarted": 15
+            }
+          },
+          {
+            "name": "crossDomainMissing",
+            "totalCount": 67,
+            "statusCount": {
+              "completed": 19,
+              "inProgress": 11,
+              "notStarted": 37
+            }
+          },
+          {
+            "name": "crossDomainIncorrect",
+            "totalCount": 47,
+            "statusCount": {
+              "completed": 20,
+              "inProgress": 4,
+              "notStarted": 23
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

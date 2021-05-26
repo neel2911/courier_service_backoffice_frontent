@@ -1,0 +1,52 @@
+<section class="container-fluid">
+  <div class="button-list">
+    <button
+      *ngFor="let filter of filterList"
+      (click)="selectedFilter = filter.categoryType"
+      [ngClass]="{ selected: filter.categoryType == selectedFilter }"
+    >
+      {{ filter.title }}
+    </button>
+  </div>
+  <ng-container *ngFor="let solution of solutionList; let i = index">
+    <div
+    class="list-contianer"
+      *ngIf="selectedFilter == 'all' || selectedFilter == solution.categoryType"
+    >
+      <h3>
+        {{ solution.title }}
+      </h3>
+      <mat-grid-list
+        gutterSize="20"
+        cols="12"
+        rowHeight="130px"
+        class="solution-list"
+      >
+        <mat-grid-tile
+          colspan="4"
+          *ngFor="let tile of solution.list; let i = index"
+          [routerLink]="tile.routeUrl"
+          [ngClass]="tile.isEnabled ? 'pointor-cursor' : 'pointor-none'"
+        >
+          <mat-card class="w-100 h-1000 d-flex align-items-center">
+            <div class="image" [ngClass]="tile.className"></div>
+            <div>
+              <h2 class="mb-0">{{ tile.title }}</h2>
+              <p>{{ tile.subTitle }}</p>
+            </div>
+            <figure class="d-flex flex-column card-hover">
+              <div class="content">
+                <p>
+                  {{ tile.content }}
+                </p>
+              </div>
+              <div class="text-right algin-self-end mt-auto">
+                <span class="material-icons-sharp"> trending_flat</span>
+              </div>
+            </figure>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </ng-container>
+</section>

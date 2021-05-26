@@ -1,0 +1,54 @@
+@import "~@angular/material/theming";
+@import "../utils/mixins";
+// @import "../utils/varibales";
+
+@mixin mat-button-custom-color($theme) {
+  @include mat-button-color($theme);
+
+  button {
+    outline: none;
+    border-radius: 0;
+    font-weight: weight(medium);
+    .mat-icon {
+      line-height: 1;
+      margin-top: -2px;
+    }
+    & + button {
+      margin-left: 10px;
+    }
+    &.custom-button {
+      @include elemHeight(42);
+      min-height: 36px;
+      min-width: 100px;
+      border-radius: 2px;
+      @include breakpoint(below-1400) {
+        min-width: 80px;
+      }
+      &.mat-primary {
+        background-color: mat-color($primary);
+        color: mat-color($primary, "900-contrast");
+      }
+      // &.mat-button-disabled{
+      //   background-color: #424990 !important;
+      //   color: #fff !important;
+      //   opacity: 0.6;
+      // }
+    }
+    &.link {
+      color: #7b7b7b !important;
+      text-decoration: underline;
+      .mat-button-focus-overlay {
+        display: none;
+      }
+    }
+    &.default-button {
+      &.mat-primary {
+        background-color: mat-color($primary, 200);
+      }
+    }
+  }
+}
+
+@mixin button-custom-theme($theme) {
+  @include mat-button-custom-color($theme);
+}

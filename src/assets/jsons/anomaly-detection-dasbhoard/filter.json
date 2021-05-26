@@ -1,0 +1,167 @@
+{
+  "data": {
+    "therapeuticAreaList": [
+      {
+        "id": 1,
+        "name": "Opioid Related Disorders"
+      },
+      {
+        "id": 2,
+        "name": "Oncology"
+      }
+    ],
+    "indicationList": [
+      {
+        "id": 1,
+        "name": "Opioid Detoxification",
+        "therapeuticAreaId": 1
+      },
+      {
+        "id": 2,
+        "name": "Pancreatic Cancer",
+        "therapeuticAreaId": 2
+      },
+      {
+        "id": 3,
+        "name": "Brain Tumor",
+        "therapeuticAreaId": 2
+      }
+    ],
+    "studyPhaseList": [
+      {
+        "id": 1,
+        "name": "Phase 1",
+        "indicationId": 1
+      },
+      {
+        "id": 2,
+        "name": "Phase 2",
+        "indicationId": 2
+      },
+      {
+        "id": 3,
+        "name": "Phase 3",
+        "indicationId": 3
+      }
+    ],
+    "studyList": [
+      {
+        "id": 1,
+        "name": "NIDA-CTN-0003",
+        "studyPhaseId": 1
+      },
+      {
+        "id": 2,
+        "name": "Pancrea_EMDSero_2009_442",
+        "studyPhaseId": 2
+      },
+      {
+        "id": 3,
+        "name": "Glioma_EMDSero_2008_441",
+        "studyPhaseId": 3
+      }
+    ],
+    "domainList": [
+      {
+        "id": 1,
+        "name": "AE",
+        "studyId": 1
+      },
+      {
+        "id": 2,
+        "name": "LB",
+        "studyId": 1
+      },
+      {
+        "id": 3,
+        "name": "VS",
+        "studyId": 1
+      },
+      {
+        "id": 4,
+        "name": "QS",
+        "studyId": 1
+      },
+      {
+        "id": 5,
+        "name": "AE-LB",
+        "studyId": 1
+      },
+      {
+        "id": 1,
+        "name": "AE",
+        "studyId": 2
+      },
+      {
+        "id": 2,
+        "name": "LB",
+        "studyId": 2
+      },
+      {
+        "id": 3,
+        "name": "VS",
+        "studyId": 2
+      },
+      {
+        "id": 4,
+        "name": "RS",
+        "studyId": 2
+      },
+      {
+        "id": 5,
+        "name": "QS",
+        "studyId": 2
+      },
+      {
+        "id": 6,
+        "name": "EG",
+        "studyId": 2
+      },
+      {
+        "id": 7,
+        "name": "AE-LB",
+        "studyId": 2
+      },
+      {
+        "id": 8,
+        "name": "AE-VS",
+        "studyId": 2
+      },
+      {
+        "id": 1,
+        "name": "AE",
+        "studyId": 3
+      },
+      {
+        "id": 2,
+        "name": "LB",
+        "studyId": 3
+      },
+      {
+        "id": 3,
+        "name": "VS",
+        "studyId": 3
+      },
+      {
+        "id": 4,
+        "name": "QS",
+        "studyId": 3
+      },
+      {
+        "id": 5,
+        "name": "EG",
+        "studyId": 3
+      },
+      {
+        "id": 6,
+        "name": "AE-VS",
+        "studyId": 3
+      },
+      {
+        "id": 7,
+        "name": "AE-LB",
+        "studyId": 3
+      }
+    ]
+  }
+}

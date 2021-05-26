@@ -1,0 +1,51 @@
+<div class="mat-typography">
+  <div mat-dialog-title class="d-flex justify-content-between pb-4">
+    <h2 class="mb-0">
+      <!-- <span>Logs of {{ userHistoryData?.data[0].clientName}}</span> -->
+      <span>Logs of {{ data.clientName }}</span>
+    </h2>
+    <button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+  </div>
+
+  <mat-dialog-content>
+    <div class="table-loading" *ngIf="!userHistoryData">
+      <div class="animated-background lg-width widget-loader xs"></div>
+      <div
+        class="animated-background lg-width widget-loader xs light-bg delay"
+      ></div>
+      <div class="animated-background lg-width widget-loader xs delay"></div>
+      <div
+        class="animated-background lg-width widget-loader xs light-bg delay"
+      ></div>
+    </div>
+
+    <div class="list-table" *ngIf="userHistoryData">
+      <table
+        mat-table
+        class="mat-elevation-z8 auto-width"
+        [dataSource]="userHistoryData"
+      >
+        <ng-container matColumnDef="createdAt">
+          <th mat-header-cell *matHeaderCellDef>Last Login</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.createdAt | date: "dd MMM yyyy HH:mm:ss" }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ipAddress">
+          <th mat-header-cell *matHeaderCellDef>IP Address</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.userMetaInfo?.ipAddress }}
+          </td>
+        </ng-container>
+
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <!-- <mat-paginator [pageSizeOptions]="[5,10,15,20]" [pageSize]="10" showFirstLastButtons></mat-paginator> -->
+    </div>
+  </mat-dialog-content>
+</div>

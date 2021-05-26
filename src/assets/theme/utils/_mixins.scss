@@ -1,0 +1,46 @@
+
+// ======>> Function Mixins <<======
+@function fontSize($maxSize, $minSize) {  
+    @return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * (100vw - 1280px) / (1920 - 1280));  
+    // @return line-height: 1.4;
+}
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 600,
+  "bold": 700,
+);
+// ======>> Mixins <<======
+@mixin transitionTime($time){
+    transition:all $time ease-in-out;    
+}
+@mixin elemWidth($elemWidth){
+    width:calc((#{$elemWidth}px * 0.625) + (#{$elemWidth} - (#{$elemWidth} * 0.625)) * (100vw - 1280px) / (1920 - 1280));
+}
+@mixin elemHeight($elemHeight){
+    height:calc((#{$elemHeight}px * 0.625) + (#{$elemHeight} - (#{$elemHeight} * 0.625)) * (100vw - 1280px) / (1920 - 1280));
+}
+@mixin posLeft($posLeft) {
+  left:calc((#{$posLeft}px * 0.625) + (#{$posLeft} - (#{$posLeft} * 0.625)) * (100vw - 1280px) / (1920 - 1280));
+}
+
+// ======>> Mixins <<======
+  @mixin breakpoint($point) {
+    @if $point == below-1600{
+      @media screen and (max-width:1600px) {
+        @content;
+      }
+    } @else if $point == below-1400 {
+       @media screen and (max-width:1400px) {
+        @content;
+      }
+    } @else if $point == below-800vh {
+      @media screen and (max-height:800px) {
+        @content;
+      }
+    }
+  }

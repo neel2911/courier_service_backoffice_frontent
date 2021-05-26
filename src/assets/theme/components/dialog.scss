@@ -1,0 +1,21 @@
+// @import "~@angular/material/theming";
+// @import "../utils/mixins";
+
+// @mixin mat-dialog($config-or-theme) {
+//   $config: mat-get-color-config($config-or-theme);
+//   $primary: map-get($config, primary);
+//   $accent: map-get($config, accent);
+//   $warn: map-get($config, warn);
+
+//   @include mat-dialog-color($config-or-theme);
+//     .mat-dialog-container {
+//           background-color: #fff;
+//           min-width: 500px;
+//           box-shadow: 0px 0px 25px 5px #0000000d;
+//           min-height: 300px;
+//     }
+// }
+
+// @mixin mat-dialog-theme($config-or-theme) {
+//   @include mat-mat-dialog-color($config-or-theme);
+// }

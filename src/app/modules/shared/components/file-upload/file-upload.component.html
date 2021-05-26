@@ -1,0 +1,6 @@
+<div #dragdrop [class]="className" [ngClass]="_isDisabled ? 'disabled' : '' " (click)="fileupload.click()">
+    <ng-content></ng-content>
+    <form #form class="m-0">
+        <input type="file" #fileupload [disabled]="_isDisabled" style="display: none;" [multiple]="isAllowMultiple" (change)="onFileSelected($event.target.files)" (input)="onInput($event)" />
+    </form>
+</div>

@@ -1,0 +1,735 @@
+<section class="dashboard-section">
+  <app-page-level-filter
+    (evtEmitter)="filterCallBack($event)"
+  ></app-page-level-filter>
+  <!-- *ngIf="isDataLoaded && !isNoDataFound; else elseBlock" -->
+  <section
+    class="container-fluid"
+    [ngClass]="{ 'd-none': !isDataLoaded && isNoDataFound }"
+  >
+    <div class="tile-section">
+      <app-widget-loader *ngIf="!loader.isTileLoaded"></app-widget-loader>
+      <div
+        class="row anomaly-count"
+        [ngClass]="{ 'd-none': !loader.isTileLoaded }"
+      >
+        <ng-container
+          *ngIf="Object.keys(tileList).length > 0; else noDataFound"
+        >
+          <div
+            class="col"
+            *ngFor="let tile of Object.keys(tileList); let i = index"
+          >
+            <mat-card
+              class="w-100 d-flex align-items-center justify-content-around"
+            >
+              <div class="text-center">
+                <h2 class="mb-0">{{ tileList[tile].count }}</h2>
+                <span
+                  class="waring-count d-inline-flex"
+                  *ngIf="tileList[tile].isShowingClassification"
+                >
+                  <span
+                    class="material-icons-sharp mr-2"
+                    [matTooltip]="
+                      tileList[tile].classification.warning.tooltipMessage
+                    "
+                    >warning</span
+                  >
+                  {{ tileList[tile].classification.warning.value }}
+                </span>
+              </div>
+              <p>
+                {{ tileList[tile].label }}
+                <strong class="d-block"> {{ tileList[tile].subLabel }} </strong>
+              </p>
+            </mat-card>
+          </div>
+        </ng-container>
+      </div>
+      <!--      
+      <mat-grid-list
+        cols="4"
+        gutterSize="20"
+        class=""
+        rowHeight="5.625em"
+        
+      >
+     
+        
+      </mat-grid-list> -->
+    </div>
+    <div class="graph-section">
+      <app-widget-loader *ngIf="!loader.isChartLoaded"></app-widget-loader>
+      <div [ngClass]="{ 'd-none': !loader.isChartLoaded }">
+        <ng-container
+          *ngIf="
+            Object.keys(lineGraphdata).length > 0 ||
+              Object.keys(barChartdata).length > 0;
+            else noDataFound
+          "
+        >
+          <div
+            class="align-items-center border-bottom graph-head row no-gutters"
+          >
+            <div class="col d-flex align-items-center">
+              <label for="" class="mr-3 mb-0">Select anlysis to review</label>
+              <mat-form-field class="custom-input">
+                <mat-select value="two">
+                  <!-- <mat-option value="one">Anomaly type</mat-option> -->
+                  <mat-option value="two">Domain Vs Anomaly type</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div
+              class="col-5 text-center"
+              *ngIf="Object.keys(lineGraphdata).length > 0"
+            >
+              <h6 class="mb-1">
+                Domain <strong>{{ returnFilter.domainList || "-" }}</strong>
+              </h6>
+            </div>
+          </div>
+          <div
+            class="row no-gutters"
+            [ngClass]="{ 'd-none': Object.keys(lineGraphdata).length == 0 }"
+          >
+            <div class="col-7">
+              <div class="graph-container text-center pt-3 h-100">
+                <div class="d-flex justify-content-between h-100">
+                  <div class="graph" style="overflow: hidden">
+                    <app-vertical-stacked-bar-chart
+                      *ngIf="Object.keys(lineGraphdata).length > 0"
+                      [verticalStackedBarChartId]="
+                        'single_domain_vertical_stacked_bar_chart_id_1'
+                      "
+                      [chartData]="lineGraphdata"
+                      [keysForStack]="['completed', 'inProgress', 'notStarted']"
+                      [barColor]="['#77DD6E', '#EDA538', '#888888']"
+                      [width]="950"
+                      [height]="270"
+                    ></app-vertical-stacked-bar-chart>
+
+                    <!-- <app-line-graph
+                      *ngIf="Object.keys(lineGraphdata).length > 0"
+                      [lineGraphId]="'sample_line-graph_id_1'"
+                      [data]="lineGraphdata"
+                      [width]="900"
+                      [height]="270"
+                    ></app-line-graph> -->
+                  </div>
+                  <div class="label-list mx-3">
+                    <ul class="list-unstyled">
+                      <li class="d-flex">
+                        <mat-icon
+                          class="mr-2 pr-1"
+                          svgIcon="accepted-label"
+                        ></mat-icon>
+                        Completed
+                      </li>
+                      <li class="d-flex">
+                        <mat-icon
+                          class="mr-2 pr-1"
+                          svgIcon="progress-label"
+                        ></mat-icon>
+                        In Progress
+                      </li>
+                      <li class="d-flex">
+                        <mat-icon
+                          class="mr-2 pr-1"
+                          svgIcon="noAction-label"
+                        ></mat-icon>
+                        Not Started
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="custom-table h-100">
+                <table class="w-100">
+                  <thead>
+                    <tr>
+                      <th><strong>Anomaly Type</strong></th>
+                      <th class="text-center border-right">Total</th>
+                      <th class="text-center">Completed</th>
+                      <th class="text-center min-width">In Progress</th>
+                      <th class="text-center min-width">Not Started</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngIf="Object.keys(lineGraphTabledata).length > 0">
+                    <tr *ngFor="let anomaly of lineGraphTabledata.graphData">
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <span
+                            class="material-icons-sharp"
+                            [ngStyle]="{ color: anomaly.color }"
+                          >
+                            fiber_manual_record
+                          </span>
+                          {{ anomaly.keyName }}
+                        </div>
+                      </td>
+                      <td class="text-center border-right">
+                        <strong>{{
+                          +anomaly.completed.value +
+                            +anomaly.inProgress.value +
+                            +anomaly.notStarted.value
+                        }}</strong>
+                      </td>
+                      <td class="text-center">
+                        <strong>{{ anomaly.completed.value }}</strong>
+                      </td>
+                      <td class="text-center min-width">
+                        {{ anomaly.inProgress.value }}
+                      </td>
+                      <td class="text-center min-width">
+                        {{ anomaly.notStarted.value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+            [ngClass]="{ 'd-none': Object.keys(barChartdata).length == 0 }"
+          >
+            <div class="col-10">
+              <div class="graph w-100">
+                <app-vertical-stacked-bar-chart
+                  *ngIf="Object.keys(barChartdata).length > 0"
+                  [verticalStackedBarChartId]="
+                    'sample_vertical_stacked_bar_chart_id_1'
+                  "
+                  [chartData]="barChartdata"
+                  [barColor]="Object.values(this.domainColor)"
+                  [keysForStack]="Object.keys(this.domainColor)"
+                  [width]="1600"
+                  [height]="300"
+                ></app-vertical-stacked-bar-chart>
+              </div>
+            </div>
+            <div class="col-2 pl-0">
+              <div class="anomalytype-list">
+                <div class="title">
+                  <h6><strong>Anomaly Type</strong></h6>
+                </div>
+                <ul class="list-unstyled mt-5">
+                  <li
+                    class="d-flex align-items-center"
+                    *ngFor="let legend of barChartdata.legends"
+                  >
+                    <span
+                      [ngStyle]="{ 'background-color': legend.color }"
+                    ></span>
+                    {{ legend.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <!-- (scroll)="onTableScrollLoadData($event)" -->
+    <div class="mb-5 pt-3 overflow-hidden table-section">
+      <app-widget-loader *ngIf="!loader.isTableLoaded"></app-widget-loader>
+      <div [ngClass]="{ 'd-none': dataSource?.data.length == 0 }">
+        <figure class="actions">
+          <button
+            mat-icon-button
+            matTooltip="Anomaly Review"
+            matTooltipClass="custom-tooltip"
+            matTooltipPosition="below"
+            class="accepted"
+            [disabled]="selection.selected.length == 0"
+            (click)="onAcceptClick()"
+          >
+            <span class="material-icons-sharp"> check </span>
+          </button>
+          <!-- <button
+            mat-icon-button
+            matTooltip="Reject Anomaly"
+            matTooltipClass="custom-tooltip"
+            matTooltipPosition="below"
+            class="rejected"
+            [disabled]="selection.selected.length == 0"
+            (click)="onRejectClick()"
+          >
+            <span class="material-icons-sharp"> close </span>
+          </button> -->
+          <button
+            mat-icon-button
+            matTooltip="Mark for Review"
+            matTooltipClass="custom-tooltip"
+            matTooltipPosition="below"
+            class="In-Progress"
+            [disabled]="selection.selected.length == 0"
+            (click)="onReviewClick()"
+          >
+            <span class="material-icons-sharp"> pause </span>
+          </button>
+        </figure>
+        <div class="table-wrapper">
+          <mat-table #mainTable [dataSource]="dataSource">
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+            <ng-container
+              matColumnDef="{{ column.field }}"
+              [stickyEnd]="column.field == 'collapsible' ? true : false"
+              *ngFor="let column of columns; let i = index"
+            >
+              <ng-container
+                *ngIf="column.field == 'select'; else nonCheckBoxHeaderBlock"
+              >
+                <mat-header-cell *matHeaderCellDef class="checkColumn">
+                  <div class="d-inline-flex">
+                    <!-- [aria-label]="checkboxLabel()" -->
+                    <mat-checkbox
+                      (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    >
+                    </mat-checkbox>
+                  </div>
+                </mat-header-cell>
+              </ng-container>
+              <ng-template #nonCheckBoxHeaderBlock>
+                <ng-container
+                  *ngIf="column.field == 'collapsible'; else withMenuColumn"
+                >
+                  <mat-header-cell
+                    *matHeaderCellDef
+                    [ngClass]="{ arrowCol: column.field == 'collapsible' }"
+                    (click)="onCollapsibleHeaderClick()"
+                  >
+                    <div class="d-inline-flex align-items-center">
+                      {{ tableTitle[column.field] }}
+
+                      <span
+                        class="material-icons-sharp"
+                        matTooltipClass="custom-tooltip"
+                        matTooltipPosition="above"
+                        [matTooltip]="
+                          expandedAll ? 'Collapse All' : 'Expand All'
+                        "
+                      >
+                        {{ expandedAll ? "arrow_drop_down" : "arrow_right" }}
+                      </span>
+                      <!-- <span
+                        class="resize-handle"
+                        cdkResizeColumn
+                        [index]="i"
+                        [matTableRef]="mainTable"
+                        [columns]="columns"
+                      ></span> -->
+                    </div>
+                  </mat-header-cell>
+                </ng-container>
+                <ng-template #withMenuColumn>
+                  <mat-header-cell
+                    *matHeaderCellDef
+                    [matMenuTriggerFor]="filterBox"
+                  >
+                    <div class="d-inline-flex align-items-center">
+                      {{ tableTitle[column.field] }}
+                      <!-- <span
+                        class="resize-handle"
+                        cdkResizeColumn
+                        [index]="i"
+                        [matTableRef]="mainTable"
+                        [columns]="columns"
+                      ></span> -->
+                      <span class="material-icons-sharp">
+                        arrow_drop_down
+                      </span>
+                      <span
+                        class="material-icons-sharp close-icon"
+                        *ngIf="tableColumnFilter[column.field] != ''"
+                        (click)="
+                          $event.stopPropagation();
+                          tableColumnFilter[column.field] = '';
+                          applyTableFilter('')
+                        "
+                      >
+                        close
+                      </span>
+                    </div>
+
+                    <mat-menu #filterBox="matMenu" class="filter-menu">
+                      <div class="d-flex justify-content-between">
+                        <button
+                          mat-flat-button
+                          class="custom-button mat-primary"
+                          (click)="
+                            $event.stopPropagation();
+                            onSortClick(
+                              column.field,
+                              'asc',
+                              displayedColumnsSortingStatus[column.field]
+                            )
+                          "
+                          [ngClass]="{
+                            active:
+                              sortActiveOn === column.field &&
+                              sortDirection === 'asc'
+                          }"
+                        >
+                          <span class="material-icons-sharp">sort</span>
+                        </button>
+                        <button
+                          mat-flat-button
+                          class="custom-button mat-primary decending"
+                          (click)="
+                            $event.stopPropagation();
+                            onSortClick(
+                              column.field,
+                              'desc',
+                              displayedColumnsSortingStatus[column.field]
+                            )
+                          "
+                          [ngClass]="{
+                            active:
+                              sortActiveOn === column.field &&
+                              sortDirection === 'desc'
+                          }"
+                        >
+                          <span class="material-icons-sharp">sort</span>
+                        </button>
+                      </div>
+                      <mat-form-field class="custom-input">
+                        <input
+                          matInput
+                          placeholder="Filter"
+                          (click)="$event.stopPropagation()"
+                          [(ngModel)]="tableColumnFilter[column.field]"
+                          [ngModelOptions]="{ standalone: true }"
+                          (keyup)="applyTableFilter($event.target.value)"
+                        />
+                        <button
+                          mat-icon-button
+                          matSuffix
+                          class="select-close ml-1"
+                          *ngIf="tableColumnFilter[column.field]"
+                          (click)="
+                            tableColumnFilter[column.field] = '';
+                            applyTableFilter('')
+                          "
+                        >
+                          <span class="material-icons-sharp"> close </span>
+                        </button>
+                        <mat-icon
+                          class="search-icon"
+                          color="primary"
+                          matSuffix
+                          *ngIf="!tableColumnFilter[column.field]"
+                          ><span class="material-icons-sharp">
+                            search
+                          </span></mat-icon
+                        >
+                      </mat-form-field>
+                    </mat-menu>
+                  </mat-header-cell>
+                </ng-template>
+              </ng-template>
+
+              <mat-cell
+                *matCellDef="let row"
+                [ngClass]="{
+                  checkColumn: column.field == 'select',
+                  arrowCol: column.field == 'collapsible'
+                }"
+              >
+                <ng-container
+                  *ngIf="column.field == 'select'; else nonCheckBoxBlock"
+                >
+                  <!-- [aria-label]="checkboxLabel(row)" -->
+                  <mat-checkbox
+                    (click)="$event.stopPropagation()"
+                    (change)="$event ? masterAllSubToggle(row) : null"
+                    [checked]="
+                      row.detectedAnomalySelection.hasValue() &&
+                      isAllSubSelected(row)
+                    "
+                    [indeterminate]="
+                      row.detectedAnomalySelection.hasValue() &&
+                      !isAllSubSelected(row)
+                    "
+                  >
+                  </mat-checkbox>
+                </ng-container>
+                <ng-template #nonCheckBoxBlock>
+                  <ng-container
+                    *ngIf="
+                      column.field == 'collapsible';
+                      else nonCollapsibleBlock
+                    "
+                  >
+                    <span class="material-icons-sharp"> arrow_right </span>
+                  </ng-container>
+                  <ng-template #nonCollapsibleBlock>
+                    <div class="d-inline-flex">
+                      {{ row[column.field] || "-" }}
+                    </div>
+                  </ng-template>
+                </ng-template>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row
+              *matHeaderRowDef="displayedColumns; sticky: true"
+            ></mat-header-row>
+            <mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              #matRow
+              matRipple
+              class="element-row"
+              [cdkDetailRow]="row"
+              [cdkDetailRowTpl]="tpl"
+            ></mat-row>
+          </mat-table>
+
+          <div
+            class="
+              filter-data
+              d-flex
+              justify-content-center
+              align-items-center
+              py-5
+            "
+            *ngIf="
+              dataSource?.data.length == 0 ||
+              dataSource?.filteredData.length == 0
+            "
+            style="height: 200px"
+          >
+            <span *ngIf="dataSource.data.length == 0">No data available</span>
+            <span
+              *ngIf="
+                dataSource.data.length > 0 &&
+                dataSource.filteredData.length == 0
+              "
+            >
+              No filter data available
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="
+          sectionData
+          d-none
+          justify-content-center
+          align-items-center
+          flex-column
+          text-center
+        "
+        [ngClass]="{
+          'd-flex': loader.isTableLoaded && dataSource?.data.length == 0
+        }"
+      >
+        <span class="material-icons-sharp"> query_stats </span>
+        <strong>No Data Found </strong>
+      </div>
+    </div>
+  </section>
+  <section
+    class="container-fluid"
+    [ngClass]="{ 'd-none': isDataLoaded && isNoDataFound }"
+  >
+    <div
+      class="
+        noData
+        d-flex
+        justify-content-center
+        align-items-center
+        flex-column
+        text-center
+      "
+    >
+      <img src="../../../../../assets/images/no-data.svg" alt="no-data" />
+      <span
+        >To begin an analysis, select
+        <strong>
+          Therapeutic Area, Indication, Study Phase, Study and Domain
+        </strong>
+      </span>
+    </div>
+  </section>
+  <div class="animated-background"></div>
+</section>
+
+<ng-template #tpl let-element>
+  <div class="mat-row detail-row" [@detailExpand] style="overflow: hidden">
+    <mat-table #table [dataSource]="element.detectedAnomaly">
+      <ng-container
+        matColumnDef="{{ column }}"
+        *ngFor="let column of subTableColumns"
+      >
+        <ng-container
+          *ngIf="column == 'select'; else nonSubCheckBoxHeaderBlock"
+        >
+          <mat-header-cell *matHeaderCellDef class="checkColumn">
+            <div class="d-inline-flex"></div>
+          </mat-header-cell>
+        </ng-container>
+        <ng-template #nonSubCheckBoxHeaderBlock>
+          <mat-header-cell *matHeaderCellDef>
+            <div class="d-inline-flex">
+              {{ subTableTitles[column] }}
+            </div>
+          </mat-header-cell>
+        </ng-template>
+
+        <mat-cell
+          *matCellDef="let row"
+          [ngClass]="{
+            checkColumn: column == 'select',
+            completed:
+              column == 'reviewStatus' &&
+              row[column].toLowerCase() == 'completed'.toLowerCase(),
+            'in-progress':
+              column == 'reviewStatus' &&
+              row[column].toLowerCase() == 'in_progress'.toLowerCase(),
+            'not-started':
+              column == 'reviewStatus' &&
+              row[column].toLowerCase() == 'not_started'.toLowerCase()
+          }"
+        >
+          <ng-container *ngIf="column == 'select'; else nonSubCheckBoxBlock">
+            <!-- (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)"
+              [aria-label]="checkboxLabel(row)" -->
+            <mat-checkbox
+              (click)="$event.stopPropagation()"
+              (change)="$event ? toggleSubRecord(element, row) : null"
+              [checked]="element.detectedAnomalySelection.isSelected(row)"
+            >
+            </mat-checkbox>
+          </ng-container>
+          <ng-template #nonSubCheckBoxBlock>
+            <ng-container *ngIf="column == 'action'; else nonActionBlock">
+              <button
+                class="ml-1"
+                mat-icon-button
+                routerLink="/cdm-anomaly-detect/anomaly-details"
+              >
+                <mat-icon>
+                  <span class="material-icons-sharp"> visibility </span>
+                </mat-icon>
+              </button>
+            </ng-container>
+            <ng-template #nonActionBlock>
+              <div class="d-inline-flex">
+                {{ row[column] || "-" }}
+              </div>
+            </ng-template>
+          </ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="subTableColumns"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: subTableColumns"
+        class="element-row"
+      >
+      </mat-row>
+    </mat-table>
+  </div>
+
+  <!-- 
+<table>
+  <thead>
+    <tr>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+      <th>Pallavi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+      <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <thead>
+            <tr>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+              <th>Pallavi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi vero voluptas molestias enim. Amet labore modi ad eveniet sapiente. Tenetur commodi ut, id quisquam ipsum soluta modi libero harum quos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+</ng-template>
+
+<ng-template #noDataFound>
+  <div
+    class="
+      sectionData
+      d-flex
+      justify-content-center
+      align-items-center
+      flex-column
+      text-center
+    "
+  >
+    <span class="material-icons-sharp"> query_stats </span>
+    <strong>No Data Found </strong>
+  </div>
+</ng-template>

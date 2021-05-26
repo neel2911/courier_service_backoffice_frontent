@@ -1,0 +1,19 @@
+@import "~@angular/material/theming";
+@import "../utils/mixins";
+
+@mixin mat-pagination-custom-color($theme) {
+  .custom-pagination {
+    // background-color: map-get($primary, 200);
+    button {
+      outline: none;
+    }
+  }
+  .sticky-pagination {
+    bottom: 0;
+    position: sticky;
+  }
+}
+
+@mixin pagination-custom-theme($theme) {
+  @include mat-pagination-custom-color($theme);
+}

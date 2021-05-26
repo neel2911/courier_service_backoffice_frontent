@@ -1,0 +1,40 @@
+[
+  {
+    "type": "idm",
+    "data": {
+      "userDetails": {
+        "userId": "13",
+        "zsId": "zs\\sa20471",
+        "emailId": "shital.agarwal@zs.com",
+        "roles": ["ZSLogin.Admin", "Idm.RoleAdmin"]
+      },
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9D&aeyJpYXQiOjE2MTk2MjQxMjcsImV4cCI6MTYxOTcxMDUyN30V@yn5kmv7HlWNsQOvxJ568aQnaD8GTBqvD8hDBAXNxf-e8",
+      "_s": {
+        "CloudFront-Policy": "eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cCo6Ly9zcGVlY2h0b3RleHQuZGVtby56c3NlcnZpY2VzLmNvbS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjE5NjM4NzY3OTY2fX19XX0_;path=/;domain=.demo.zsservices.com",
+        "CloudFront-Key-Pair-Id": "APKAI2YTWPSKCL37U7TQ;path=/;domain=.demo.zsservices.com",
+        "CloudFront-Signature": "A-hcuxtNyfDBQgkSN2sstfLfAg7WhptcEJhykDXmhJLVWU0UudsuiD0FY5FGnyo4mDjjZTf8IQ~N1nvfM6h8TZlXyKxA6ckqsaPyThN9EbKLOj8ViXCmfpjLaGV-TmnRPmO0CpA~tlJOj3p4KIh5RdUSvGd23okirXPQ2Db2u0laRf9UkKv4xqrsaITh-jf8UyJAHE1z6RfBQ4lPW8NLtUZVJlLsbWOBo0MViDrv~dBeLXhOGs6oHvKg8ytGWvFAyib94uvst4NdQRd3UOxAc2fDOy3dfr-BQt1AughiFFoBZKFsyVZofJxcTGoYQRF3VLWEr6yQTX2gEUgJDKIdqw__;path=/;domain=.demo.zsservices.com"
+      }
+    },
+    "message": "User is valid"
+  },
+  {
+    "type": "custom",
+    "data": {
+      "userDetails": {
+        "userId": "1",
+        "type": "custom",
+        "role": "admin",
+        "name": "Admin",
+        "accessStartDate": "1566373727000",
+        "accessEndDate": "1566383827000"
+      },
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9U&YeyJ1c2VySWQiOiIxIiwidHlwZSI6ImN1c3RvbSIsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiIsImFjY2Vzc1N0YXJ0RGF0ZSI6IjE1NjYzNzM3MjcwMDAiLCJhY2Nlc3NFbmREYXRlIjoiMTU2NjM4MzgyNzAwMCIsImlhdCI6MTYxOTYyNDMzNSwiZXhwIjoxNjE5NzEwNzM1fQE@rJbMOK2skhTbG3zytQ0gWsiQndeYK3Uds5zUD2qzV3Zg",
+      "_s": {
+        "CloudFront-Policy": "eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cCo6Ly9hdHJnYWxsZXJ5LmRlbW8uenNzZXJ2aWNlcy5jb20vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTYxOTcxMjE3Mzg5N319fV19;path=/;",
+        "CloudFront-Key-Pair-Id": "APKAI2YTWPSKCL37U7TQ;path=/;",
+        "CloudFront-Signature": "e4BVyh6KjM9mjLfYp-r~ynPEdM5oT0HPKeG8YIH4taZxHuDALCePVIBYGpnYXk-wMBjQMq2JgdFpPeQK3XO73GHzc~Gd3mA6Gs3Hj3qunqimcTGJB0OcRr3CjJ-YGjQ42xnQsWALhFoVSWoBEIElT-IciWe1oCM5J-cuef2~V4ASlN40mjd1U4jjsUVCQEDk8ruCOFdCYtfomsdFfsW~1B~qcAoFwpoKqimS1T3-zFGCUJtXXlrcq0bevWa4QxNWUCLsKFsbu8vhL8GAzkE6atfDV0d3EojQFn9aAmiLNXm2j1CuPNIBZv2c9ZZdhEBGqrZkK64fdCBUO2Tp762rdw__;path=/;"
+      }
+    },
+    "message": "User is valid"
+  }
+]

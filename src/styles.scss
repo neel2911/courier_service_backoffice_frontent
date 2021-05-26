@@ -1,0 +1,59 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Import the custom themes.
+@import "assets/theme/custom-components.scss";
+@import "assets/theme/custom-typography.scss";
+@import "assets/theme/primary-theme.scss";
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $zs-sky-net-primary: mat-palette($mat-indigo);
+// $zs-sky-net-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $zs-sky-net-warn: mat-palette($mat-red);
+
+// // Create the theme object (a Sass map containing all of the palettes).
+// $zs-sky-net-theme: mat-light-theme(
+//   $zs-sky-net-primary,
+//   $zs-sky-net-accent,
+//   $zs-sky-net-warn
+// );
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include angular-material-theme($zs-sky-net-theme);
+
+.primary-theme.light {
+  // Call the main material theme mixin to create all the default theming styles.
+  @include angular-material-theme($theme1);
+  // Call the custom component mixin to create all the custom component theming styles
+  @include custom-component-theming($theme1);
+}
+
+// .primary-theme.dark {
+//   // Call the main material theme mixin to create all the default theming styles.
+//   @include angular-material-color($theme1-dark);
+//   // Call the custom component mixin to create all the custom component theming styles
+//   @include custom-component-theming($theme1-dark);
+// }
+
+@include angular-material-typography($custom-typography);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}

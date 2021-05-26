@@ -1,0 +1,23 @@
+.animated-background {
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: ease-in-out;
+    background: #ededed;
+    background:linear-gradient(to right, #edeef7 8%, #efeff7 22%, #e9eaf7 36%);
+    background-size: 50%;
+    position: relative;
+    height: 100%;
+    -webkit-animation-delay: 0.35s;
+    animation-delay: 0.35s;
+    min-height: 350px;
+}
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -50% 0
+    }
+    100% {
+        background-position: 50% 0
+    }
+}

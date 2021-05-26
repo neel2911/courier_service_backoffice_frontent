@@ -1,0 +1,23 @@
+@import '../assets/theme/utils/mixins';
+
+.app-top-padding {
+  padding-top: 70px;
+  @include breakpoint(below-1600){
+    padding-top: 60px;
+  }
+}
+.custom-sidenav{
+  @include elemWidth(80);
+  min-width: 50px;
+}
+.app-left-padding {
+  padding-left: 55px;
+}
+
+.position-fixed {
+  position: fixed;
+}
+.mat-drawer-content{
+ background: #fff;
+  height: 100vh;
+}

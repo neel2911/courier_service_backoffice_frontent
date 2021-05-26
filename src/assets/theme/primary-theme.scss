@@ -1,0 +1,35 @@
+// Define your application's custom theme.
+
+// import the custom palettes
+@import "./color-palettes.scss";
+
+// $primary: mat-palette($primary-blue);
+// $accent: mat-palette($primary-blue, A200, A100, A400);
+// $warn: mat-palette($mat-red);
+
+// Create the material theme and merge it with the extra palettes
+$custom-light-primary: mat-palette($primary);
+$custom-light-accent: mat-palette($primary);
+$custom-light-warn: mat-palette($warn, 50, 100, 200);
+
+$extra-palettes: (
+  custom: mat-palette($custom),
+);
+
+$theme1: map-merge(
+  mat-light-theme(
+    $custom-light-primary,
+    $custom-light-accent,
+    $custom-light-warn
+  ),
+  $extra-palettes
+);
+
+// $custom-dark-primary: mat-palette($black);
+// $custom-dark-accent: mat-palette($black, A200, A100, A400);
+// $custom-dark-warn: mat-palette($black);
+
+// $theme1-dark: map-merge(
+//   mat-dark-theme($custom-dark-primary, $custom-dark-accent, $custom-dark-warn),
+//   $extra-palettes
+// );

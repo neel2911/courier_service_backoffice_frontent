@@ -1,0 +1,27 @@
+@import "~@angular/material/theming";
+@import "../utils/mixins";
+
+@mixin mat-drawer-custom-color($theme) {
+
+  @include mat-sidenav-color($theme);
+
+  .custom-drawer {
+    &.mat-drawer {
+      min-width: 20px;
+      &.mat-sidenav-closed {
+        transform: translate3d(0, 0, 0) !important;
+        visibility: visible !important;
+        min-width: 64px !important;
+        width: 64px !important;
+
+        &.mat-sidenav-content {
+          margin-left: 64px !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin drawer-custom-theme($theme) {
+  @include mat-drawer-custom-color($theme);
+}
