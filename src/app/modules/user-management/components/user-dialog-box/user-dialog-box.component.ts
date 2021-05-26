@@ -11,11 +11,6 @@ import { UserManagementService } from "../../services/user-management.service";
 export class UserDialogBoxComponent implements OnInit {
   public minStartDate: Date;
   public userForm: FormGroup;
-  public errorMsg: string;
-  public appURL = environment.app_URL;
-  showSubmitButton = true;
-  generatedAccessCode = "";
-  generateResponse = null;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -30,25 +25,32 @@ export class UserDialogBoxComponent implements OnInit {
       today.getMonth(),
       today.getDate()
     );
-    this.errorMsg = data.errorMsg;
     this.minStartDate = currentDate;
     if (data.isUpdate && currentDate > user.accessStartDate) {
       this.minStartDate = user.accessStartDate;
     }
     this.userForm = formBuilder.group(
       {
-        clientName: [user.clientName || "", [Validators.required]],
-        requesterName: [user.requesterName || "", Validators.required],
+        employeeId: [user.employeeId || "", [Validators.required]],
+        name: [user.name || "", Validators.required],
+        userName: [user.userName || "", Validators.required],
+        role: [user.role || "", Validators.required],
+        contactNumber: [
+          user.contactNumber || "",
+          [
+            Validators.required,
+            Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"),
+          ],
+        ],
+        emailId: [user.emailId || "", [Validators.required, Validators.email]],
+        address: [user.address || "", Validators.required],
         accessStartDate: [
           user.accessStartDate || currentDate,
           Validators.required,
         ],
         accessEndDate: [user.accessEndDate, Validators.required],
-        accessReason: [user.accessReason || "", Validators.required],
-        accessStatus: [
-          user.accessStatus !== void 0 ? user.accessStatus : true,
-          Validators.nullValidator,
-        ],
+        description: [user.description || "", Validators.required],
+        status: [user.accessStatus || false, Validators.nullValidator],
       },
       { updateOn: "blur" }
     );
@@ -67,25 +69,13 @@ export class UserDialogBoxComponent implements OnInit {
       this._userManagementService
         .updateUser(requestUser)
         .subscribe((data: any) => {
-          if (data) {
-            this.dialogRef.close(data);
-          } else {
-            this.errorMsg = data.errorMessage;
-          }
+          this.dialogRef.close(data);
         });
     } else {
-      requestUser.role = "guest";
-      requestUser.accessStatus = "unblock";
       this._userManagementService
         .addUser(requestUser)
         .subscribe((data: any) => {
-          if (data) {
-            this.showSubmitButton = false;
-            this.generatedAccessCode = data.data.accessCode;
-            this.generateResponse = data;
-          } else {
-            this.errorMsg = data.errorMessage;
-          }
+          console.log(data);
         });
     }
   }

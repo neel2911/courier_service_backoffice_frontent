@@ -30,6 +30,7 @@ export class EmployeeListComponent implements OnInit {
     "name",
     "userName",
     "passCode",
+    "contactNumber",
     "role",
     "accessStartDate",
     "lastLoggedIn",

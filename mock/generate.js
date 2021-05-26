@@ -13,7 +13,7 @@ for (var i = 1; i <= 300; i++) {
     status: i % 7 == 0 ? "unblock" : "block",
     accessStartDate: new Date(faker.date.past()).getTime(),
     accessEndDate: new Date(faker.date.future()).getTime(),
-    contactNumber: faker.phone.phoneNumber(),
+    contactNumber: faker.datatype.number(9999999999, 9999999999),
     emailId: faker.internet.email(),
     address: faker.address.streetAddress(),
     description: faker.lorem.lines(1),
