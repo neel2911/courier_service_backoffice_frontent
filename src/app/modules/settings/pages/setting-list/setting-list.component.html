@@ -10,7 +10,7 @@
   </div>
   <ng-container *ngFor="let solution of solutionList; let i = index">
     <div
-    class="list-contianer"
+      class="list-contianer"
       *ngIf="selectedFilter == 'all' || selectedFilter == solution.categoryType"
     >
       <h3>
@@ -29,7 +29,12 @@
           [ngClass]="tile.isEnabled ? 'pointor-cursor' : 'pointor-none'"
         >
           <mat-card class="w-100 h-1000 d-flex align-items-center">
-            <div class="image" [ngClass]="tile.className"></div>
+            <div class="image" [ngClass]="tile.className">
+              <span class="icon material-icons-sharp">
+                {{ tile.icon }}
+              </span>
+            </div>
+
             <div>
               <h2 class="mb-0">{{ tile.title }}</h2>
               <p>{{ tile.subTitle }}</p>

@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "title": "General",
+      "categoryType": "general",
+      "list": [
+        {
+          "title": "Roles",
+          "subTitle": "",
+          "icon": "settings",
+          "className": "anomaly-img",
+          "content": "Manange the roles",
+          "routeUrl": "/settings/role",
+          "isEnabled": true
+        }
+      ]
+    }
+  ]
+}

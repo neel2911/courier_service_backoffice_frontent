@@ -2,240 +2,212 @@
 @import "../../../../../assets/theme/utils/fonts.scss";
 
 @mixin dataCard-theme($theme) {
-    .button-list {
-        margin: 20px 0;
-        button {
-            height: 34px;
-            border: 0;
-            border-radius: 2px !important;
-            background-color: mat-color($primary,600);
-            padding: 6px 15px;
-            font-size: 16px;
-            font-weight: normal !important;
-            text-transform: capitalize;
-            color: #fff;
-            transition: all 0.3s;
-            &.selected{
-                background-color: mat-color($primary,50);
-            }
-        }
+  .button-list {
+    margin: 20px 0;
+    button {
+      height: 34px;
+      border: 0;
+      border-radius: 2px !important;
+      background-color: mat-color($primary, 600);
+      padding: 6px 15px;
+      font-size: 16px;
+      font-weight: normal !important;
+      text-transform: capitalize;
+      color: #fff;
+      transition: all 0.3s;
+      &.selected {
+        background-color: mat-color($primary, 50);
+      }
     }
-    
-    
-    .list-contianer{
-        padding: 20px;
-        box-shadow: 0px 0px 20px 4px #DEE1EF99;
+  }
+
+  .list-contianer {
+    padding: 20px;
+    box-shadow: 0px 0px 20px 4px #dee1ef99;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-fill-mode: both;
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    h3 {
+      font-family: "Tiempos Headline";
+      font-size: fontSize(22, 18);
+    }
+  }
+  .solution-list {
+    .mat-grid-tile {
+      overflow: visible;
+      &.pointor-cursor {
+        .mat-card .content + .text-right span {
+          cursor: pointer;
+        }
+      }
+    }
+    .mat-card {
+      padding: 40px;
+      height: 100%;
+      .image {
+        margin-right: 50px;
+        width: 60px;
+        height: 60px;
+        padding: 30px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        position: relative;
+        .icon {
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-size: 60px;
+        }
+        // &.anomaly-img {
+        //   background-image: url("../../../../../assets/images/data/anomaly.svg");
+        // }
+        @include breakpoint(below-1400) {
+          width: 50px;
+          height: 50px;
+          background-size: 45px;
+          padding: 25px;
+          &.encoding-img {
+            height: 70px;
+          }
+          &.query-img {
+            height: 50px;
+            background-size: 42px;
+          }
+        }
+      }
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 22px;
+        margin-bottom: 0;
+      }
+      .content + .text-right {
+        line-height: 0;
+        span {
+          height: 0;
+          cursor: default;
+        }
+      }
+      .content {
+        //max-height: 100px;
+        overflow: hidden;
+        margin: 0 0 5px;
+      }
+      @include breakpoint(below-1400) {
+        padding: 25px;
+        .image {
+          margin-right: 30px;
+        }
+      }
+      &:hover {
+        .card-hover {
+          pointer-events: auto;
+          opacity: 1;
+          -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+          -webkit-animation-fill-mode: both;
+          -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+          animation-fill-mode: both;
+        }
+      }
+      .card-hover {
+        position: absolute;
+        background: linear-gradient(114.71deg, #6d76c4 23.1%, #555faf 94.61%);
+        box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
         border-radius: 2px;
-        margin-bottom: 20px;
-        -webkit-animation-duration:1s;
-        animation-duration:1s;
-        -webkit-animation-fill-mode: both;
-        -webkit-animation-name: fadeIn;
-        animation-name: fadeIn;
-        animation-fill-mode: both;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 10px 20px;
+        color: $white;
+        opacity: 0;
+        pointer-events: none;
+        // transition: all 0.6s ease-out;
+        pointer-events: none;
+        right: 0;
+
         @-webkit-keyframes fadeIn {
-            0% {opacity: 0;}
-            100% {opacity: 1;}
-         }
-         
-         @keyframes fadeIn {
-            0% {opacity: 0;}
-            100% {opacity: 1;}
-         }
-        h3{
-            font-family: 'Tiempos Headline';
-            font-size: fontSize(22,18);
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
         }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        // .image{
+        //     margin-right:20px;
+        //     width: 38px;
+        //     height: 38px;
+        //     padding: 19px;
+        //     background-size: 35px;
+        //     &.anomaly-img{
+        //         background-image: url("../../../../../assets/images/data/anomaly-white.svg");
+        //     }
+        //     &.aws-img{
+        //         background-image: url("../../../../../assets/images/data/aws-white.svg");
+        //     }
+        //     &.mapping-img{
+        //         background-image: url("../../../../../assets/images/data/mapping-white.svg");
+        //     }
+        //     &.query-img{
+        //         background-image: url("../../../../../assets/images/data/query-white.svg");
+        //         height: 48px;
+        //     }
+        //     &.encoding-img{
+        //         background-image: url("../../../../../assets/images/data/encoding-white.svg");
+        //        background-size: 28px;
+        //     }
+        //     &.data-linage-img{
+        //         background-image: url("../../../../../assets/images/data/data-linage-white.svg");
+        //     }
+        //     &.medical-imaging-img{
+        //         background-image: url("../../../../../assets/images/data/medical-imaging-white.svg");
+        //     }
+        //     &.validated-img{
+        //         background-image: url("../../../../../assets/images/data/validated-white.svg");
+        //     }
+        // }
+        p {
+          font-weight: weight(light);
+          font-size: 15px;
+        }
+      }
     }
-    .solution-list{
-        
-        .mat-grid-tile{
-            overflow: visible;
-            &.pointor-cursor{
-                .mat-card .content + .text-right span {
-                    cursor: pointer;
-                }
-            }
-        }
-        .mat-card{
-            padding: 40px;
-            height: 100%;
-            .image{
-                margin-right: 50px;
-                width: 60px;
-                height: 60px;
-                padding: 30px;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: contain;
-                &.anomaly-img{
-                    background-image: url("../../../../../assets/images/data/anomaly.svg");
-                }  
-                &.aws-img{
-                    background-image: url("../../../../../assets/images/data/aws.svg");
-                }
-                &.mapping-img{
-                    background-image: url("../../../../../assets/images/data/mapping.svg");
-                }
-                &.query-img{
-                    background-image: url("../../../../../assets/images/data/query.svg");
-                }
-                &.encoding-img{
-                    background-image: url("../../../../../assets/images/data/encoding.svg");
-                }
-                &.data-linage-img{
-                    background-image: url("../../../../../assets/images/data/data-linage.svg");
-                }
-                &.medical-imaging-img{
-                    background-image: url("../../../../../assets/images/data/medical-imaging.svg");
-                }
-                &.validated-img{
-                    background-image: url("../../../../../assets/images/data/validated.svg");
-                }
-                &.medical-img{
-                    background-image: url("../../../../../assets/images/data/medical-img.svg");
-                }
-                &.grained-img{
-                    background-image: url("../../../../../assets/images/data/grained-img.svg");
-                }
-                &.medicalCoder-img{
-                    background-image: url("../../../../../assets/images/data/medicalCoder-img.svg");
-                }
-                &.paython-img{
-                    background-image: url("../../../../../assets/images/data/paython-img.svg");
-                    width: 80px;
-                }
-                &.review-img{
-                    background-image: url("../../../../../assets/images/data/review-img.svg");
-                }
-                &.report-img{
-                    background-image: url("../../../../../assets/images/data/report-img.svg");
-                }
-                &.narrative-img{
-                    background-image: url("../../../../../assets/images/data/narrative-img.svg");
-                }
-                &.data-img{
-                    background-image: url("../../../../../assets/images/data/data-img.svg");
-                }
-                &.data-catalog{
-                    background-image: url("../../../../../assets/images/data/data-catalog-img.svg");
-                }
-                @include breakpoint(below-1400){
-                    width: 50px;
-                    height: 50px;
-                    background-size: 45px;
-                    padding: 25px;
-                    &.encoding-img{
-                        height: 70px;
-                    }
-                    &.query-img{
-                        height: 50px;
-                        background-size: 42px;
-                    }
-                }
-            }
-            h2{
-                font-size:22px;
-            }
-            p{
-                font-size:22px;
-                margin-bottom: 0;
-            }
-            .content + .text-right{
-                line-height: 0;
-                span{
-                    height: 0;
-                    cursor: default;
-                }
-            }
-            .content{
-                //max-height: 100px;
-                overflow: hidden;
-                margin:0 0 5px;
-            }
-            @include breakpoint(below-1400){
-                padding: 25px;
-                .image{
-                    margin-right: 30px;
-                }
-            }
-            &:hover{
-                .card-hover{
-                    pointer-events: auto;
-                    opacity: 1;
-                    -webkit-animation-duration: 0.8s;
-                    animation-duration: 0.8s;
-                    -webkit-animation-fill-mode: both;
-                    -webkit-animation-name: fadeIn;
-                    animation-name: fadeIn;
-                    animation-fill-mode: both;
-                }
-            }
-            .card-hover{
-                position: absolute;
-                background: linear-gradient(114.71deg, #6D76C4 23.1%, #555FAF 94.61%);
-                box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-                border-radius: 2px;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                z-index: 1;
-                padding: 10px 20px;
-                color: $white;
-                opacity: 0;
-                pointer-events: none;
-                // transition: all 0.6s ease-out;
-                pointer-events: none;
-                right: 0;
-                
-                @-webkit-keyframes fadeIn {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
-                 }
-                 
-                 @keyframes fadeIn {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
-                 }
-                 
-                // .image{
-                //     margin-right:20px;
-                //     width: 38px;
-                //     height: 38px;
-                //     padding: 19px;
-                //     background-size: 35px;
-                //     &.anomaly-img{
-                //         background-image: url("../../../../../assets/images/data/anomaly-white.svg");
-                //     }  
-                //     &.aws-img{
-                //         background-image: url("../../../../../assets/images/data/aws-white.svg");
-                //     }
-                //     &.mapping-img{
-                //         background-image: url("../../../../../assets/images/data/mapping-white.svg");
-                //     }
-                //     &.query-img{
-                //         background-image: url("../../../../../assets/images/data/query-white.svg");
-                //         height: 48px;
-                //     }
-                //     &.encoding-img{
-                //         background-image: url("../../../../../assets/images/data/encoding-white.svg");
-                //        background-size: 28px;
-                //     }
-                //     &.data-linage-img{
-                //         background-image: url("../../../../../assets/images/data/data-linage-white.svg");
-                //     }
-                //     &.medical-imaging-img{
-                //         background-image: url("../../../../../assets/images/data/medical-imaging-white.svg");
-                //     }
-                //     &.validated-img{
-                //         background-image: url("../../../../../assets/images/data/validated-white.svg");
-                //     }
-                // }
-                p{
-                    font-weight: weight(light);
-                    font-size: 15px;
-                }
-            }
-        }
-    }
-}  
+  }
+}
