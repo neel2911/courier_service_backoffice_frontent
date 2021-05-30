@@ -10,7 +10,7 @@
           "icon": "settings",
           "className": "anomaly-img",
           "content": "Manange the roles",
-          "routeUrl": "/settings/role",
+          "routeUrl": "/settings/roles",
           "isEnabled": true
         }
       ]

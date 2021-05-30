@@ -1,0 +1,131 @@
+<div class="table-wrapper">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container
+      matColumnDef="{{ column.field }}"
+      [stickyEnd]="false"
+      *ngFor="let column of tableConfig.columns; let i = index"
+    >
+      <ng-container
+        *ngIf="column.field == 'select'; else nonCheckBoxHeaderBlock"
+      >
+        <mat-header-cell *matHeaderCellDef class="checkColumn">
+          <div class="d-inline-flex">
+            <mat-checkbox
+              (change)="$event ? masterToggle() : null"
+              [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+            >
+            </mat-checkbox>
+          </div>
+        </mat-header-cell>
+      </ng-container>
+      <ng-template #nonCheckBoxHeaderBlock>
+        <ng-container
+          *ngIf="
+            tableConfig.sortableColumns.indexOf(column.field) != -1;
+            else nonSortableBlock
+          "
+        >
+          <mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+            <div class="d-inline-flex align-items-center">
+              {{ tableConfig.titles[column.field] }}
+            </div>
+          </mat-header-cell>
+        </ng-container>
+        <ng-template #nonSortableBlock>
+          <mat-header-cell *matHeaderCellDef>
+            <div class="d-inline-flex align-items-center">
+              {{ tableConfig.titles[column.field] }}
+            </div>
+          </mat-header-cell>
+        </ng-template>
+      </ng-template>
+
+      <mat-cell
+        *matCellDef="let row"
+        [ngClass]="{
+          checkColumn: column.field == 'select'
+        }"
+      >
+        <ng-container *ngIf="column.field == 'select'; else nonCheckBoxBlock">
+          <!-- [aria-label]="checkboxLabel(row)" -->
+          <mat-checkbox
+            (click)="$event.stopPropagation()"
+            (change)="$event ? masterAllSubToggle(row) : null"
+            [checked]="
+              row.detectedAnomalySelection.hasValue() && isAllSubSelected(row)
+            "
+            [indeterminate]="
+              row.detectedAnomalySelection.hasValue() && !isAllSubSelected(row)
+            "
+          >
+          </mat-checkbox>
+        </ng-container>
+        <ng-template #nonCheckBoxBlock>
+          <ng-container
+            *ngIf="
+              tableConfig.booleanColumns.indexOf(column.field) != -1;
+              else nonBooleanBlock
+            "
+          >
+            <div class="d-inline-flex">
+              <mat-checkbox [checked]="row[column.field]" [disabled]="true">
+              </mat-checkbox>
+            </div>
+          </ng-container>
+          <ng-template #nonBooleanBlock>
+            <ng-container
+              *ngIf="
+                tableConfig.dateColumns.indexOf(column.field) != -1;
+                else nonDateBlock
+              "
+            >
+              <div class="d-inline-flex">
+                {{
+                  row[column.field]
+                    ? (row[column.field] | date: "dd MMM yyyy , HH:mm:ss")
+                    : "-"
+                }}
+              </div>
+            </ng-container>
+            <ng-template #nonDateBlock>
+              <div class="d-inline-flex">
+                {{ row[column.field] || "-" }}
+              </div>
+            </ng-template>
+          </ng-template>
+        </ng-template>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row
+      *matHeaderRowDef="tableConfig.displayColumns; sticky: true"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: tableConfig.displayColumns"
+      #matRow
+      matRipple
+      class="element-row"
+    ></mat-row>
+  </mat-table>
+  <div
+    class="no-data d-flex align-items-center justify-content-center"
+    *ngIf="dataSource?.data.length == 0 || dataSource?.filteredData.length == 0"
+    style="height: 200px"
+  >
+    <span *ngIf="dataSource.data.length == 0">No data available</span>
+    <span
+      *ngIf="dataSource.data.length > 0 && dataSource.filteredData.length == 0"
+    >
+      No filter data available
+    </span>
+  </div>
+  <mat-paginator
+    [ngClass]="{ 'd-none': !tableConfig.hasPaginator }"
+    class="sticky-pagination custom-pagination"
+    [pageSizeOptions]="tableConfig.pageSizeOption"
+    [pageSize]="tableConfig.pageSize"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</div>

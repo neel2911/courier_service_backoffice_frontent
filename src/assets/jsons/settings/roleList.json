@@ -1,0 +1,78 @@
+{
+  "data": {
+    "mainTableConfigs": {
+      "titles": {
+        "roleName": "Role Name",
+        "description": "Description",
+        "status": "Status",
+        "createdAt": "Created At",
+        "createdBy": "Created By",
+        "updatedAt": "Updated At",
+        "updatedBy": "Updated By"
+      },
+      "sortableColumns": ["roleName", "status"],
+      "filerableColumns": ["roleName", "description", "status"],
+      "booleanColumns": [],
+      "dateColumns": ["createdAt", "updatedAt"]
+    },
+    "subTableConfigs": {
+      "titles": {
+        "moduleName": "Module Name",
+        "read": "Read",
+        "create": "Create",
+        "update": "Update",
+        "delete": "Delete"
+      },
+      "sortableColumns": ["moduleName"],
+      "filerableColumns": ["moduleName"],
+      "booleanColumns": ["read", "create", "update", "delete"],
+      "dateColumns": []
+    },
+    "records": [
+      {
+        "id": 1,
+        "roleName": "Operator",
+        "roleKey": "operator",
+        "description": "demo description",
+        "permission": [
+          {
+            "id": "1",
+            "moduleKey": "operator_manifest",
+            "moduleName": "Operator Manifest",
+            "read": true,
+            "create": false,
+            "update": false,
+            "delete": false
+          }
+        ],
+        "status": "active",
+        "createdAt": 1621935880865,
+        "createdBy": "Garnett Barton",
+        "updatedAt": 1613047405978,
+        "updatedBy": "Carolyn Moen"
+      },
+      {
+        "id": 2,
+        "roleName": "Marketor",
+        "roleKey": "marketor",
+        "description": "marketor demo",
+        "permission": [
+          {
+            "id": "1",
+            "moduleKey": "marketor_client_mangement",
+            "moduleName": "marketor Client Mangement",
+            "read": true,
+            "create": true,
+            "update": false,
+            "delete": false
+          }
+        ],
+        "status": "block",
+        "createdAt": 1604407211350,
+        "createdBy": "Brody Fisher",
+        "updatedAt": 1612770396236,
+        "updatedBy": "Allen Kutch"
+      }
+    ]
+  }
+}

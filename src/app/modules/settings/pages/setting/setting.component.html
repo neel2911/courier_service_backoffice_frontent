@@ -1,0 +1,54 @@
+<section class="container-fluid pt-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h3 class="mat-h2 m-0">
+      {{ currentSetting && settingTitle[currentSetting] }}
+    </h3>
+    <div class="d-flex align-items-center">
+      <form class="filter-section d-flex align-items-center">
+        <mat-form-field class="custom-input">
+          <mat-label>Filter</mat-label>
+          <input
+            matInput
+            [(ngModel)]="filterText"
+            [ngModelOptions]="{ standalone: true }"
+            (keyup)="applyFilter($event.target.value)"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            *ngIf="filterText"
+            (click)="applyFilter('')"
+          >
+            <span class="material-icons-sharp"> close </span>
+          </button>
+          <mat-icon
+            svgIcon="search"
+            class="search-icon"
+            color="primary"
+            matSuffix
+            *ngIf="!filterText"
+          ></mat-icon>
+        </mat-form-field>
+      </form>
+      <button
+        mat-flat-button
+        class="custom-button ml-3"
+        color="primary"
+        (click)="onUserGenerate()"
+      >
+        <span class="material-icons-sharp"> person_add </span>
+        New Request
+      </button>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <app-table-with-sub-table
+      *ngIf="tableData"
+      [tableConfig]="tableData.mainTableConfigs"
+      [subTableConfig]="tableData.subTableConfigs"
+      [tableRecords]="tableData.defaultRecords"
+      [filterText]="filterText"
+    ></app-table-with-sub-table>
+  </div>
+</section>
