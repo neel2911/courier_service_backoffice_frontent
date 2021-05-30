@@ -1,19 +1,29 @@
 <div class="mat-typography">
   <div mat-dialog-title class="d-flex justify-content-between pb-4">
     <h2 class="mb-0">Details of {{ data.clientName }}</h2>
-    <button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+    <span class="material-icons-sharp" mat-dialog-close> close </span>
   </div>
 
   <mat-dialog-content>
     <dl class="user-details">
-      <dt>Client Name :</dt>
-      <dd>{{ data.clientName }}</dd>
-      <dt>Requester Name :</dt>
-      <dd>{{ data.requesterName }}</dd>
-      <dt>Access Code :</dt>
-      <dd>{{ data.accessCode }}</dd>
-      <dt>Access Reason :</dt>
-      <dd>{{ data.accessReason }}</dd>
+      <dt>Employee Id :</dt>
+      <dd>{{ data.employeeId }}</dd>
+      <dt>Name :</dt>
+      <dd>{{ data.name }}</dd>
+      <dt>Username :</dt>
+      <dd>{{ data.userName }}</dd>
+      <dt>Passcode :</dt>
+      <dd>{{ data.passCode }}</dd>
+      <dt>Role :</dt>
+      <dd>{{ data.role }}</dd>
+      <dt>Contact number :</dt>
+      <dd>{{ data.contactNumber }}</dd>
+      <dt>Email Id :</dt>
+      <dd>{{ data.emailId }}</dd>
+      <dt>Address :</dt>
+      <dd>{{ data.address }}</dd>
+      <dt>Description :</dt>
+      <dd>{{ data.description }}</dd>
       <dt>Active Period :</dt>
       <dd>
         {{ data.accessStartDate | date: "dd MMM yyyy" }} -
@@ -23,7 +33,9 @@
       <dd>
         <span
           class="user-status"
-          [ngClass]="data.status == EmployeeStatus.ACTIVE ? 'active' : 'inactive'"
+          [ngClass]="
+            data.status == EmployeeStatus.ACTIVE ? 'active' : 'inactive'
+          "
           >{{ data.status }}</span
         >
       </dd>
@@ -34,10 +46,6 @@
             ? (data.lastLoggedIn | date: "dd MMM yyyy , HH:mm:ss")
             : "Not yet accessed"
         }}
-      </dd>
-      <dt *ngIf="data.lastLoggedIn">IP :</dt>
-      <dd *ngIf="data.lastLoggedIn">
-        {{ data.userMetaInfo?.ipAddress || "" }}
       </dd>
       <dt>Created On :</dt>
       <dd>{{ data.createdAt | date: "dd MMM yyyy, HH:mm:ss" }}</dd>

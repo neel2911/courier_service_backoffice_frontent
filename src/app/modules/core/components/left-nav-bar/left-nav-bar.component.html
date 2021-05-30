@@ -1,57 +1,22 @@
 <div class="sidenav-container h-100 text-center">
   <mat-nav-list class="d-flex flex-column align-items-center h-100">
-    <div class="logo d-flex align-items-center justify-content-center" routerLink="/">
-      
-    </div>
+    <div
+      class="logo d-flex align-items-center justify-content-center"
+      routerLink="/"
+    ></div>
     <div class="d-flex flex-column align-items-center h-100">
       <div *ngIf="!isDashboard">
-        <!-- class="disabled" -->
-        <!-- routerLink="/cdm-anomaly-detect" -->
-        <a data-toggle="tooltip" data-placement="bottom" routerLinkActive="active" matTooltip="Dashboard"
-          matTooltipPosition="right" matTooltipClass="custom-tooltip" routerLink="/cdm-anomaly-detect">
-          <span class="material-icons-sharp"> dashboard </span>
-        </a>
-        <!-- class="disabled" -->
-        <!-- routerLink="/theming-preview" -->
-        <a data-toggle="tooltip" data-placement="bottom" matTooltip="My Workspace" matTooltipPosition="right"
-          matTooltipClass="custom-tooltip" routerLinkActive="active" class="disabled" matBadge="2" matBadgeOverlap="true">
-          <mat-icon svgIcon="workspace"></mat-icon>
-        </a>
-        <!-- class="disabled" -->
-        <!-- routerLink="/user-management" -->
-        <a data-toggle="tooltip" data-placement="bottom" matTooltip="Run Analysis" matTooltipPosition="right"
-          matTooltipClass="custom-tooltip" routerLinkActive="active" class="disabled">
-          <span class="material-icons-sharp"> analytics </span>
-        </a>
-      </div>
-
-      <div class="d-flex flex-column mt-auto bottom-link">
-        <!-- class="disabled" -->
-        <!-- routerLink="/user-management" -->
-        <a data-toggle="tooltip" data-placement="bottom" matTooltip="Help" matTooltipPosition="right"
-          matTooltipClass="custom-tooltip" routerLinkActive="active" class="disabled">
-          <span class="material-icons-sharp"> help_center </span>
-        </a>
-
-        <a data-toggle="tooltip" data-placement="bottom" matTooltip="John Doe" matTooltipPosition="right"
-          matTooltipClass="custom-tooltip" routerLinkActive="active" class="disabled">
-          <span class="material-icons-sharp"> account_box </span>
-        </a>
-
-        <!-- <a
-          href="#"
+        <a
           data-toggle="tooltip"
           data-placement="bottom"
-          matTooltip="Logout"
+          routerLinkActive="active"
+          matTooltip="Manage Employees"
           matTooltipPosition="right"
           matTooltipClass="custom-tooltip"
-         
-          routerLinkActive="active"
-          class="disabled"
+          routerLink="/user-management"
         >
-        routerLink="/login"
-          <span class="material-icons-sharp"> logout </span>
-        </a> -->
+          <span class="material-icons-sharp"> people </span>
+        </a>
       </div>
     </div>
   </mat-nav-list>
