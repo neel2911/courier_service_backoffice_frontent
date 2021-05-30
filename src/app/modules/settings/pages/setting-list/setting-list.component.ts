@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { map } from "rxjs/operators";
 import { AppService } from "src/app/services/app.service";
-import { ClinicalDataSolutionsService } from "../../service/clinical-data-solutions.service";
+import { SettingsService } from "../../service/settings.service";
 
 @Component({
-  selector: "app-solution-list",
-  templateUrl: "./solution-list.component.html",
-  styleUrls: ["./solution-list.component.scss"],
+  selector: "app-setting-list",
+  templateUrl: "./setting-list.component.html",
+  styleUrls: ["./setting-list.component.scss"],
 })
-export class SolutionListComponent implements OnInit {
+export class SettingListComponent implements OnInit {
   public solutionList = [];
   public selectedFilter = "all";
   public filterList = [
@@ -18,7 +18,7 @@ export class SolutionListComponent implements OnInit {
     },
   ];
   constructor(
-    private clinicalDataSolutionsService: ClinicalDataSolutionsService,
+    private _settingsService: SettingsService,
     private _appService: AppService
   ) {}
 
@@ -27,7 +27,7 @@ export class SolutionListComponent implements OnInit {
   }
 
   getSolutionList() {
-    this.clinicalDataSolutionsService
+    this._settingsService
       .getFilters()
       .pipe(map((v) => v.data))
       .subscribe((res) => {

@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: "**",
     redirectTo: "/user-management",
-    pathMatch: "full",
   },
 ];
 

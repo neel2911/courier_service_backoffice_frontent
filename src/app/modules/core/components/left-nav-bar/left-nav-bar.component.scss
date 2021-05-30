@@ -17,7 +17,7 @@
       a {
         margin-bottom: 50px;
         @extend .d-inline-flex;
-        color: #ffffff;
+        color: #f0f1f6;
         position: relative;
         @include breakpoint(below-1400) {
           margin-bottom: 40px;

@@ -3,7 +3,7 @@ import { environment } from "src/environments/environment";
 import { HttpWrapperService } from "../../core/http/http-wrapper.service";
 
 @Injectable()
-export class ClinicalDataSolutionsService {
+export class SettingsService {
   constructor(private httpWrapper: HttpWrapperService) {}
 
   public getFilters() {

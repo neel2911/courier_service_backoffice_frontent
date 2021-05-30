@@ -134,10 +134,10 @@ export class AppComponent implements OnInit {
       }
 
       if (event instanceof NavigationEnd) {
-        this.isDashboard = false;
-        if (event.url === "/solution-list" || event.url === "/") {
-          this.isDashboard = true;
-        }
+        // this.isDashboard = false;
+        // if (event.url === "/solution-list" || event.url === "/") {
+        //   this.isDashboard = true;
+        // }
         this._appService.updateBreadCrumb(event.url);
         document.scrollingElement.scrollTo(0, 0);
         this.isDrawerOpen = false;
@@ -174,4 +174,6 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  public onLogoutHandler() {}
 }

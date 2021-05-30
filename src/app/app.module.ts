@@ -6,20 +6,21 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./modules/core/core.module";
 import { MaterialModule } from "./modules/material/material.module";
-import { UserManagementModule } from "./modules/user-management/user-management.module";
-
+import { SettingsModule } from "./modules/settings/settings.module";
+// import { UserManagementModule } from "./modules/user-management/user-management.module";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     CoreModule,
-    UserManagementModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    // UserManagementModule,
+    SettingsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

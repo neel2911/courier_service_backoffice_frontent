@@ -18,10 +18,10 @@ import { UserDialogBoxComponent } from "./components/user-dialog-box/user-dialog
   ],
   imports: [
     CommonModule,
-    UserManagementRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    UserManagementRoutingModule,
   ],
   exports: [],
   providers: [UserManagementService],
