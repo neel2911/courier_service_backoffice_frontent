@@ -5,6 +5,7 @@
   .table-wrapper {
     max-height: 60vh;
     overflow-y: auto;
+    border: 1px solid #ccc;
     .mat-table {
       width: 100%;
       display: table;
@@ -13,7 +14,7 @@
         min-width: 80px;
         // display: table-row;
         background-color: #f0f1f6;
-        border: 1px solid #d9dbe9;
+        // border: 1px solid #d9dbe9;
         margin-bottom: 5px;
         @include breakpoint(below-1600) {
           height: 48px;
@@ -32,6 +33,7 @@
           vertical-align: middle;
           position: sticky;
           top: 0;
+          // border-spacing: 0;
           z-index: 1;
           // white-space: nowrap;
           @include breakpoint(below-1600) {
@@ -93,7 +95,7 @@
             &:before {
               top: -2px;
               border-top-width: 0;
-              border-bottom-color: #7b7b7b;
+              border-bottom: 0;
             }
             &:after {
               bottom: -3px;
@@ -137,6 +139,8 @@
         margin-bottom: 5px;
         background-color: #ffffff;
         border: 1px solid #d9dbe9;
+        border-left: 0;
+        border-right: 0;
         cursor: pointer;
         @include breakpoint(below-1600) {
           height: auto;
@@ -298,6 +302,7 @@
     .sectionData {
       height: 100%;
     }
+    
   }
 }
 

@@ -1,11 +1,19 @@
-.mat-datepicker-toggle{
-    color: #333;
+@mixin user-dialog-box_custom_theme($theme) {
+    .mat-datepicker-toggle{
+        color: #333;
+    }
+    .date-placeholder{
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        cursor:pointer;
+    }    
+    .btn{
+        background-color: mat-color($primary, 500);
+        color: white;
+    }
 }
-.date-placeholder{
-    position:absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    cursor:pointer;
-}
+
+

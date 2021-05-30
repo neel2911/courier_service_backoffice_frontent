@@ -8,7 +8,7 @@
       height: 34px;
       border: 0;
       border-radius: 2px !important;
-      background-color: mat-color($primary, 600);
+      background-color: mat-color($primary, 300);
       padding: 6px 15px;
       font-size: 16px;
       font-weight: normal !important;
@@ -16,7 +16,7 @@
       color: #fff;
       transition: all 0.3s;
       &.selected {
-        background-color: mat-color($primary, 50);
+        background-color: mat-color($primary, 600);
       }
     }
   }
@@ -137,7 +137,7 @@
       }
       .card-hover {
         position: absolute;
-        background: linear-gradient(114.71deg, #6d76c4 23.1%, #555faf 94.61%);
+        background: linear-gradient(114.71deg, #ef5350 23.1%, #d50000 94.61%);
         box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
         border-radius: 2px;
         top: 0;

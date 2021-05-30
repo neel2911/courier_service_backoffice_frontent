@@ -10,6 +10,8 @@
 @import "./components/pagination.scss";
 @import "./components/drawer.scss";
 @import "../theme/utils/varibales";
+@import "../../app/modules/user-management/components/user-dialog-box/user-dialog-box.component.scss";
+@import "../../app/modules/core/components/primary-loader/primary-loader.component.scss";
 
 @mixin custom-component-theming($theme) {
   @include application-varibales($theme);
@@ -25,6 +27,8 @@
   /** add Page level component mixin here **/
   @include dashboard-custom-theme($theme);
   /** add any other theming mixins from custom components here. */
+  @include user-dialog-box_custom_theme($theme);
+  @include primary-loader_custom_theme($theme);
 }
 
 body {
