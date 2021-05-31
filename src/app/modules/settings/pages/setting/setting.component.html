@@ -1,8 +1,17 @@
 <section class="container-fluid pt-4">
   <div class="d-flex justify-content-between align-items-center">
-    <h3 class="mat-h2 m-0">
-      {{ currentSetting && settingTitle[currentSetting] }}
-    </h3>
+    <div>
+      <a mat-button class="link p-0 mr-2" routerLink="/settings">
+        <span class="material-icons-sharp"> arrow_back </span>
+        Settings
+      </a>
+      <mat-divider [vertical]="true" class="d-inline"></mat-divider>
+      <h3 class="mat-h2 ml-2 d-inline">
+        <span>
+          {{ currentSetting && settingTitle[currentSetting] }}
+        </span>
+      </h3>
+    </div>
     <div class="d-flex align-items-center">
       <form class="filter-section d-flex align-items-center">
         <mat-form-field class="custom-input">
@@ -36,8 +45,8 @@
         color="primary"
         (click)="onUserGenerate()"
       >
-        <span class="material-icons-sharp"> person_add </span>
-        New Request
+        <span class="material-icons-sharp"> add </span>
+        New
       </button>
     </div>
   </div>

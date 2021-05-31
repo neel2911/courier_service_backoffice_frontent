@@ -162,6 +162,13 @@ export class TableWithSubTableComponent implements OnInit {
     this.evtEmitter.emit(data);
   }
 
+  onUpdateClick(row) {
+    this.commonEmitter({
+      selected: row,
+      type: "update",
+    });
+  }
+
   onCollapsibleHeaderClick() {
     this.expandedAll = !this.expandedAll;
     this.matRow.forEach((row) => {

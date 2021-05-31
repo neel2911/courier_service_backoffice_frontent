@@ -2,7 +2,11 @@
   <mat-table [dataSource]="dataSource" matSort>
     <ng-container
       matColumnDef="{{ column.field }}"
-      [stickyEnd]="column.field == 'collapsible' ? true : false"
+      [stickyEnd]="
+        column.field == 'collapsible' || column.field == 'actions'
+          ? true
+          : false
+      "
       *ngFor="let column of tableConfig.columns; let i = index"
     >
       <ng-container
@@ -25,10 +29,17 @@
         >
           <mat-header-cell
             *matHeaderCellDef
-            [ngClass]="{ arrowCol: column.field == 'collapsible' }"
-            (click)="onCollapsibleHeaderClick()"
+            [ngClass]="{
+              arrowCol: column.field == 'collapsible'
+            }"
+            (click)="
+              column.field == 'collapsible' && onCollapsibleHeaderClick()
+            "
           >
-            <div class="d-inline-flex align-items-center">
+            <div
+              class="d-inline-flex align-items-center"
+              *ngIf="column.field == 'collapsible'"
+            >
               {{ tableConfig.titles[column.field] }}
 
               <span
@@ -56,11 +67,27 @@
             </mat-header-cell>
           </ng-container>
           <ng-template #nonSortableBlock>
-            <mat-header-cell *matHeaderCellDef>
-              <div class="d-inline-flex align-items-center">
-                {{ tableConfig.titles[column.field] }}
-              </div>
-            </mat-header-cell>
+            <ng-container
+              *ngIf="column.field == 'actions'; else nonActionBlock"
+            >
+              <mat-header-cell
+                *matHeaderCellDef
+                [ngClass]="{
+                  actionCol: column.field == 'actions'
+                }"
+              >
+                <div class="d-inline-flex align-items-center">
+                  {{ tableConfig.titles[column.field] }}
+                </div>
+              </mat-header-cell>
+            </ng-container>
+            <ng-template #nonActionBlock>
+              <mat-header-cell *matHeaderCellDef>
+                <div class="d-inline-flex align-items-center">
+                  {{ tableConfig.titles[column.field] }}
+                </div>
+              </mat-header-cell>
+            </ng-template>
           </ng-template>
         </ng-template>
       </ng-template>
@@ -69,7 +96,8 @@
         *matCellDef="let row"
         [ngClass]="{
           checkColumn: column.field == 'select',
-          arrowCol: column.field == 'collapsible'
+          arrowCol: column.field == 'collapsible',
+          actionCol: column.field == 'actions'
         }"
       >
         <ng-container *ngIf="column.field == 'select'; else nonCheckBoxBlock">
@@ -120,9 +148,24 @@
                 </div>
               </ng-container>
               <ng-template #nonDateBlock>
-                <div class="d-inline-flex">
-                  {{ row[column.field] || "-" }}
-                </div>
+                <ng-container
+                  *ngIf="column.field == 'actions'; else nonActionBlock"
+                >
+                  <div class="actions justify-content-between text-center">
+                    <!-- (click)="onUserEditClick(row)"" -->
+                    <button
+                      mat-icon-button
+                      (click)="onUpdateClick(row); $event.stopPropagation()"
+                    >
+                      <span class="material-icons-sharp"> update </span>
+                    </button>
+                  </div>
+                </ng-container>
+                <ng-template #nonActionBlock>
+                  <div class="d-inline-flex">
+                    {{ row[column.field] || "-" }}
+                  </div>
+                </ng-template>
               </ng-template>
             </ng-template>
           </ng-template>

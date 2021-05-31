@@ -2,7 +2,7 @@
   <mat-table [dataSource]="dataSource" matSort>
     <ng-container
       matColumnDef="{{ column.field }}"
-      [stickyEnd]="false"
+      [stickyEnd]="column.field == 'actions'"
       *ngFor="let column of tableConfig.columns; let i = index"
     >
       <ng-container
@@ -33,18 +33,33 @@
           </mat-header-cell>
         </ng-container>
         <ng-template #nonSortableBlock>
-          <mat-header-cell *matHeaderCellDef>
-            <div class="d-inline-flex align-items-center">
-              {{ tableConfig.titles[column.field] }}
-            </div>
-          </mat-header-cell>
+          <ng-container *ngIf="column.field == 'actions'; else nonActionBlock">
+            <mat-header-cell
+              *matHeaderCellDef
+              [ngClass]="{
+                actionCol: column.field == 'actions'
+              }"
+            >
+              <div class="d-inline-flex align-items-center">
+                {{ tableConfig.titles[column.field] }}
+              </div>
+            </mat-header-cell>
+          </ng-container>
+          <ng-template #nonActionBlock>
+            <mat-header-cell *matHeaderCellDef>
+              <div class="d-inline-flex align-items-center">
+                {{ tableConfig.titles[column.field] }}
+              </div>
+            </mat-header-cell>
+          </ng-template>
         </ng-template>
       </ng-template>
 
       <mat-cell
         *matCellDef="let row"
         [ngClass]="{
-          checkColumn: column.field == 'select'
+          checkColumn: column.field == 'select',
+          actionCol: column.field == 'actions'
         }"
       >
         <ng-container *ngIf="column.field == 'select'; else nonCheckBoxBlock">
@@ -89,9 +104,21 @@
               </div>
             </ng-container>
             <ng-template #nonDateBlock>
-              <div class="d-inline-flex">
-                {{ row[column.field] || "-" }}
-              </div>
+              <ng-container
+                *ngIf="column.field == 'actions'; else nonActionBlock"
+              >
+                <div class="actions justify-content-between text-center">
+                  <!-- (click)="onUserEditClick(row)"" -->
+                  <button mat-icon-button>
+                    <span class="material-icons-sharp"> update </span>
+                  </button>
+                </div>
+              </ng-container>
+              <ng-template #nonActionBlock>
+                <div class="d-inline-flex">
+                  {{ row[column.field] || "-" }}
+                </div>
+              </ng-template>
             </ng-template>
           </ng-template>
         </ng-template>

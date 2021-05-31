@@ -2,15 +2,12 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
-import { MatTableDataSource } from "@angular/material/table";
 import { NavigationEnd, Router } from "@angular/router";
 import { map } from "rxjs/operators";
 import { MatNotificationService } from "src/app/modules/material/services/mat-notification.service";
 import { EmployeeStatus } from "src/app/modules/shared/enum/enum";
-import { HistoryDialogBoxComponent } from "src/app/modules/user-management/components/history-dialog-box/history-dialog-box.component";
 import { UserDialogBoxComponent } from "src/app/modules/user-management/components/user-dialog-box/user-dialog-box.component";
 import { ViewUserDialogBoxComponent } from "src/app/modules/user-management/components/view-user-dialog-box/view-user-dialog-box.component";
-import { Employee } from "src/app/modules/user-management/model/employee";
 import { UserManagementService } from "src/app/modules/user-management/services/user-management.service";
 import { SettingsService } from "../../service/settings.service";
 
@@ -26,7 +23,7 @@ export class SettingComponent implements OnInit {
 
   public currentSetting = null;
   public settingTitle = {
-    role: "Manage Roles",
+    roles: "Manage Roles",
   };
   public filterText = "";
   public tableData = null;
@@ -67,6 +64,7 @@ export class SettingComponent implements OnInit {
             field: c,
           });
         });
+        columns.push({ field: "actions" });
         columns.push({ field: "collapsible" });
         const subTablecolumns = [];
         Object.keys(res.subTableConfigs.titles).forEach((c) => {
@@ -77,9 +75,10 @@ export class SettingComponent implements OnInit {
         this.tableData = {
           ...{
             mainTableConfigs: {
-              titles: res.mainTableConfigs.titles,
+              titles: { ...res.mainTableConfigs.titles, actions: "Actions" },
               displayColumns: [
                 ...Object.keys(res.mainTableConfigs.titles),
+                "actions",
                 "collapsible",
               ],
               columns,
