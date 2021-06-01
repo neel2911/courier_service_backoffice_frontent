@@ -140,6 +140,13 @@ export class DefaultTableComponent implements OnInit {
     this.evtEmitter.emit(data);
   }
 
+  onUpdateClick(row) {
+    this.commonEmitter({
+      data: row,
+      type: "update",
+    });
+  }
+
   public applyFilter(filterValue: string) {
     this.filterText = filterValue.trim();
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -156,7 +156,8 @@ a {
     }
   }
 
-  &.roles-dialog-container {
+  &.roles-dialog-container,
+  &.networks-dialog-container {
     .mat-dialog-container {
       max-width: 80vw;
     }

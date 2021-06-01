@@ -1,0 +1,53 @@
+{
+  "data": {
+    "mainTableConfigs": {
+      "titles": {
+        "networkName": "Network Name",
+        "emailId": "Email Id",
+        "contactNumber": "Contact Number",
+        "address": "Address",
+        "status": "Status",
+        "createdAt": "Created At",
+        "createdBy": "Created By",
+        "updatedAt": "Updated At",
+        "updatedBy": "Updated By"
+      },
+      "sortableColumns": ["networkName", "status"],
+      "filterableColumns": [
+        "networkName",
+        "emailId",
+        "contactNumber",
+        "status"
+      ],
+      "booleanColumns": [],
+      "dateColumns": ["createdAt", "updatedAt"]
+    },
+    "subTableConfigs": null,
+    "records": [
+      {
+        "networkSeqId": 1,
+        "networkName": "DHL",
+        "emailId": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "address": "13195 Hauck Forks",
+        "status": "active",
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      },
+      {
+        "networkSeqId": 2,
+        "networkName": "FedX",
+        "emailId": "Jaleel.Kessler@fedx.com",
+        "contactNumber": 1217610517,
+        "address": "10881 Sven Route",
+        "status": "inactive",
+        "createdAt": 1620590882278,
+        "createdBy": "Devin Wolff",
+        "updatedAt": 1604899753473,
+        "updatedBy": "Annabelle Thiel"
+      }
+    ]
+  }
+}

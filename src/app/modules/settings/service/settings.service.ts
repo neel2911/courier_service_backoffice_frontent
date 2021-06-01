@@ -29,4 +29,22 @@ export class SettingsService {
       `${environment.local_url}/settings/roleList.json`
     );
   }
+
+  public getNetworkList() {
+    return this._httpWrapperService.get(
+      `${environment.local_url}/settings/networkList.json`
+    );
+  }
+
+  public addNetwork() {
+    return this._httpWrapperService.get(
+      `${environment.local_url}/settings/networkList.json`
+    );
+  }
+
+  public updateNetwork() {
+    return this._httpWrapperService.get(
+      `${environment.local_url}/settings/networkList.json`
+    );
+  }
 }

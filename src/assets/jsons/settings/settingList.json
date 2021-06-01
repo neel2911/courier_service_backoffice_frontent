@@ -14,6 +14,21 @@
           "isEnabled": true
         }
       ]
+    },
+    {
+      "title": "Service",
+      "categoryType": "service",
+      "list": [
+        {
+          "title": "Networks",
+          "subTitle": "",
+          "icon": "settings",
+          "className": "anomaly-img",
+          "content": "Manage Networks",
+          "routeUrl": "/settings/networks",
+          "isEnabled": true
+        }
+      ]
     }
   ]
 }

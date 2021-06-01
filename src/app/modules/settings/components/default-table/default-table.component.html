@@ -115,7 +115,10 @@
               >
                 <div class="actions justify-content-between text-center">
                   <!-- (click)="onUserEditClick(row)"" -->
-                  <button mat-icon-button>
+                  <button
+                    mat-icon-button
+                    (click)="onUpdateClick(row);"
+                  >
                     <span class="material-icons-sharp"> update </span>
                   </button>
                 </div>

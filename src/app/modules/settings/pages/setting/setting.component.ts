@@ -8,6 +8,7 @@ import { MatNotificationService } from "src/app/modules/material/services/mat-no
 import { EmployeeStatus } from "src/app/modules/shared/enum/enum";
 import { UserDialogBoxComponent } from "src/app/modules/user-management/components/user-dialog-box/user-dialog-box.component";
 import { ViewUserDialogBoxComponent } from "src/app/modules/user-management/components/view-user-dialog-box/view-user-dialog-box.component";
+import { NetworksDialogBoxComponent } from "../../components/networks-dialog-box/networks-dialog-box.component";
 import { RolesDialogBoxComponent } from "../../components/roles-dialog-box/roles-dialog-box.component";
 import { SettingsService } from "../../service/settings.service";
 
@@ -24,6 +25,7 @@ export class SettingComponent implements OnInit {
   public currentSetting = null;
   public settingTitle = {
     roles: "Manage Roles",
+    networks: "Manage Networks",
   };
   public filterText = "";
   public tableData = null;
@@ -48,6 +50,41 @@ export class SettingComponent implements OnInit {
   }
 
   ngOnInit() {
+    switch (this.currentSetting) {
+      case "roles":
+        this.setRoleTable();
+        break;
+      case "networks":
+        this.setNeworkTable();
+        break;
+    }
+  }
+
+  public applyFilter(filterValue: string) {
+    this.filterText = filterValue.trim();
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  public onTableEmitter(e) {
+    switch (this.currentSetting) {
+      case "roles":
+        this.onUpdateRoleClick(e.data);
+        break;
+      case "networks":
+        this.onUpdateNeworkClick(e.data);
+        break;
+    }
+    console.log(e);
+  }
+
+  public highlightSelectedRecord(row) {
+    this.selectedRowIndex = row.accessCode;
+    setTimeout(() => {
+      this.selectedRowIndex = -1;
+    }, 1000);
+  }
+
+  public setRoleTable() {
     this._settingsService
       .getRoleList()
       .pipe(
@@ -107,22 +144,8 @@ export class SettingComponent implements OnInit {
       });
   }
 
-  public applyFilter(filterValue: string) {
-    this.filterText = filterValue.trim();
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
   public onAddRoleClick() {
     this.openRoleDialog();
-  }
-
-  onTableEmitter(e) {
-    switch (this.currentSetting) {
-      case "roles":
-        this.onUpdateRoleClick(e.data);
-        break;
-    }
-    console.log(e);
   }
 
   public onUpdateRoleClick(row) {
@@ -155,10 +178,79 @@ export class SettingComponent implements OnInit {
     });
   }
 
-  public highlightSelectedRecord(row) {
-    this.selectedRowIndex = row.accessCode;
-    setTimeout(() => {
-      this.selectedRowIndex = -1;
-    }, 1000);
+  public setNeworkTable() {
+    this._settingsService
+      .getNetworkList()
+      .pipe(
+        map((val: any) => {
+          return val.hasOwnProperty("data") ? val : { data: val };
+        }),
+        map((v) => v.data)
+      )
+      .subscribe((res) => {
+        const columns = [];
+        Object.keys(res.mainTableConfigs.titles).forEach((c) => {
+          columns.push({
+            field: c,
+          });
+        });
+        columns.push({ field: "actions" });
+        this.tableData = {
+          ...{
+            mainTableConfigs: {
+              titles: { ...res.mainTableConfigs.titles, actions: "Actions" },
+              displayColumns: [
+                ...Object.keys(res.mainTableConfigs.titles),
+                "actions",
+              ],
+              columns,
+              sortableColumns: res.mainTableConfigs.sortableColumns,
+              filterableColumns: res.mainTableConfigs.filterableColumns,
+              booleanColumns: res.mainTableConfigs.booleanColumns,
+              dateColumns: res.mainTableConfigs.dateColumns,
+              hasPaginator: true,
+              pageSizeOption: [5, 10, 15, 20],
+              pageSize: 10,
+              subTableDataAccessKey: "permission",
+            },
+            defaultRecords: [...res.records],
+          },
+        };
+        console.log(res);
+      });
+  }
+
+  public onAddNeworkClick() {
+    this.openNeworkDialog();
+  }
+
+  public onUpdateNeworkClick(row) {
+    this.openNeworkDialog(true, row);
+  }
+
+  private openNeworkDialog(
+    isUpdate: boolean = false,
+    data: any = null,
+    errorMsg: string = ""
+  ) {
+    const dialogRef = this._dialog.open(NetworksDialogBoxComponent, {
+      data: {
+        isUpdate,
+        data,
+      },
+      panelClass: `${this.currentSetting.toLowerCase()}-dialog-container`,
+      height: "80vh",
+      width: "80vw",
+      minWidth: "80vw",
+      disableClose: true,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      // console.log(`Dialog result:`, result);
+      if (result) {
+        this._notification.success(result.message);
+        this.highlightSelectedRecord(isUpdate ? data : result.data);
+      }
+      // this.getUsersList();
+    });
   }
 }

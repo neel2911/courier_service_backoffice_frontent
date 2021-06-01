@@ -6,6 +6,7 @@ import { SettingComponent } from "./pages/setting/setting.component";
 const routes: Routes = [
   { path: "", component: SettingListComponent },
   { path: "roles", component: SettingComponent },
+  { path: "networks", component: SettingComponent },
   { path: "**", redirectTo: "/settings", pathMatch: "full" },
 ];
 

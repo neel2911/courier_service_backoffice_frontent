@@ -11,7 +11,7 @@
         "updatedBy": "Updated By"
       },
       "sortableColumns": ["roleName", "status"],
-      "filterableColumns": ["roleName", "description", "status"],
+      "filterableColumns": ["roleName", "status"],
       "booleanColumns": [],
       "dateColumns": ["createdAt", "updatedAt"]
     },

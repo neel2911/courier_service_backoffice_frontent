@@ -39,26 +39,54 @@
           ></mat-icon>
         </mat-form-field>
       </form>
-      <button
-        mat-flat-button
-        class="custom-button ml-3"
-        color="primary"
-        (click)="onAddRoleClick()"
-      >
-        <span class="material-icons-sharp"> add </span>
-        New
-      </button>
+      <ng-container [ngSwitch]="currentSetting">
+        <ng-container *ngSwitchCase="'roles'">
+          <button
+            mat-flat-button
+            class="custom-button ml-3"
+            color="primary"
+            (click)="onAddRoleClick()"
+          >
+            <span class="material-icons-sharp"> add </span>
+            New
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="'networks'">
+          <button
+            mat-flat-button
+            class="custom-button ml-3"
+            color="primary"
+            (click)="onAddNeworkClick()"
+          >
+            <span class="material-icons-sharp"> add </span>
+            New
+          </button>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 
   <div class="table-wrapper">
-    <app-table-with-sub-table
-      *ngIf="tableData"
-      [tableConfig]="tableData.mainTableConfigs"
-      [subTableConfig]="tableData.subTableConfigs"
-      [tableRecords]="tableData.defaultRecords"
-      [filterText]="filterText"
-      (evtEmitter)="onTableEmitter($event)"
-    ></app-table-with-sub-table>
+    <ng-container [ngSwitch]="currentSetting">
+      <ng-container *ngSwitchCase="'roles'">
+        <app-table-with-sub-table
+          *ngIf="tableData"
+          [tableConfig]="tableData.mainTableConfigs"
+          [subTableConfig]="tableData.subTableConfigs"
+          [tableRecords]="tableData.defaultRecords"
+          [filterText]="filterText"
+          (evtEmitter)="onTableEmitter($event)"
+        ></app-table-with-sub-table>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <app-default-table
+          *ngIf="tableData"
+          [tableConfig]="tableData.mainTableConfigs"
+          [tableRecords]="tableData.defaultRecords"
+          [filterText]="filterText"
+          (evtEmitter)="onTableEmitter($event)"
+        ></app-default-table>
+      </ng-container>
+    </ng-container>
   </div>
 </section>

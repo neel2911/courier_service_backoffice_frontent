@@ -12,6 +12,7 @@ import { UserManagementService } from "../user-management/services/user-manageme
 import { TableWithSubTableComponent } from "./components/table-with-sub-table/table-with-sub-table.component";
 import { DefaultTableComponent } from "./components/default-table/default-table.component";
 import { RolesDialogBoxComponent } from "./components/roles-dialog-box/roles-dialog-box.component";
+import { NetworksDialogBoxComponent } from "./components/networks-dialog-box/networks-dialog-box.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RolesDialogBoxComponent } from "./components/roles-dialog-box/roles-dia
     TableWithSubTableComponent,
     DefaultTableComponent,
     RolesDialogBoxComponent,
+    NetworksDialogBoxComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,6 @@ import { RolesDialogBoxComponent } from "./components/roles-dialog-box/roles-dia
     SettingsRoutingModule,
   ],
   providers: [SettingsService, UserManagementService],
-  entryComponents: [RolesDialogBoxComponent],
+  entryComponents: [RolesDialogBoxComponent, NetworksDialogBoxComponent],
 })
 export class SettingsModule {}
