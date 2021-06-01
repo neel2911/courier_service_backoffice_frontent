@@ -63,7 +63,7 @@ export class DefaultTableComponent implements OnInit {
       this.dataSource.paginator = this.pageinator;
     }
     this.dataSource.filterPredicate = (data, filter: string): boolean => {
-      return this.tableConfig.filerableColumns.some((v) =>
+      return this.tableConfig.filterableColumns.some((v) =>
         data[v].toString().toLowerCase().includes(filter.toString())
       );
     };

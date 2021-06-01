@@ -11,7 +11,7 @@
         "updatedBy": "Updated By"
       },
       "sortableColumns": ["roleName", "status"],
-      "filerableColumns": ["roleName", "description", "status"],
+      "filterableColumns": ["roleName", "description", "status"],
       "booleanColumns": [],
       "dateColumns": ["createdAt", "updatedAt"]
     },
@@ -24,19 +24,19 @@
         "delete": "Delete"
       },
       "sortableColumns": ["moduleName"],
-      "filerableColumns": ["moduleName"],
+      "filterableColumns": ["moduleName"],
       "booleanColumns": ["read", "create", "update", "delete"],
       "dateColumns": []
     },
     "records": [
       {
-        "id": 1,
+        "roleSeqId": 1,
         "roleName": "Operator",
         "roleKey": "operator",
         "description": "demo description",
         "permission": [
           {
-            "id": "1",
+            "permissionSeqId": "1",
             "moduleKey": "operator_manifest",
             "moduleName": "Operator Manifest",
             "read": true,
@@ -52,13 +52,13 @@
         "updatedBy": "Carolyn Moen"
       },
       {
-        "id": 2,
+        "roleSeqId": 2,
         "roleName": "Marketor",
         "roleKey": "marketor",
         "description": "marketor demo",
         "permission": [
           {
-            "id": "1",
+            "permissionSeqId": "1",
             "moduleKey": "marketor_client_mangement",
             "moduleName": "marketor Client Mangement",
             "read": true,
