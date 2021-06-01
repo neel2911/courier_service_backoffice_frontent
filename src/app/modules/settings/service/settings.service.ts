@@ -12,7 +12,19 @@ export class SettingsService {
     );
   }
 
-  public getSettingData() {
+  public getRoleList() {
+    return this._httpWrapperService.get(
+      `${environment.local_url}/settings/roleList.json`
+    );
+  }
+
+  public addRole() {
+    return this._httpWrapperService.get(
+      `${environment.local_url}/settings/roleList.json`
+    );
+  }
+
+  public updateRole() {
     return this._httpWrapperService.get(
       `${environment.local_url}/settings/roleList.json`
     );

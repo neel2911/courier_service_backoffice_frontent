@@ -155,6 +155,12 @@ a {
       min-height: 80px;
     }
   }
+
+  &.roles-dialog-container {
+    .mat-dialog-container {
+      max-width: 80vw;
+    }
+  }
   &.accept-dialog-container {
     .mat-dialog-container {
       h2 {
@@ -342,6 +348,15 @@ a {
     margin-bottom: 0;
     .mat-checkbox-frame {
       border-color: #6069b4 !important;
+    }
+  }
+  &.mat-checkbox-disabled {
+    opacity: 0.6;
+    .mat-checkbox-layout {
+      margin-bottom: 0;
+      .mat-checkbox-frame {
+        border-color: #6069b4 !important;
+      }
     }
   }
 }

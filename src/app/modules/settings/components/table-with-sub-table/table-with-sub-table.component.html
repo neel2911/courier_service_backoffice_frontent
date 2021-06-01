@@ -128,8 +128,12 @@
               "
             >
               <div class="d-inline-flex">
-                <mat-checkbox [checked]="row[column.field]" [disabled]="true">
-                </mat-checkbox>
+                <span class="material-icons-sharp" *ngIf="row[column.field]">
+                  check_circle
+                </span>
+                <span class="material-icons-sharp" *ngIf="!row[column.field]">
+                  cancel
+                </span>
               </div>
             </ng-container>
             <ng-template #nonBooleanBlock>

@@ -8,7 +8,7 @@ import { MatNotificationService } from "src/app/modules/material/services/mat-no
 import { EmployeeStatus } from "src/app/modules/shared/enum/enum";
 import { UserDialogBoxComponent } from "src/app/modules/user-management/components/user-dialog-box/user-dialog-box.component";
 import { ViewUserDialogBoxComponent } from "src/app/modules/user-management/components/view-user-dialog-box/view-user-dialog-box.component";
-import { UserManagementService } from "src/app/modules/user-management/services/user-management.service";
+import { RolesDialogBoxComponent } from "../../components/roles-dialog-box/roles-dialog-box.component";
 import { SettingsService } from "../../service/settings.service";
 
 @Component({
@@ -33,7 +33,6 @@ export class SettingComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) pageinator: MatPaginator;
 
   constructor(
-    private _userManagementService: UserManagementService,
     private _settingsService: SettingsService,
     private _dialog: MatDialog,
     private _notification: MatNotificationService,
@@ -50,7 +49,7 @@ export class SettingComponent implements OnInit {
 
   ngOnInit() {
     this._settingsService
-      .getSettingData()
+      .getRoleList()
       .pipe(
         map((val: any) => {
           return val.hasOwnProperty("data") ? val : { data: val };
@@ -105,93 +104,59 @@ export class SettingComponent implements OnInit {
           },
         };
         console.log(res);
-        // this.setTableData(res);
-        // this.applyFilter(this.filterText);
       });
   }
-
-  // private setTableData(currentSettingData: any) {
-  //   this.displayedColumns = [];
-  //   this.columns == [];
-  //   this.dataSource = new MatTableDataSource<any>(currentSettingData);
-  //   this.dataSource.sort = this.sort;
-  //   this.dataSource.paginator = this.pageinator;
-
-  //   this.dataSource.sortData = (item, sort) => {
-  //     return item.sort((a, b) => {
-  //       const x =
-  //         a[sort.active] > b[sort.active]
-  //           ? 1
-  //           : a[sort.active] < b[sort.active]
-  //           ? -1
-  //           : 0;
-  //       return (
-  //         x *
-  //         (sort.direction === "asc" ? 1 : sort.direction === "desc" ? -1 : 0)
-  //       );
-  //     });
-  //   };
-
-  //   this.dataSource.filterPredicate = (data, filter: string): boolean => {
-  //     filter = filter.toLowerCase();
-  //     return (
-  //       data.employeeId.toLowerCase().includes(filter) ||
-  //       data.name.toLowerCase().includes(filter) ||
-  //       data.userName.toLowerCase().includes(filter) ||
-  //       data.passCode.toLowerCase().includes(filter) ||
-  //       data.role.toLowerCase().includes(filter) ||
-  //       data.status.toLowerCase().includes(filter)
-  //     );
-  //   };
-  // }
 
   public applyFilter(filterValue: string) {
     this.filterText = filterValue.trim();
     // this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  public onUserGenerate() {
-    this.openDialog();
+  public onAddRoleClick() {
+    this.openRoleDialog();
   }
 
-  public onUserEditClick(user) {
-    this.openDialog(true, user);
+  onTableEmitter(e) {
+    switch (this.currentSetting) {
+      case "roles":
+        this.onUpdateRoleClick(e.data);
+        break;
+    }
+    console.log(e);
   }
 
-  private openDialog(
+  public onUpdateRoleClick(row) {
+    this.openRoleDialog(true, row);
+  }
+
+  private openRoleDialog(
     isUpdate: boolean = false,
-    user: any = null,
+    data: any = null,
     errorMsg: string = ""
   ) {
-    const dialogRef = this._dialog.open(UserDialogBoxComponent, {
+    const dialogRef = this._dialog.open(RolesDialogBoxComponent, {
       data: {
         isUpdate,
-        user,
+        data,
       },
-      panelClass: "user-dialog-container",
+      panelClass: `${this.currentSetting.toLowerCase()}-dialog-container`,
+      height: "80vh",
+      width: "80vw",
+      minWidth: "80vw",
       disableClose: true,
     });
     dialogRef.afterClosed().subscribe((result) => {
       // console.log(`Dialog result:`, result);
       if (result) {
         this._notification.success(result.message);
-        this.highlightSelectedRecord(isUpdate ? user : result.data);
+        this.highlightSelectedRecord(isUpdate ? data : result.data);
       }
       // this.getUsersList();
     });
   }
 
-  public onUserViewClick(user) {
-    const dialogRef = this._dialog.open(ViewUserDialogBoxComponent, {
-      data: user,
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      this.highlightSelectedRecord(user);
-    });
-  }
-
-  public highlightSelectedRecord(user) {
-    this.selectedRowIndex = user.accessCode;
+  public highlightSelectedRecord(row) {
+    this.selectedRowIndex = row.accessCode;
     setTimeout(() => {
       this.selectedRowIndex = -1;
     }, 1000);

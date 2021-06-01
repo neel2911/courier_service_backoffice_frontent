@@ -164,7 +164,7 @@ export class TableWithSubTableComponent implements OnInit {
 
   onUpdateClick(row) {
     this.commonEmitter({
-      selected: row,
+      data: row,
       type: "update",
     });
   }

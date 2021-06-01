@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { UserManagementService } from "../user-management/services/user-management.service";
 import { TableWithSubTableComponent } from "./components/table-with-sub-table/table-with-sub-table.component";
 import { DefaultTableComponent } from "./components/default-table/default-table.component";
+import { RolesDialogBoxComponent } from "./components/roles-dialog-box/roles-dialog-box.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DefaultTableComponent } from "./components/default-table/default-table.
     SettingComponent,
     TableWithSubTableComponent,
     DefaultTableComponent,
+    RolesDialogBoxComponent,
   ],
   imports: [
     CommonModule,
@@ -29,5 +31,6 @@ import { DefaultTableComponent } from "./components/default-table/default-table.
     SettingsRoutingModule,
   ],
   providers: [SettingsService, UserManagementService],
+  entryComponents: [RolesDialogBoxComponent],
 })
 export class SettingsModule {}

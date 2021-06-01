@@ -1,0 +1,112 @@
+<div class="mat-typography">
+  <div mat-dialog-title class="d-flex justify-content-between">
+    <h2>
+      <span *ngIf="!data.isUpdate">Create Request</span
+      ><span *ngIf="data.isUpdate">Update Details</span>
+    </h2>
+    <span class="material-icons-sharp" mat-dialog-close> close </span>
+  </div>
+  <mat-dialog-content>
+    <mat-tab-group mat-align-tabs="start">
+      <mat-tab label="Role Information">
+        <form class="" [formGroup]="roleForm">
+          <div class="row">
+            <div class="col-12">
+              <mat-form-field class="custom-form-field">
+                <mat-label>Role Name</mat-label>
+                <input
+                  matInput
+                  formControlName="roleName"
+                  autocomplete="off"
+                  required
+                />
+                <mat-error
+                  *ngIf="roleForm.controls.roleName.hasError('required')"
+                >
+                  Enter role name
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field class="custom-form-field">
+                <mat-label>Description</mat-label>
+                <textarea
+                  matInput
+                  formControlName="description"
+                  required
+                ></textarea>
+                <mat-error
+                  *ngIf="roleForm.controls.description.hasError('required')"
+                >
+                  Enter description
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-slide-toggle formControlName="status">
+                Status
+              </mat-slide-toggle>
+            </div>
+          </div>
+        </form>
+      </mat-tab>
+      <mat-tab label="Permissions" *ngIf="data.isUpdate">
+        <div class="table-wrapper">
+          <mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="moduleName">
+              <mat-header-cell *matHeaderCellDef>Module Name</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{ row.moduleName }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="read">
+              <mat-header-cell *matHeaderCellDef>Read</mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <mat-checkbox [(ngModel)]="row.read"></mat-checkbox>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="create">
+              <mat-header-cell *matHeaderCellDef>Create</mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <mat-checkbox [(ngModel)]="row.create"> </mat-checkbox>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="update">
+              <mat-header-cell *matHeaderCellDef>Update</mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <mat-checkbox [(ngModel)]="row.update"></mat-checkbox>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+              <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                N/A
+                <!-- <mat-checkbox
+                  [(ngModel)]="row.delete"
+                  [disabled]="true"
+                ></mat-checkbox> -->
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row
+              *matHeaderRowDef="displayedColumns"
+            ></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+          </mat-table>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="col-12 text-center pt-4 m-0">
+      <button class="btn" type="submit">
+        <span *ngIf="!data.isUpdate" (click)="onRoleSave()">Create Role</span
+        ><span *ngIf="data.isUpdate" (click)="onRoleSave()"
+          >Update Details</span
+        >
+      </button>
+    </div>
+  </mat-dialog-actions>
+</div>
