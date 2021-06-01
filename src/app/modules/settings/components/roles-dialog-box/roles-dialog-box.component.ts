@@ -38,7 +38,9 @@ export class RolesDialogBoxComponent implements OnInit {
       { updateOn: "blur" }
     );
 
-    this.dataSource.data = [...role.permission];
+    if (data.isUpdate) {
+      this.dataSource.data = [...role.permission];
+    }
   }
 
   ngOnInit() {}
