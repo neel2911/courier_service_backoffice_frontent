@@ -140,10 +140,10 @@ export class DefaultTableComponent implements OnInit {
     this.evtEmitter.emit(data);
   }
 
-  onUpdateClick(row) {
+  onActionClick(type, row) {
     this.commonEmitter({
+      type,
       data: row,
-      type: "update",
     });
   }
 

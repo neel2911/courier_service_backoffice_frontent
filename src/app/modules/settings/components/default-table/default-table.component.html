@@ -116,10 +116,13 @@
                 <div class="actions justify-content-between text-center">
                   <!-- (click)="onUserEditClick(row)"" -->
                   <button
+                    *ngFor="let action of tableConfig.actionList"
                     mat-icon-button
-                    (click)="onUpdateClick(row);"
+                    (click)="onActionClick(action.type, row)"
                   >
-                    <span class="material-icons-sharp"> update </span>
+                    <span class="material-icons-sharp">
+                      {{ action.icon }}
+                    </span>
                   </button>
                 </div>
               </ng-container>

@@ -122,6 +122,12 @@ export class SettingComponent implements OnInit {
               filterableColumns: res.mainTableConfigs.filterableColumns,
               booleanColumns: res.mainTableConfigs.booleanColumns,
               dateColumns: res.mainTableConfigs.dateColumns,
+              actionList: [
+                {
+                  type: "update",
+                  icon: "update",
+                },
+              ],
               hasPaginator: true,
               pageSizeOption: [5, 10, 15, 20],
               pageSize: 10,
@@ -208,6 +214,12 @@ export class SettingComponent implements OnInit {
               filterableColumns: res.mainTableConfigs.filterableColumns,
               booleanColumns: res.mainTableConfigs.booleanColumns,
               dateColumns: res.mainTableConfigs.dateColumns,
+              actionList: [
+                {
+                  type: "update",
+                  icon: "update",
+                },
+              ],
               hasPaginator: true,
               pageSizeOption: [5, 10, 15, 20],
               pageSize: 10,
