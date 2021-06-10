@@ -1,0 +1,52 @@
+<section class="container-fluid pt-4">
+  <form class="" [formGroup]="pricingForm">
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field class="custom-form-field">
+          <mat-label>Quation Name</mat-label>
+          <input matInput formControlName="name" autocomplete="off" required />
+          <mat-error *ngIf="pricingForm.controls.name.hasError('required')">
+            Enter quation name
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-slide-toggle formControlName="status"> Status </mat-slide-toggle>
+      </div>
+    </div>
+  </form>
+  <div
+    class="drag-section text-center d-flex"
+    [ngClass]="{ 'drag-select': isExcelLoaded }"
+  >
+    <div *ngIf="isExcelLoaded">
+      <button (click)="removeFile()" class="close">Remove</button>
+      <p class="file-name">{{ selectedFiles[0].name }}</p>
+    </div>
+    <app-file-upload
+      [isAllowMultiple]="false"
+      [isDisabled]="isExcelLoaded == true"
+      [allowFileTypes]="['.xlsx']"
+      (selectFiles)="onFileRead($event)"
+      (onFileInput)="onFileInputStart($event)"
+    >
+      <div
+        class="
+          drag-drop-select
+          d-flex
+          align-items-center
+          justify-content-center
+        "
+      >
+        <span>
+          <i class="icon aa-upload"></i>
+          Drag and drop files
+        </span>
+      </div>
+      <div class="note mt-5">
+        Only files with the following extensions are allowed
+        <strong>{{ ".xlsx" }}</strong>
+      </div>
+    </app-file-upload>
+  </div>
+</section>

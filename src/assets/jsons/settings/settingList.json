@@ -12,6 +12,15 @@
           "content": "Manange the roles",
           "routeUrl": "/settings/roles",
           "isEnabled": true
+        },
+        {
+          "title": "Pricing",
+          "subTitle": "",
+          "icon": "settings",
+          "className": "anomaly-img",
+          "content": "Manange default pricing",
+          "routeUrl": "/settings/pricing",
+          "isEnabled": true
         }
       ]
     },

@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: "", component: SettingListComponent },
   { path: "roles", component: SettingComponent },
   { path: "networks", component: SettingComponent },
+  { path: "pricing", component: SettingComponent },
   { path: "**", redirectTo: "/settings", pathMatch: "full" },
 ];
 

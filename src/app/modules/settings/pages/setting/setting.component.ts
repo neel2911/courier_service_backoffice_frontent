@@ -5,6 +5,7 @@ import { MatSort } from "@angular/material/sort";
 import { NavigationEnd, Router } from "@angular/router";
 import { map } from "rxjs/operators";
 import { MatNotificationService } from "src/app/modules/material/services/mat-notification.service";
+import { UploadPricingFilesComponent } from "src/app/modules/shared/components/upload-pricing-files/upload-pricing-files.component";
 import { EmployeeStatus } from "src/app/modules/shared/enum/enum";
 import { NetworksDialogBoxComponent } from "../../components/networks-dialog-box/networks-dialog-box.component";
 import { RolesDialogBoxComponent } from "../../components/roles-dialog-box/roles-dialog-box.component";
@@ -24,6 +25,7 @@ export class SettingComponent implements OnInit {
   public settingTitle = {
     roles: "Manage Roles",
     networks: "Manage Networks",
+    pricing: "Manage Default Price",
   };
   public filterText = "";
   public tableData = null;
@@ -80,6 +82,25 @@ export class SettingComponent implements OnInit {
     setTimeout(() => {
       this.selectedRowIndex = -1;
     }, 1000);
+  }
+
+  public onAddPricingClick() {
+    const dialogRef = this._dialog.open(UploadPricingFilesComponent, {
+      data: {},
+      panelClass: `${this.currentSetting.toLowerCase()}-dialog-container`,
+      height: "80vh",
+      width: "80vw",
+      minWidth: "80vw",
+      disableClose: true,
+    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   // console.log(`Dialog result:`, result);
+    //   if (result) {
+    //     this._notification.success(result.message);
+    //     this.highlightSelectedRecord(isUpdate ? data : result.data);
+    //   }
+    //   // this.getUsersList();
+    // });
   }
 
   public setRoleTable() {

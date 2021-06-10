@@ -1,92 +1,176 @@
 <section class="container-fluid pt-4">
-  <div class="d-flex justify-content-between align-items-center">
-    <div>
-      <a mat-button class="link p-0 mr-2" routerLink="/settings">
-        <span class="material-icons-sharp"> arrow_back </span>
-        Settings
-      </a>
-      <mat-divider [vertical]="true" class="d-inline"></mat-divider>
-      <h3 class="mat-h2 ml-2 d-inline">
-        <span>
-          {{ currentSetting && settingTitle[currentSetting] }}
-        </span>
-      </h3>
-    </div>
-    <div class="d-flex align-items-center">
-      <form class="filter-section d-flex align-items-center">
-        <mat-form-field class="custom-input">
-          <mat-label>Filter</mat-label>
-          <input
-            matInput
-            [(ngModel)]="filterText"
-            [ngModelOptions]="{ standalone: true }"
-            (keyup)="applyFilter($event.target.value)"
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            *ngIf="filterText"
-            (click)="applyFilter('')"
-          >
-            <span class="material-icons-sharp"> close </span>
-          </button>
-          <mat-icon
-            svgIcon="search"
-            class="search-icon"
-            color="primary"
-            matSuffix
-            *ngIf="!filterText"
-          ></mat-icon>
-        </mat-form-field>
-      </form>
-      <ng-container [ngSwitch]="currentSetting">
-        <ng-container *ngSwitchCase="'roles'">
-          <button
-            mat-flat-button
-            class="custom-button ml-3"
-            color="primary"
-            (click)="onAddRoleClick()"
-          >
-            <span class="material-icons-sharp"> add </span>
-            New
-          </button>
-        </ng-container>
-        <ng-container *ngSwitchCase="'networks'">
-          <button
-            mat-flat-button
-            class="custom-button ml-3"
-            color="primary"
-            (click)="onAddNeworkClick()"
-          >
-            <span class="material-icons-sharp"> add </span>
-            New
-          </button>
-        </ng-container>
-      </ng-container>
-    </div>
-  </div>
-
-  <div class="table-wrapper">
-    <ng-container [ngSwitch]="currentSetting">
-      <ng-container *ngSwitchCase="'roles'">
-        <app-table-with-sub-table
-          *ngIf="tableData"
-          [tableConfig]="tableData.mainTableConfigs"
-          [subTableConfig]="tableData.subTableConfigs"
-          [tableRecords]="tableData.defaultRecords"
-          [filterText]="filterText"
-          (evtEmitter)="onTableEmitter($event)"
-        ></app-table-with-sub-table>
-      </ng-container>
-      <ng-container *ngSwitchDefault>
-        <app-default-table
-          *ngIf="tableData"
-          [tableConfig]="tableData.mainTableConfigs"
-          [tableRecords]="tableData.defaultRecords"
-          [filterText]="filterText"
-          (evtEmitter)="onTableEmitter($event)"
-        ></app-default-table>
-      </ng-container>
+  <ng-container [ngSwitch]="currentSetting">
+    <ng-container *ngSwitchCase="'pricing'">
+      <app-upload-pricing-files></app-upload-pricing-files>
+      <!-- <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <a mat-button class="link p-0 mr-2" routerLink="/settings">
+            <span class="material-icons-sharp"> arrow_back </span>
+            Settings
+          </a>
+          <mat-divider [vertical]="true" class="d-inline"></mat-divider>
+          <h3 class="mat-h2 ml-2 d-inline">
+            <span>
+              {{ currentSetting && settingTitle[currentSetting] }}
+            </span>
+          </h3>
+        </div>
+        <div class="d-flex align-items-center">
+          <form class="filter-section d-flex align-items-center">
+            <mat-form-field class="custom-input">
+              <mat-label>Filter</mat-label>
+              <input
+                matInput
+                [(ngModel)]="filterText"
+                [ngModelOptions]="{ standalone: true }"
+                (keyup)="applyFilter($event.target.value)"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                *ngIf="filterText"
+                (click)="applyFilter('')"
+              >
+                <span class="material-icons-sharp"> close </span>
+              </button>
+              <mat-icon
+                svgIcon="search"
+                class="search-icon"
+                color="primary"
+                matSuffix
+                *ngIf="!filterText"
+              ></mat-icon>
+            </mat-form-field>
+          </form>
+          <ng-container [ngSwitch]="currentSetting">
+            <ng-container *ngSwitchCase="'pricing'">
+              <button
+                mat-flat-button
+                class="custom-button ml-3"
+                color="primary"
+                (click)="onAddPricingClick()"
+              >
+                <span class="material-icons-sharp"> add </span>
+                New
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="'roles'">
+              <button
+                mat-flat-button
+                class="custom-button ml-3"
+                color="primary"
+                (click)="onAddRoleClick()"
+              >
+                <span class="material-icons-sharp"> add </span>
+                New
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="'networks'">
+              <button
+                mat-flat-button
+                class="custom-button ml-3"
+                color="primary"
+                (click)="onAddNeworkClick()"
+              >
+                <span class="material-icons-sharp"> add </span>
+                New
+              </button>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div> -->
     </ng-container>
-  </div>
+    <ng-container *ngSwitchDefault>
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <a mat-button class="link p-0 mr-2" routerLink="/settings">
+            <span class="material-icons-sharp"> arrow_back </span>
+            Settings
+          </a>
+          <mat-divider [vertical]="true" class="d-inline"></mat-divider>
+          <h3 class="mat-h2 ml-2 d-inline">
+            <span>
+              {{ currentSetting && settingTitle[currentSetting] }}
+            </span>
+          </h3>
+        </div>
+        <div class="d-flex align-items-center">
+          <form class="filter-section d-flex align-items-center">
+            <mat-form-field class="custom-input">
+              <mat-label>Filter</mat-label>
+              <input
+                matInput
+                [(ngModel)]="filterText"
+                [ngModelOptions]="{ standalone: true }"
+                (keyup)="applyFilter($event.target.value)"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                *ngIf="filterText"
+                (click)="applyFilter('')"
+              >
+                <span class="material-icons-sharp"> close </span>
+              </button>
+              <mat-icon
+                svgIcon="search"
+                class="search-icon"
+                color="primary"
+                matSuffix
+                *ngIf="!filterText"
+              ></mat-icon>
+            </mat-form-field>
+          </form>
+          <ng-container [ngSwitch]="currentSetting">
+            <ng-container *ngSwitchCase="'roles'">
+              <button
+                mat-flat-button
+                class="custom-button ml-3"
+                color="primary"
+                (click)="onAddRoleClick()"
+              >
+                <span class="material-icons-sharp"> add </span>
+                New
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="'networks'">
+              <button
+                mat-flat-button
+                class="custom-button ml-3"
+                color="primary"
+                (click)="onAddNeworkClick()"
+              >
+                <span class="material-icons-sharp"> add </span>
+                New
+              </button>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <ng-container [ngSwitch]="currentSetting">
+          <ng-container *ngSwitchCase="'roles'">
+            <app-table-with-sub-table
+              *ngIf="tableData"
+              [tableConfig]="tableData.mainTableConfigs"
+              [subTableConfig]="tableData.subTableConfigs"
+              [tableRecords]="tableData.defaultRecords"
+              [filterText]="filterText"
+              (evtEmitter)="onTableEmitter($event)"
+            ></app-table-with-sub-table>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <app-default-table
+              *ngIf="tableData"
+              [tableConfig]="tableData.mainTableConfigs"
+              [tableRecords]="tableData.defaultRecords"
+              [filterText]="filterText"
+              (evtEmitter)="onTableEmitter($event)"
+            ></app-default-table>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
 </section>
