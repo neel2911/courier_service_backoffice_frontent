@@ -9,17 +9,14 @@ import { SettingListComponent } from "./pages/setting-list/setting-list.componen
 import { SettingComponent } from "./pages/setting/setting.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { UserManagementService } from "../user-management/services/user-management.service";
-import { TableWithSubTableComponent } from "./components/table-with-sub-table/table-with-sub-table.component";
-import { DefaultTableComponent } from "./components/default-table/default-table.component";
 import { RolesDialogBoxComponent } from "./components/roles-dialog-box/roles-dialog-box.component";
 import { NetworksDialogBoxComponent } from "./components/networks-dialog-box/networks-dialog-box.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [
     SettingListComponent,
     SettingComponent,
-    TableWithSubTableComponent,
-    DefaultTableComponent,
     RolesDialogBoxComponent,
     NetworksDialogBoxComponent,
   ],
@@ -27,6 +24,7 @@ import { NetworksDialogBoxComponent } from "./components/networks-dialog-box/net
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     MaterialModule,
     D3Module,
     AngularSplitModule,

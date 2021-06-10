@@ -13,6 +13,13 @@ const routes: Routes = [
   // },
 
   {
+    path: "client-management",
+    loadChildren: () =>
+      import("./modules/client-management/client-management.module").then(
+        (m) => m.ClientManagementModule
+      ),
+  },
+  {
     path: "user-management",
     loadChildren: () =>
       import("./modules/user-management/user-management.module").then(

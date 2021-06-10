@@ -6,8 +6,6 @@ import { NavigationEnd, Router } from "@angular/router";
 import { map } from "rxjs/operators";
 import { MatNotificationService } from "src/app/modules/material/services/mat-notification.service";
 import { EmployeeStatus } from "src/app/modules/shared/enum/enum";
-import { UserDialogBoxComponent } from "src/app/modules/user-management/components/user-dialog-box/user-dialog-box.component";
-import { ViewUserDialogBoxComponent } from "src/app/modules/user-management/components/view-user-dialog-box/view-user-dialog-box.component";
 import { NetworksDialogBoxComponent } from "../../components/networks-dialog-box/networks-dialog-box.component";
 import { RolesDialogBoxComponent } from "../../components/roles-dialog-box/roles-dialog-box.component";
 import { SettingsService } from "../../service/settings.service";

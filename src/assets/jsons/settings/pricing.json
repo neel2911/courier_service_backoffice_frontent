@@ -1,0 +1,28 @@
+{
+  "data": {
+    "priceSeqId": "",
+    "name": "",
+    "status": "",
+    "clientSeqId": "",
+    "createdAt": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "updatedBy": "",
+    "countryWithZoneCode": [
+      {
+        "countrySeqId": "",
+        "countryName": "",
+        "zoneCode": ""
+      }
+    ],
+    "chargesPerItem": [
+      {
+        "chargesPerItemSeqId": "",
+        "itemName": "",
+        "zonecode": "",
+        "charges": "",
+        "currency": ""
+      }
+    ]
+  }
+}

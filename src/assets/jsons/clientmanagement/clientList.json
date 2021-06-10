@@ -1,0 +1,91 @@
+{
+  "data": {
+    "pageable": {
+      "sort": {
+        "sorted": false,
+        "unsorted": true,
+        "empty": true
+      },
+      "pageSize": 20,
+      "pageNumber": 0,
+      "offset": 0,
+      "paged": true,
+      "unpaged": false
+    },
+    "last": true,
+    "totalPages": 1,
+    "totalElements": 7,
+    "number": 0,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "first": true,
+    "numberOfElements": 7,
+    "size": 7,
+    "empty": false,
+    "records": [
+      {
+        "clientSeqId": 1,
+        "clientCode": "DHL",
+        "clientName": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      },
+      {
+        "clientSeqId": 3,
+        "clientCode": "DHL2",
+        "clientName": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      },
+      {
+        "clientSeqId": 4,
+        "clientCode": "DHL",
+        "clientName": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      },
+      {
+        "clientSeqId": 5,
+        "clientCode": "DHL2",
+        "clientName": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      },
+      {
+        "clientSeqId": 6,
+        "clientCode": "DHL",
+        "clientName": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      },
+      {
+        "clientSeqId": 7,
+        "clientCode": "DHL2",
+        "clientName": "Rodrick.VonRueden93@dhl.com",
+        "contactNumber": 7304396445,
+        "createdAt": 1611307537141,
+        "createdBy": "Lila Hegmann",
+        "updatedAt": 1598271889766,
+        "updatedBy": "Mollie Pfannerstill"
+      }
+    ]
+  }
+}

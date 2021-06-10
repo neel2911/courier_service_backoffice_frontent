@@ -22,6 +22,10 @@ export class ReactiveDatasource implements DataSource<any> {
     this.loadingSubject.complete();
   }
 
+  getRecords() {
+    this.dataSubject.getValue();
+  }
+
   loadData(dataObserver: Observable<any>) {
     this.loadingSubject.next(true);
     dataObserver
@@ -29,6 +33,6 @@ export class ReactiveDatasource implements DataSource<any> {
         catchError(() => of([])),
         finalize(() => this.loadingSubject.next(false))
       )
-      .subscribe((data) => this.dataSubject.next(data));
+      .subscribe((data) => this.dataSubject.next(data.records));
   }
 }

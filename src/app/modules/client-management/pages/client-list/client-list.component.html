@@ -1,0 +1,125 @@
+<section class="container-fluid pt-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h3 class="mat-h2 ml-2 d-inline">
+        <span> Client List </span>
+      </h3>
+    </div>
+    <div class="d-flex align-items-center">
+      <form class="filter-section d-flex align-items-center">
+        <mat-form-field class="custom-input">
+          <mat-label>Filter</mat-label>
+          <input
+            matInput
+            [(ngModel)]="filterText"
+            [ngModelOptions]="{ standalone: true }"
+            (keyup)="applyFilter($event.target.value)"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            *ngIf="filterText"
+            (click)="applyFilter('')"
+          >
+            <span class="material-icons-sharp"> close </span>
+          </button>
+          <mat-icon
+            svgIcon="search"
+            class="search-icon"
+            color="primary"
+            matSuffix
+            *ngIf="!filterText"
+          ></mat-icon>
+        </mat-form-field>
+      </form>
+      <button
+        mat-flat-button
+        class="custom-button ml-3"
+        color="primary"
+        [routerLink]="['add-update-client']"
+      >
+        <span class="material-icons-sharp"> add </span>
+        New
+      </button>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <!-- <app-table-loader *ngIf="!userList"></app-table-loader> -->
+    <table mat-table class="table" [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="clientCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Client Code</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.clientCode }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="clientName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.clientName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="contactNumber">
+        <th mat-header-cell *matHeaderCellDef>Contact Number</th>
+        <td mat-cell *matCellDef="let row">{{ row.contactNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef>Created At</th>
+        <td mat-cell *matCellDef="let row">{{ row.createdAt }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdBy">
+        <th mat-header-cell *matHeaderCellDef>Created By</th>
+        <td mat-cell *matCellDef="let row">{{ row.createdBy }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="updatedAt">
+        <th mat-header-cell *matHeaderCellDef>Updated At</th>
+        <td mat-cell *matCellDef="let row">{{ row.updatedAt }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="updatedBy">
+        <th mat-header-cell *matHeaderCellDef>Updated By</th>
+        <td mat-cell *matCellDef="let row">{{ row.updatedBy }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="more">
+        <th mat-header-cell *matHeaderCellDef class="text-center">Actions</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="actions justify-content-between text-center">
+            <button mat-icon-button (click)="onClientEditClick(row)">
+              <span class="material-icons-sharp"> update </span>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        [ngClass]="{ highlight: selectedRowIndex == row.accessCode }"
+      ></tr>
+    </table>
+    <!-- <div
+      class="no-data d-flex align-items-center justify-content-center"
+      *ngIf="dataSource?.getRecords().length == 0 || filterText !== ''"
+      style="height: 200px"
+    >
+      <span *ngIf="filterText == '' && dataSource?.getRecords().length == 0"
+        >No data available</span
+      >
+      <span *ngIf="filterText != '' && dataSource?.getRecords().length == 0">
+        No filter data available
+      </span>
+    </div> -->
+    <mat-paginator
+      class="sticky-pagination custom-pagination"
+      [length]="totalRecords"
+      [pageSizeOptions]="pageSizeOption"
+      [pageSize]="pageSize"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</section>
